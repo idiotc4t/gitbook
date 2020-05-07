@@ -6,9 +6,9 @@
 
 * 下图分别是medium完整性令牌和high完整性令牌。
 
-![](../.gitbook/assets/image%20%288%29.png)
+![](../.gitbook/assets/image%20%289%29.png)
 
-![](../.gitbook/assets/image%20%2832%29.png)
+![](../.gitbook/assets/image%20%2833%29.png)
 
 ## 提权流程
 

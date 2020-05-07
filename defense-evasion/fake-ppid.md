@@ -12,9 +12,9 @@ description: fake-PPID
   
 触发UAC创建进程的过程中,我们可以知道实际上高权限的进程是由consent.exe进程创建的，但实际上父进程并非指向consent.exe任就是UAC发起者的进程ID，那么我们是否可以自己指定父进程，增加判断成本从而使蓝队脑阔疼。
 
-![](../.gitbook/assets/image%20%2817%29.png)
+![](../.gitbook/assets/image%20%2818%29.png)
 
-![&#x7236;&#x8FDB;&#x7A0B;&#x5E76;&#x975E;consent.exe](../.gitbook/assets/image%20%2842%29.png)
+![&#x7236;&#x8FDB;&#x7A0B;&#x5E76;&#x975E;consent.exe](../.gitbook/assets/image%20%2843%29.png)
 
 ## CreateProcessAsUser函数
 
@@ -93,7 +93,7 @@ int main() {
 }
 ```
 
-![](../.gitbook/assets/image%20%2829%29.png)
+![](../.gitbook/assets/image%20%2830%29.png)
 
 ## 与进程注入技术EARLYBIRD搭配使用
 
@@ -150,11 +150,11 @@ int main() {
 }
 ```
 
-![](../.gitbook/assets/image%20%2843%29.png)
+![](../.gitbook/assets/image%20%2844%29.png)
 
-![](../.gitbook/assets/image%20%2838%29.png)
+![](../.gitbook/assets/image%20%2839%29.png)
 
-![](../.gitbook/assets/image%20%2836%29.png)
+![](../.gitbook/assets/image%20%2837%29.png)
 
 * github:[https://github.com/idiotc4t/FakePPID](https://github.com/idiotc4t/FakePPID)
 

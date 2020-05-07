@@ -72,7 +72,7 @@ int main() {
 }
 ```
 
-![](../.gitbook/assets/image%20%2872%29.png)
+![](../.gitbook/assets/image%20%2873%29.png)
 
 符合我们的预期，接下来我们再测试一下KnownDlls内的dll加载次序:
 
@@ -86,9 +86,9 @@ int main() {
 }
 ```
 
-![](../.gitbook/assets/image%20%2874%29.png)
+![](../.gitbook/assets/image%20%2875%29.png)
 
-![](../.gitbook/assets/image%20%285%29.png)
+![](../.gitbook/assets/image%20%286%29.png)
 
 同样符合我们的预期，那我们猜测，是否存在这样一些没有保存在KnownDlls同时又存在于dll最先加载次序之后的dll模块呢，如果我们能找到这样的模块，同时又对较高顺位的加载目录有写入权限，那我们就能控制这个程序加载的模块代码，这种技术被称之为dll劫持。\(虽然不是高深的技术，狗头\)。
 
@@ -128,21 +128,21 @@ return (TRUE);
 
 某程序需要使用一个system32下的dll，同时该dll并未注册为KnownDlls，这时我们在程序当前目录写入一个同名dll。
 
-![](../.gitbook/assets/image%20%2820%29.png)
+![](../.gitbook/assets/image%20%2821%29.png)
 
 编写dll放入system32，运行程序。
 
-![](../.gitbook/assets/image%20%2835%29.png)
+![](../.gitbook/assets/image%20%2836%29.png)
 
-![](../.gitbook/assets/image%20%2866%29.png)
+![](../.gitbook/assets/image%20%2867%29.png)
 
-![](../.gitbook/assets/image%20%2873%29.png)
+![](../.gitbook/assets/image%20%2874%29.png)
 
 这时我们在程序所在目录放置恶意dll。
 
-![](../.gitbook/assets/image%20%2862%29.png)
+![](../.gitbook/assets/image%20%2863%29.png)
 
-![](../.gitbook/assets/image%20%2834%29.png)
+![](../.gitbook/assets/image%20%2835%29.png)
 
 恶意dll先于合法dll加载。
 

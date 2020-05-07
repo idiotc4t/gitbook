@@ -16,11 +16,11 @@ AMSI的全称是反恶意软件扫描接口（Anti-Malware Scan Interface），�
 
 AMSI整体架构如下图所示：
 
-![](../.gitbook/assets/image%20%2826%29.png)
+![](../.gitbook/assets/image%20%2827%29.png)
 
 简单的说AMSI就是这玩意:
 
-![](../.gitbook/assets/image%20%2858%29.png)
+![](../.gitbook/assets/image%20%2859%29.png)
 
 ## 技术原理&流程
 
@@ -65,21 +65,21 @@ AMSI整体架构如下图所示：
 
 创建一个powershell进程
 
-![](../.gitbook/assets/image%20%2860%29.png)
+![](../.gitbook/assets/image%20%2861%29.png)
 
 调试器附加并定位AmsiScanBuffer函数
 
-![](../.gitbook/assets/image%20%2810%29.png)
+![](../.gitbook/assets/image%20%2811%29.png)
 
 修补该函数使其直接返回\(具体细节大家可以使用ida和x64dbg跟一下\)。
 
-![](../.gitbook/assets/image%20%2857%29.png)
+![](../.gitbook/assets/image%20%2858%29.png)
 
-![](../.gitbook/assets/image%20%2854%29.png)
+![](../.gitbook/assets/image%20%2855%29.png)
 
 绕过AMSI。
 
-![](../.gitbook/assets/image%20%2839%29.png)
+![](../.gitbook/assets/image%20%2840%29.png)
 
 ## 代码实现
 
