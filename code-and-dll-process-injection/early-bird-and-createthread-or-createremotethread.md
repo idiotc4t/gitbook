@@ -47,7 +47,7 @@ int main() {
 }
 ```
 
-* 远程注入:
+* 远程线程注入:
 
 ```text
 #include<Windows.h>
