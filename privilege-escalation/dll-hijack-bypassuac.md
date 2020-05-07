@@ -26,7 +26,7 @@
 
 过滤条件:
 
-![](../.gitbook/assets/image%20%2853%29.png)
+![](../.gitbook/assets/image%20%2854%29.png)
 
 ![](../.gitbook/assets/image%20%2816%29.png)
 
@@ -34,7 +34,7 @@
 
 在这里笔者就直接把dll放入system32\sysprep\。\(好吧其实是我懒\)。
 
-![](../.gitbook/assets/image%20%2826%29.png)
+![](../.gitbook/assets/image%20%2827%29.png)
 
 成功bypassuac，当然如果要武器化,那还需要对dll进行一些优化。
 

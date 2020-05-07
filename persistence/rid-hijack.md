@@ -8,7 +8,7 @@ description: RID-hijack
 
 在windows系统内，使用rid区分用户组和用户账户，rid是安全标识符sid的一部分，每创建一个组或一个用户，都会往后递增一位，通常administrator的rid始终为500，而标准用户通常以1001开始。
 
-![](../.gitbook/assets/image%20%2834%29.png)
+![](../.gitbook/assets/image%20%2835%29.png)
 
  [Sebastian Castr](https://twitter.com/r4wd3r)发现可以通过修改注册表来劫持有效账户的RID，使guest成为管理员，同时进行活动的话会以原本的身份记录在日志内。
 
@@ -20,7 +20,7 @@ windows内置访客账户guest的rid信息储存在一下键值对内。
 HKEY_LOCAL_MACHINE\SAM\SAM\Domains\Account\Users\Names\Guest
 ```
 
-![0x1f5&#x8F6C;&#x6362;&#x6210;&#x5341;&#x8FDB;&#x5236;501](../.gitbook/assets/image%20%2822%29.png)
+![0x1f5&#x8F6C;&#x6362;&#x6210;&#x5341;&#x8FDB;&#x5236;501](../.gitbook/assets/image%20%2823%29.png)
 
 也可以通过wmic查询。
 
@@ -28,7 +28,7 @@ HKEY_LOCAL_MACHINE\SAM\SAM\Domains\Account\Users\Names\Guest
 wmic useraccount where (name='Guest') get name,sid
 ```
 
-![](../.gitbook/assets/image%20%2828%29.png)
+![](../.gitbook/assets/image%20%2829%29.png)
 
 通过RID在如下键值对内寻找账户的相关信息。
 
@@ -40,7 +40,7 @@ HKEY_LOCAL_MACHINE\SAM\SAM\Domains\Account\Users\000001F5
 
 PS:需要system权限。
 
-![](../.gitbook/assets/image%20%2868%29.png)
+![](../.gitbook/assets/image%20%2869%29.png)
 
 在"F"键值对偏移0x30的位置存储着RID，修改为0xF401\(500\)即可劫持RID。
 

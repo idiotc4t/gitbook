@@ -125,7 +125,7 @@ description: 进程镂空
 
 #### \* 实现效果
 
-![](../.gitbook/assets/image%20%2848%29.png)
+![](../.gitbook/assets/image%20%2849%29.png)
 
 ## 完整代码
 
