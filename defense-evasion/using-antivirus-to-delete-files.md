@@ -22,7 +22,7 @@ X5O!P%@AP[4\PZX54(P^)7CC)7}$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*
 
 简单的说为了测试杀毒软件的性能,所有厂商都会把这个测试字符串当作病毒处理。
 
-![](../.gitbook/assets/image%20%2870%29.png)
+![](../.gitbook/assets/image%20%2872%29.png)
 
 预想一个场景，在杀毒软件运行时考虑到内存占用可能并不会加载所有自身dll，那我们往这个未加载的dll里写入这个测试字符串，这样杀毒软件就会自己干掉自己，等到需要用到这个功能dll的时候，这个功能就会失效。
 

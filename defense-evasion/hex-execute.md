@@ -63,7 +63,7 @@ int main(int argc, char* argv[]) {
 ```
 {% endcode %}
 
-![](../.gitbook/assets/image%20%2877%29.png)
+![](../.gitbook/assets/image%20%2879%29.png)
 
 * 未加密payload检出率:12%
 

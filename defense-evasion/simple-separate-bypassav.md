@@ -57,15 +57,15 @@ return 0;
 
 ## 实现效果
 
-![](../.gitbook/assets/image%20%2843%29.png)
+![](../.gitbook/assets/image%20%2844%29.png)
 
 端口已经开始侦听 我们使用 msf 生成 shellcode 并通过 nc 交付给受害者
 
-![](../.gitbook/assets/image%20%2867%29.png)
+![](../.gitbook/assets/image%20%2869%29.png)
 
 生成一段 c 格式的 shellcode
 
-![](../.gitbook/assets/image%20%2852%29.png)
+![](../.gitbook/assets/image%20%2854%29.png)
 
 处理一下变成一句字符串的形式
 
@@ -110,9 +110,9 @@ if __name__ == '__main__':
     main()
 ```
 
-![](../.gitbook/assets/image%20%2858%29.png)
+![](../.gitbook/assets/image%20%2860%29.png)
 
-![](../.gitbook/assets/image%20%2824%29.png)
+![](../.gitbook/assets/image%20%2825%29.png)
 
 
 

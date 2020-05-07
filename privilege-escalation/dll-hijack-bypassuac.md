@@ -26,15 +26,15 @@
 
 过滤条件:
 
-![](../.gitbook/assets/image%20%2854%29.png)
+![](../.gitbook/assets/image%20%2856%29.png)
 
-![](../.gitbook/assets/image%20%2816%29.png)
+![](../.gitbook/assets/image%20%2817%29.png)
 
 运行自动提权文件我们发现，在程序当前目录并不存在预期dll，虽然处于system32目录下我们无法直接写入dll，但是操作系统提供的一些功能是可以让我们以受限用户权限越权写入的，如wusa能够将cab文件释放至管理员权限的文件夹，在之后的windows10中虽然取消了该方法，但是同样有等效的替代方案IFileOperation越权复制文件。
 
 在这里笔者就直接把dll放入system32\sysprep\。\(好吧其实是我懒\)。
 
-![](../.gitbook/assets/image%20%2827%29.png)
+![](../.gitbook/assets/image%20%2828%29.png)
 
 成功bypassuac，当然如果要武器化,那还需要对dll进行一些优化。
 

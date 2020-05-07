@@ -14,7 +14,7 @@ ZwCreateThreadEx函数比CreateRemoteThread函数更接近内核，CreateRemoteT
 
 ZwCreateThreadEx函数原型在不同位数的系统中有细微差别。
 
-![](../.gitbook/assets/image%20%2820%29.png)
+![](../.gitbook/assets/image%20%2821%29.png)
 
 ```text
 #ifdef _WIN64

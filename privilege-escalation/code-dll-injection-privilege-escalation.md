@@ -15,7 +15,7 @@
 
 代码延用经典远程线程注入。
 
-![](../.gitbook/assets/image%20%2861%29.png)
+![](../.gitbook/assets/image%20%2863%29.png)
 
 通常winlogon进程就处于用户同一session，而且是system权限的，这样的进程可以通过任务管理器查看。
 

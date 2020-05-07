@@ -228,7 +228,7 @@ typedef struct _LIST_ENTRY {
 
 因为使用结构体本身使用并不方便，这里使用内嵌汇编的方式来获取kernel32.dll的dllbase。 
 
-![](../.gitbook/assets/image%20%2819%29.png)
+![](../.gitbook/assets/image%20%2820%29.png)
 
 ```text
 HMODULE GetKernel32() {
