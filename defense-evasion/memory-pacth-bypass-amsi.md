@@ -20,7 +20,7 @@ AMSI整体架构如下图所示：
 
 简单的说AMSI就是这玩意:
 
-![](../.gitbook/assets/image%20%2864%29.png)
+![](../.gitbook/assets/image%20%2865%29.png)
 
 ## 技术原理&流程
 
@@ -65,7 +65,7 @@ AMSI整体架构如下图所示：
 
 创建一个powershell进程
 
-![](../.gitbook/assets/image%20%2866%29.png)
+![](../.gitbook/assets/image%20%2867%29.png)
 
 调试器附加并定位AmsiScanBuffer函数
 

@@ -61,7 +61,7 @@ return 0;
 
 端口已经开始侦听 我们使用 msf 生成 shellcode 并通过 nc 交付给受害者
 
-![](../.gitbook/assets/image%20%2872%29.png)
+![](../.gitbook/assets/image%20%2873%29.png)
 
 生成一段 c 格式的 shellcode
 
