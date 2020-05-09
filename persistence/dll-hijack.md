@@ -72,7 +72,7 @@ int main() {
 }
 ```
 
-![](../.gitbook/assets/image%20%2878%29.png)
+![](../.gitbook/assets/image%20%2880%29.png)
 
 符合我们的预期，接下来我们再测试一下KnownDlls内的dll加载次序:
 
@@ -86,7 +86,7 @@ int main() {
 }
 ```
 
-![](../.gitbook/assets/image%20%2880%29.png)
+![](../.gitbook/assets/image%20%2882%29.png)
 
 ![](../.gitbook/assets/image%20%286%29.png)
 
@@ -134,13 +134,13 @@ return (TRUE);
 
 ![](../.gitbook/assets/image%20%2839%29.png)
 
-![](../.gitbook/assets/image%20%2871%29.png)
+![](../.gitbook/assets/image%20%2873%29.png)
 
-![](../.gitbook/assets/image%20%2879%29.png)
+![](../.gitbook/assets/image%20%2881%29.png)
 
 这时我们在程序所在目录放置恶意dll。
 
-![](../.gitbook/assets/image%20%2867%29.png)
+![](../.gitbook/assets/image%20%2869%29.png)
 
 ![](../.gitbook/assets/image%20%2838%29.png)
 

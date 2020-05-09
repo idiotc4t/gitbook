@@ -20,7 +20,7 @@ AMSI整体架构如下图所示：
 
 简单的说AMSI就是这玩意:
 
-![](../.gitbook/assets/image%20%2863%29.png)
+![](../.gitbook/assets/image%20%2864%29.png)
 
 ## 技术原理&流程
 
@@ -65,7 +65,7 @@ AMSI整体架构如下图所示：
 
 创建一个powershell进程
 
-![](../.gitbook/assets/image%20%2865%29.png)
+![](../.gitbook/assets/image%20%2866%29.png)
 
 调试器附加并定位AmsiScanBuffer函数
 
@@ -73,9 +73,9 @@ AMSI整体架构如下图所示：
 
 修补该函数使其直接返回\(具体细节大家可以使用ida和x64dbg跟一下\)。
 
-![](../.gitbook/assets/image%20%2862%29.png)
+![](../.gitbook/assets/image%20%2863%29.png)
 
-![](../.gitbook/assets/image%20%2859%29.png)
+![](../.gitbook/assets/image%20%2860%29.png)
 
 绕过AMSI。
 

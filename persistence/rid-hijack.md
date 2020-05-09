@@ -40,7 +40,7 @@ HKEY_LOCAL_MACHINE\SAM\SAM\Domains\Account\Users\000001F5
 
 PS:需要system权限。
 
-![](../.gitbook/assets/image%20%2872%29.png)
+![](../.gitbook/assets/image%20%2874%29.png)
 
 在"F"键值对偏移0x30的位置存储着RID，修改为0xF401\(500\)即可劫持RID。
 
