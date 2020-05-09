@@ -14,6 +14,8 @@
 
 ## 代码实现
 
+代码参考@mantvydasb
+
 ```text
 #include <iostream>
 #include <Windows.h>
@@ -75,4 +77,14 @@ int main(int argc, char* argv[])
 	return 0;
 }
 ```
+
+## LINKS
+
+{% embed url="https://www.forrest-orr.net/post/malicious-memory-artifacts-part-i-dll-hollowing" %}
+
+
+
+{% embed url="https://ired.team/" %}
+
+
 
