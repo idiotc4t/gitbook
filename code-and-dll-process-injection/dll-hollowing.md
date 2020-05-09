@@ -78,6 +78,14 @@ int main(int argc, char* argv[])
 }
 ```
 
+## 实现效果
+
+![](../.gitbook/assets/image%20%289%29.png)
+
+![](../.gitbook/assets/image%20%2873%29.png)
+
+
+
 ## LINKS
 
 {% embed url="https://www.forrest-orr.net/post/malicious-memory-artifacts-part-i-dll-hollowing" %}

@@ -35,7 +35,7 @@ ps:需要管理员权限
             CloseHandle(hParentProcess);
 ```
 
-![](../.gitbook/assets/image%20%2843%29.png)
+![](../.gitbook/assets/image%20%2844%29.png)
 
 ## LINKS
 

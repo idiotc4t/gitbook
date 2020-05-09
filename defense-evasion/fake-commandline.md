@@ -134,7 +134,7 @@ ntdll!_PEB
 
 
 
-![](../.gitbook/assets/image%20%2827%29.png)
+![](../.gitbook/assets/image%20%2828%29.png)
 
 ```text
 ntdll!_RTL_USER_PROCESS_PARAMETERS
@@ -215,7 +215,7 @@ ntdll!_UNICODE_STRING
 
 ```
 
-![](../.gitbook/assets/image%20%2853%29.png)
+![](../.gitbook/assets/image%20%2854%29.png)
 
 ## 代码实现
 
@@ -256,7 +256,7 @@ int main()
 }
 ```
 
-![](../.gitbook/assets/image%20%2873%29.png)
+![](../.gitbook/assets/image%20%2875%29.png)
 
 ## LINKS
 
