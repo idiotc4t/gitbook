@@ -28,7 +28,7 @@
 * [CreateRemoteThread](code-and-dll-process-injection/createremotethread.md)
 * [APC Injection](code-and-dll-process-injection/apc-injection.md)
 * [Early Bird](code-and-dll-process-injection/early-bird.md)
-* [Early Bird & CreateThread or CreateRemoteThread](code-and-dll-process-injection/early-bird-and-createthread-or-createremotethread.md)
+* [Early Bird & CreateRemoteThread](code-and-dll-process-injection/early-bird-and--createremotethread.md)
 * [Mapping Injection](code-and-dll-process-injection/mapping-injection.md)
 * [Process Hollowing](code-and-dll-process-injection/process-hollowing.md)
 * [DLL Hollowing](code-and-dll-process-injection/dll-hollowing.md)
