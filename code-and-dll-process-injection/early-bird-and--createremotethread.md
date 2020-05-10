@@ -15,6 +15,12 @@
 
 由于进程会在入口点执行前被接管，所以我们其实并不用指向一个真正有效的入口点。
 
+这里有个小坑,生成的shellcode需要指定exitfunc，不然默认的process退出技术会把整个进程结束。
+
+```text
+msfvenom -p windows/x64/messagebox exitfunc=thread -f c 
+```
+
 * 本进程代码执行:
 
 ```text
@@ -86,9 +92,5 @@ int main() {
 
 ![](../.gitbook/assets/image%20%2824%29.png)
 
-## 待解决问题
 
-由于未指定有效的线程入口点,在apc执行结束后，进程会崩溃退出。
-
-可以用指定一个dll入口点解决。
 
