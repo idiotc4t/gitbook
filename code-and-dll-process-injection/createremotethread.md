@@ -105,7 +105,7 @@ CreateRemoteThread(hProcess, 0, 0, (LPTHREAD_START_ROUTINE)lpBaseAddress, 0, 0, 
 
 * 不同进程的kernel32.dll
 
-![](../.gitbook/assets/image%20%2880%29.png)
+![](../.gitbook/assets/image%20%2881%29.png)
 
 ![](../.gitbook/assets/image%20%282%29.png)
 
