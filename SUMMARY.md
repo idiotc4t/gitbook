@@ -30,6 +30,7 @@
 * [Early Bird](code-and-dll-process-injection/early-bird.md)
 * [Early Bird & CreateRemoteThread](code-and-dll-process-injection/early-bird-and--createremotethread.md)
 * [Mapping Injection](code-and-dll-process-injection/mapping-injection.md)
+* [NtCreateSection & NtMapViewOfSection Code Execute](code-and-dll-process-injection/untitled.md)
 * [Process Hollowing](code-and-dll-process-injection/process-hollowing.md)
 * [DLL Hollowing](code-and-dll-process-injection/dll-hollowing.md)
 * [APC & NtTestAlert Code Execute](code-and-dll-process-injection/apc-and-nttestalert-code-execute.md)
