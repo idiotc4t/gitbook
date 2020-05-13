@@ -9,7 +9,7 @@
 * [通过复制Token提权到SYSTEM](privilege-escalation/token-manipulation.md)
 * [通过code&dll注入提权到SYSTEM](privilege-escalation/code-dll-injection-privilege-escalation.md)
 * [通过伪装PPID提权到SYSTEM](privilege-escalation/privilege-escalation-ppid.md)
-* [通过系统服务提权到SYSTEM](privilege-escalation/tong-guo-ming-ming-guan-dao-ti-quan-dao-system.md)
+* [通过伪装PPID提权到SYSTEM](privilege-escalation/privilege-escalation-service.md)
 
 ## 防御逃避 <a id="defense-evasion"></a>
 

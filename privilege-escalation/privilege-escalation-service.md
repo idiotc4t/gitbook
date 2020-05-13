@@ -1,4 +1,4 @@
-# 通过系统服务提权到SYSTEM
+# 通过伪装PPID提权到SYSTEM
 
 ## 简介
 
