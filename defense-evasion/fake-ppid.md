@@ -14,7 +14,7 @@ description: fake-PPID
 
 ![](../.gitbook/assets/image%20%2820%29.png)
 
-![&#x7236;&#x8FDB;&#x7A0B;&#x5E76;&#x975E;consent.exe](../.gitbook/assets/image%20%2846%29.png)
+![&#x7236;&#x8FDB;&#x7A0B;&#x5E76;&#x975E;consent.exe](../.gitbook/assets/image%20%2847%29.png)
 
 ## CreateProcessAsUser函数
 
@@ -93,7 +93,7 @@ int main() {
 }
 ```
 
-![](../.gitbook/assets/image%20%2833%29.png)
+![](../.gitbook/assets/image%20%2834%29.png)
 
 ## 与进程注入技术EARLYBIRD搭配使用
 
@@ -150,11 +150,11 @@ int main() {
 }
 ```
 
-![](../.gitbook/assets/image%20%2847%29.png)
+![](../.gitbook/assets/image%20%2848%29.png)
 
-![](../.gitbook/assets/image%20%2842%29.png)
+![](../.gitbook/assets/image%20%2843%29.png)
 
-![](../.gitbook/assets/image%20%2840%29.png)
+![](../.gitbook/assets/image%20%2841%29.png)
 
 * github:[https://github.com/idiotc4t/FakePPID](https://github.com/idiotc4t/FakePPID)
 

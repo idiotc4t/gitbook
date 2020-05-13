@@ -72,7 +72,7 @@ int main() {
 }
 ```
 
-![](../.gitbook/assets/image%20%2882%29.png)
+![](../.gitbook/assets/image%20%2883%29.png)
 
 符合我们的预期，接下来我们再测试一下KnownDlls内的dll加载次序:
 
@@ -86,7 +86,7 @@ int main() {
 }
 ```
 
-![](../.gitbook/assets/image%20%2884%29.png)
+![](../.gitbook/assets/image%20%2885%29.png)
 
 ![](../.gitbook/assets/image%20%286%29.png)
 
@@ -132,17 +132,17 @@ return (TRUE);
 
 编写dll放入system32，运行程序。
 
-![](../.gitbook/assets/image%20%2839%29.png)
+![](../.gitbook/assets/image%20%2840%29.png)
 
-![](../.gitbook/assets/image%20%2875%29.png)
+![](../.gitbook/assets/image%20%2876%29.png)
 
-![](../.gitbook/assets/image%20%2883%29.png)
+![](../.gitbook/assets/image%20%2884%29.png)
 
 这时我们在程序所在目录放置恶意dll。
 
-![](../.gitbook/assets/image%20%2871%29.png)
+![](../.gitbook/assets/image%20%2872%29.png)
 
-![](../.gitbook/assets/image%20%2838%29.png)
+![](../.gitbook/assets/image%20%2839%29.png)
 
 恶意dll先于合法dll加载。
 

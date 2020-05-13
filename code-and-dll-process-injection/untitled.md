@@ -6,7 +6,7 @@
 
 这种技术与mapping injection具有同样的优点，我们可以不使用virutalprotectex、writeprocessmemory等注入技术经典函数。
 
-![](../.gitbook/assets/image%20%2860%29.png)
+![](../.gitbook/assets/image%20%2861%29.png)
 
 ## 注入流程
 
