@@ -72,7 +72,7 @@ int main() {
 }
 ```
 
-![](../.gitbook/assets/image%20%2883%29.png)
+![](../.gitbook/assets/image%20%2884%29.png)
 
 符合我们的预期，接下来我们再测试一下KnownDlls内的dll加载次序:
 
@@ -86,7 +86,7 @@ int main() {
 }
 ```
 
-![](../.gitbook/assets/image%20%2885%29.png)
+![](../.gitbook/assets/image%20%2886%29.png)
 
 ![](../.gitbook/assets/image%20%286%29.png)
 
@@ -128,21 +128,21 @@ return (TRUE);
 
 某程序需要使用一个system32下的dll，同时该dll并未注册为KnownDlls，这时我们在程序当前目录写入一个同名dll。
 
-![](../.gitbook/assets/image%20%2823%29.png)
+![](../.gitbook/assets/image%20%2824%29.png)
 
 编写dll放入system32，运行程序。
 
-![](../.gitbook/assets/image%20%2840%29.png)
+![](../.gitbook/assets/image%20%2841%29.png)
 
-![](../.gitbook/assets/image%20%2876%29.png)
+![](../.gitbook/assets/image%20%2877%29.png)
 
-![](../.gitbook/assets/image%20%2884%29.png)
+![](../.gitbook/assets/image%20%2885%29.png)
 
 这时我们在程序所在目录放置恶意dll。
 
-![](../.gitbook/assets/image%20%2872%29.png)
+![](../.gitbook/assets/image%20%2873%29.png)
 
-![](../.gitbook/assets/image%20%2839%29.png)
+![](../.gitbook/assets/image%20%2840%29.png)
 
 恶意dll先于合法dll加载。
 

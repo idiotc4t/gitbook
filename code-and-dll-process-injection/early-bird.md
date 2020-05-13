@@ -12,7 +12,7 @@ Early Bird是一种简单而强大的技术，Early Bird本质上是一种APC注
 4. 将APC插入到该进程的主线程
 5. 恢复挂起进程的线程
 
-![](../.gitbook/assets/image%20%2812%29.png)
+![](../.gitbook/assets/image%20%2813%29.png)
 
 ## 代码实现
 
@@ -93,7 +93,7 @@ int main() {
 }
 ```
 
-![](../.gitbook/assets/image%20%2836%29.png)
+![](../.gitbook/assets/image%20%2837%29.png)
 
 ![](../.gitbook/assets/image%20%288%29.png)
 

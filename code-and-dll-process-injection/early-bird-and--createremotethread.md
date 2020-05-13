@@ -2,7 +2,7 @@
 
 在前面的[Early Bird](early-bird.md)篇我们知道，在恢复挂起线程时程序会调用NtTestAlert函数对APC队列进行处理，试想，我们在进程内创建一个挂起的线程，然后往这个线程内插入用户apc，随后恢复进程，是不是同样可以在进程执行入口点前接管进程?
 
-![](../.gitbook/assets/image%20%2851%29.png)
+![](../.gitbook/assets/image%20%2852%29.png)
 
 ## 实现思路
 
@@ -90,7 +90,7 @@ int main() {
 }
 ```
 
-![](../.gitbook/assets/image%20%2825%29.png)
+![](../.gitbook/assets/image%20%2826%29.png)
 
 
 
