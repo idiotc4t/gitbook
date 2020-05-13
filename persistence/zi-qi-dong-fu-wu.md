@@ -255,3 +255,17 @@ void DoTask()
 }
 ```
 
+## LINKS
+
+{% embed url="https://www.cnblogs.com/lgxZJ/p/7440116.html" %}
+
+
+
+{% embed url="https://docs.microsoft.com/en-us/windows/win32/ad/installing-a-service-on-a-host-computer" %}
+
+{% embed url="https://payloads.online/archivers/2020-04-02/1\#0x05-%E7%BC%96%E5%86%99%E6%9C%8D%E5%8A%A1%E7%A8%8B%E5%BA%8F" %}
+
+{% embed url="https://www.cnblogs.com/hbccdf/p/3491641.html" %}
+
+
+
