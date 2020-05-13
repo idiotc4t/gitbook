@@ -41,6 +41,6 @@
 * [编写简单远控](persistence/simple-cc.md)
 * [DLL劫持](persistence/dll-hijack.md)
 * [RID劫持](persistence/rid-hijack.md)
-* [自启动服务](persistence/zi-qi-dong-fu-wu.md)
+* [自启动服务](persistence/startup-service.md)
 * [注册表自启动项](persistence/registry-startup.md)
 
