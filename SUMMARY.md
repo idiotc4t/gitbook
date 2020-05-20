@@ -26,16 +26,16 @@
 ## 代码与进程注入 <a id="code-and-dll-process-injection"></a>
 
 * [CreateRemoteThread](code-and-dll-process-injection/createremotethread.md)
-* [TLS Code Execute](code-and-dll-process-injection/tls-code-execute.md)
 * [APC Injection](code-and-dll-process-injection/apc-injection.md)
+* [Mapping Injection](code-and-dll-process-injection/mapping-injection.md)
+* [Bypass Session 0 Injection](code-and-dll-process-injection/bypass-session-0-injection.md)
 * [Early Bird](code-and-dll-process-injection/early-bird.md)
 * [Early Bird & CreateRemoteThread](code-and-dll-process-injection/early-bird-and--createremotethread.md)
-* [Mapping Injection](code-and-dll-process-injection/mapping-injection.md)
+* [TLS Code Execute](code-and-dll-process-injection/tls-code-execute.md)
+* [APC & NtTestAlert Code Execute](code-and-dll-process-injection/apc-and-nttestalert-code-execute.md)
 * [NtCreateSection & NtMapViewOfSection Code Execute](code-and-dll-process-injection/untitled.md)
 * [Process Hollowing](code-and-dll-process-injection/process-hollowing.md)
 * [DLL Hollowing](code-and-dll-process-injection/dll-hollowing.md)
-* [APC & NtTestAlert Code Execute](code-and-dll-process-injection/apc-and-nttestalert-code-execute.md)
-* [Bypass Session 0 Injection](code-and-dll-process-injection/bypass-session-0-injection.md)
 
 ## 权限维持 <a id="persistence"></a>
 
