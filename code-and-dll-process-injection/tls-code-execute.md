@@ -76,3 +76,17 @@ int main()
 }
 ```
 
+## LINKS
+
+{% embed url="http://www.hackdig.com/?03/hack-2257.htm" %}
+
+{% embed url="https://www.cnblogs.com/kuangke/p/7590657.html" %}
+
+{% embed url="https://blog.csdn.net/hotspurs/article/details/90298636" %}
+
+{% embed url="https://blog.csdn.net/qq\_18218335/article/details/69357016?utm\_medium=distribute.pc\_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth\_1-utm\_source=distribute.pc\_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase" %}
+
+
+
+
+
