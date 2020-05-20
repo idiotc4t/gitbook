@@ -26,6 +26,7 @@
 ## 代码与进程注入 <a id="code-and-dll-process-injection"></a>
 
 * [CreateRemoteThread](code-and-dll-process-injection/createremotethread.md)
+* [TLS Code Execute](code-and-dll-process-injection/tls-code-execute.md)
 * [APC Injection](code-and-dll-process-injection/apc-injection.md)
 * [Early Bird](code-and-dll-process-injection/early-bird.md)
 * [Early Bird & CreateRemoteThread](code-and-dll-process-injection/early-bird-and--createremotethread.md)
