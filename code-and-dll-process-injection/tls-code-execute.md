@@ -69,9 +69,6 @@ VOID NTAPI TlsCallBack(PVOID DllHandle, DWORD dwReason, PVOID Reserved)
 EXTERN_C PIMAGE_TLS_CALLBACK _tls_callback = TlsCallBack;
 #pragma data_seg ()
 
-
-
-
 int main()
 {
 	printf("ok");
