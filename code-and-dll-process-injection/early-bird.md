@@ -4,6 +4,16 @@
 
 Early Bird是一种简单而强大的技术，Early Bird本质上是一种APC注入与线程劫持的变体，由于线程初始化时会调用ntdll未导出函数NtTestAlert，该函数会清空并处理APC队列，所以注入的代码通常在进程的主线程的入口点之前运行并接管进程控制权，从而避免了反恶意软件产品的钩子的检测，同时获得一个合法进程的环境信息。
 
+线程初始化时调用NtTestAlert:
+
+![](../.gitbook/assets/image%20%2896%29.png)
+
+![](../.gitbook/assets/image%20%2897%29.png)
+
+执行参考:
+
+{% page-ref page="apc-and-nttestalert-code-execute.md" %}
+
 ## Early Bird流程
 
 1. 创建一个挂起的进程\(通常是windows的合法进程\)
