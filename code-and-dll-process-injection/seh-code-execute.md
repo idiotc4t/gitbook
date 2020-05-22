@@ -17,9 +17,20 @@ PException_DISPOSITION handle;    //handle指向一个异常处理函数。
 
 当异常产生时操作系统会接管并会按照\(A\)-&gt;\(B\)-&gt;\(C\)的顺序依次传递，直到异常处理完毕。
 
-异常处理函数通常也遵循约定的编写格式。
+异常处理函数通常也遵循约定的编写格式，由于异常处理函数是一个回调函数，所以第一参数是由操作系统传递的一个指向EXCEPTION\_RECORD结构体的指针。
 
 ![](../.gitbook/assets/image%20%2891%29.png)
+
+```text
+typedef struct _EXCEPTION_RECORD {
+    DWORD ExceptionCode;   //异常代码
+    DWORD ExceptionFlags;
+    struct _EXCEPTION_RECORD *ExceptionRecord;
+    PVOID ExceptionAddress;   //异常发生地址
+    DWORD NumberParameters;
+    ULONG_PTR ExceptionInformation[EXCEPTION_MAXIMUM_PARAMETERS];
+} EXCEPTION_RECORD;
+```
 
 常见的异常:
 
