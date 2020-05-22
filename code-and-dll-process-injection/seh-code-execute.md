@@ -6,8 +6,6 @@
 
 SEH默认存储与堆栈中，以链表的形式保存其结构如下。
 
-
-
 ```text
 typedef struct _Exception_SEH_List{	
 PException_SEH *next;    //*next指针指向下一个节点，	
