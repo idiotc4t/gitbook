@@ -21,7 +21,7 @@ PException_DISPOSITION handle;    //handle指向一个异常处理函数。
 
 CONTEXT保存CPU处理异常前的状态，用于处理后的恢复。
 
-![](../.gitbook/assets/image%20%2891%29.png)
+![](../.gitbook/assets/image%20%2893%29.png)
 
 ```text
 typedef struct _EXCEPTION_RECORD {
@@ -60,4 +60,74 @@ EXCEPTION_STACK_OVERFLOW                   0xC00000FD     栈溢出时引发该�
 ```
 
 异常发生的时候，执行异常代码的线程就会发生中断，转而运行SEH，此时操作系统会把线程 CONTEXT结构体的指针传递给异常处理函数的相应参数。由于这个处理函数可以由我们自定义，所以我们可以利用操作系统来帮我执行shellcode，同时由于seh的特殊性，调试器默认会接管异常而不使用seh，所以我们通常会利用seh进行一些反调试。
+
+结构化异常基于线程，每个单独的线程都有自己的seh链，我们可以在TEB.NtTib.ExceptionList找到seh的链表头，而TEB可以在FS:\[00\]寄存器位置找到，NTTIB和ExceptionList分别处于各自结构体第一个成员，所以FS:\[00\]=TEB.NtTib.ExceptionList。
+
+![](../.gitbook/assets/image%20%2892%29.png)
+
+![](../.gitbook/assets/image%20%2891%29.png)
+
+## SEH实现
+
+原始实现：
+
+```text
+//1.挂入链表相当于这部分
+//fs[0]-> Exception
+	_asm
+	{
+		mov eax, fs:[0]
+		mov temp,eax
+		lea ecx,Exception
+		mov fs:[0],ecx
+	}
+	//为SEH成员赋值
+	Exception.Next = (_EXCEPTION*)temp;
+	Exception.Handler = (DWORD)&MyEexception_handler;
+
+//下面是2，3
+EXCEPTION_DISPOSITION _cdecl MyEexception_handler
+(
+	struct _EXCEPTION_RECORD *ExceptionRecord,	//异常结构体
+	PVOID EstablisherFrame,						//SEH结构体地址
+	struct _CONTEXT *ContextRecord,				//存储异常发生时的各种寄存器的值 栈位置等
+	PVOID DispatcherContext
+)
+{
+	if (ExceptionRecord->ExceptionCode == 0xC0000094)		//2.异常过滤
+	{
+		ContextRecord->Eip = ContextRecord->Eip + 2;			//3.异常处理
+		ContextRecord->Ecx = 100;
+
+		return ExceptionContinueExecution;
+	}
+	return ExceptionContinueSearch;
+}
+```
+
+编译器封装:
+
+```text
+//这里的代码底层实现就类似上面的代码。
+_try						//1.挂入链表
+	{
+
+	}
+	_except(过滤表达式)	//2.异常过滤
+	{
+		异常处理程序		//3.异常处理程序
+	}
+
+异常过滤表达式常量值
+1) EXCEPTION_EXECUTE_HANDLER (1)	执行except代码
+2) EXCEPTION_CONTINUE_SEARCH (0)	寻找下一个异常处理函数
+3) EXCEPTION_CONTINUE_EXECUTION (-1)	返回出错位置重新执行
+
+表达式由多种写法:
+1.直接写常量值
+2.表达式
+_except(GetExceptionCode() == 0xC0000094 ? EXCEPTION_EXECUTE_HANDLER : EXCEPTION_CONTINUE_SEARCH)
+3.调用函数
+_except(ExceptFilter(GetExceptionInformation()))
+```
 
