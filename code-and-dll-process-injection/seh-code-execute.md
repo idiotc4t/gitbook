@@ -125,9 +125,40 @@ _try						//1.挂入链表
 
 表达式由多种写法:
 1.直接写常量值
+_except(EXCEPTION_CONTINUE_EXECUTION)
 2.表达式
 _except(GetExceptionCode() == 0xC0000094 ? EXCEPTION_EXECUTE_HANDLER : EXCEPTION_CONTINUE_SEARCH)
 3.调用函数
 _except(ExceptFilter(GetExceptionInformation()))
+```
+
+## SEH利用
+
+```text
+#include<Windows.h>
+#include<stdio.h>
+
+int a = 1;
+int b = 0;
+
+int ExceptFilter()
+{
+	b = 1;
+
+	return EXCEPTION_CONTINUE_EXECUTION;//返回出错位置重新执行
+}
+
+int main()
+{
+	_try
+	{
+		int c = a / b;
+	}
+	_except(ExceptFilter()) {
+		
+	};
+	return 0;
+
+}
 ```
 
