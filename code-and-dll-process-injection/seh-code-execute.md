@@ -134,17 +134,21 @@ _except(ExceptFilter(GetExceptionInformation()))
 
 ## SEH利用
 
+如果有调试器并接管异常，那么程序会在发生除零异常的位置停滞，而没有调试器程序则会处理这个异常并执行shellcode。
+
 ```text
 #include<Windows.h>
 #include<stdio.h>
-
+#pragma comment(linker, "/section:.data,RWE")
+char shellcode[] =
+"";
 int a = 1;
 int b = 0;
 
 int ExceptFilter()
 {
 	b = 1;
-
+	((void(*NTAPI)(void)) & shellcode)();
 	return EXCEPTION_CONTINUE_EXECUTION;//返回出错位置重新执行
 }
 
@@ -157,8 +161,27 @@ int main()
 	_except(ExceptFilter()) {
 		
 	};
+
 	return 0;
 
 }
 ```
+
+![](../.gitbook/assets/image%20%2895%29.png)
+
+或:
+
+![](../.gitbook/assets/image%20%2894%29.png)
+
+## LINKS
+
+{% embed url="https://www.cnblogs.com/FKdelphi/p/10734361.html" %}
+
+{% embed url="https://bbs.pediy.com/thread-249592.htm" %}
+
+{% embed url="https://blog.csdn.net/weixin\_42052102/article/details/83547922" %}
+
+{% embed url="https://blog.csdn.net/weixin\_42052102/article/details/83551306" %}
+
+
 
