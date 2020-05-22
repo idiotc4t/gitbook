@@ -6,9 +6,11 @@ Early Bird是一种简单而强大的技术，Early Bird本质上是一种APC注
 
 线程初始化时调用NtTestAlert:
 
+![](../.gitbook/assets/image%20%2897%29.png)
+
 ![](../.gitbook/assets/image%20%2896%29.png)
 
-![](../.gitbook/assets/image%20%2897%29.png)
+![](../.gitbook/assets/image%20%2898%29.png)
 
 执行参考:
 
