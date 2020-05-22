@@ -32,6 +32,7 @@
 * [Early Bird](code-and-dll-process-injection/early-bird.md)
 * [Early Bird & CreateRemoteThread](code-and-dll-process-injection/early-bird-and--createremotethread.md)
 * [TLS Code Execute](code-and-dll-process-injection/tls-code-execute.md)
+* [SEH Code Execute](code-and-dll-process-injection/seh-code-execute.md)
 * [APC & NtTestAlert Code Execute](code-and-dll-process-injection/apc-and-nttestalert-code-execute.md)
 * [NtCreateSection & NtMapViewOfSection Code Execute](code-and-dll-process-injection/untitled.md)
 * [Process Hollowing](code-and-dll-process-injection/process-hollowing.md)
