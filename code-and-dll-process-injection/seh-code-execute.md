@@ -19,6 +19,8 @@ PException_DISPOSITION handle;    //handle指向一个异常处理函数。
 
 异常处理函数通常也遵循约定的编写格式，由于异常处理函数是一个回调函数，所以第一参数是由操作系统传递的一个指向EXCEPTION\_RECORD结构体的指针。
 
+CONTEXT保存CPU处理异常前的状态，用于处理后的恢复。
+
 ![](../.gitbook/assets/image%20%2891%29.png)
 
 ```text
@@ -56,4 +58,6 @@ EXCEPTION_PRIV_INSTRUCTION                     0xC0000096     程序企图执行
 EXCEPTION_SINGLE_STEP                          0x80000004     标志寄存器的TF位为1时，每执行一条指令就会引发该异常。主要用于单步调试。
 EXCEPTION_STACK_OVERFLOW                   0xC00000FD     栈溢出时引发该异常。
 ```
+
+异常发生的时候，执行异常代码的线程就会发生中断，转而运行SEH，此时操作系统会把线程 CONTEXT结构体的指针传递给异常处理函数的相应参数。由于这个处理函数可以由我们自定义，所以我们可以利用操作系统来帮我执行shellcode，同时由于seh的特殊性，调试器默认会接管异常而不使用seh，所以我们通常会利用seh进行一些反调试。
 
