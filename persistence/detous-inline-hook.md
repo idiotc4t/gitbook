@@ -53,3 +53,23 @@ int main() {
 
 ## RdpThief应用
 
+前段时间\(很久很久以前\)，有一篇专门讲通过detours窃取rdp凭证的文章，这里作为案例复现一下。
+
+起一个rdp客户端创建连接。
+
+![](../.gitbook/assets/image%20%28104%29.png)
+
+搜索用户名。
+
+![](../.gitbook/assets/image%20%28103%29.png)
+
+![](../.gitbook/assets/image%20%28105%29.png)
+
+密码也是同样，这里密码通过不能通过字符串搜索直接出结果，但根据查看函数调用可知具体密码处于CryptProtectMemory函数第一个参数所指向的内存区域偏移+4的位置。
+
+![](../.gitbook/assets/image%20%28107%29.png)
+
+具体ip地址也是一样。
+
+![](../.gitbook/assets/image%20%28106%29.png)
+
