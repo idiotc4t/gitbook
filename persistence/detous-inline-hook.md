@@ -73,3 +73,15 @@ int main() {
 
 ![](../.gitbook/assets/image%20%28106%29.png)
 
+github:[https://github.com/0x09AL/RdpThief.git](https://github.com/0x09AL/RdpThief.git)
+
+## LINKS
+
+{% embed url="https://www.cnblogs.com/M-Anonymous/p/9766343.html" %}
+
+{% embed url="https://github.com/microsoft/Detours/wiki/OverviewInterception" %}
+
+{% embed url="https://blog.csdn.net/systemino/article/details/103083541" %}
+
+
+
