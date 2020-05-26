@@ -40,7 +40,7 @@
 
 ## 权限维持 <a id="persistence"></a>
 
-* [Detous InLine Hook](persistence/detous-inline-hook.md)
+* [Detours InLine Hook](persistence/detous-inline-hook.md)
 * [DLL劫持](persistence/dll-hijack.md)
 * [RID劫持](persistence/rid-hijack.md)
 * [自启动服务](persistence/startup-service.md)
