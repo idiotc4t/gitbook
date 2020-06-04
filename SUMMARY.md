@@ -36,6 +36,7 @@
 * [APC & NtTestAlert Code Execute](code-and-dll-process-injection/apc-and-nttestalert-code-execute.md)
 * [NtCreateSection & NtMapViewOfSection Code Execute](code-and-dll-process-injection/untitled.md)
 * [Process Hollowing](code-and-dll-process-injection/process-hollowing.md)
+* [SetContext Hijack Thread](code-and-dll-process-injection/setcontext-hijack-thread.md)
 * [DLL Hollowing](code-and-dll-process-injection/dll-hollowing.md)
 
 ## 权限维持 <a id="persistence"></a>
