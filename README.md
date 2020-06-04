@@ -15,6 +15,8 @@ $ wecome to the real network world
 4. 如发现错误请跟我联系
 {% endhint %}
 
+PS:我的代码有些臭毛病，不太喜欢按照规范写，总喜欢最少的代码实现最多的功能。
+
 ## 联系方式
 
 * email idiotc4t@gmail.com
