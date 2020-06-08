@@ -4,8 +4,6 @@
 
 在Cobalt Strike 3.13版本的时候引入了一个进程参数欺骗的技术\(虽然现在都4.0了\)，可以使进程在创建时记录的参数与实际运行时不同，windows系统从peb的commandline中读取参数，并对参数做相应的处理，在线程未初始化完成前，我们可以修改参数，并让进程执行它，在操作上几乎与命令行伪装一样，只是有一些流程上的不同，这里不过多赘述详见[伪装命令行规避检测](fake-commandline.md)。
 
-
-
 ## 利用流程
 
 1. 创建一个挂起的cmd或powershell进程。
@@ -129,13 +127,11 @@ int main()
 
 ### 实现效果
 
-![](../.gitbook/assets/image%20%28111%29.png)
+![process explorer](../.gitbook/assets/image%20%28111%29.png)
 
-![](../.gitbook/assets/image%20%28109%29.png)
+![process hacker](../.gitbook/assets/image%20%28109%29.png)
 
-![](../.gitbook/assets/image%20%28110%29.png)
-
-
+![dir . &amp;&amp; whoami /priv &amp;&amp; pause](../.gitbook/assets/image%20%28110%29.png)
 
 ## LINKS
 
