@@ -137,5 +137,13 @@ int main()
 
 
 
+## LINKS
+
+{% embed url="https://app.gitbook.com/@idiotc4t/s/idiotc4t-s-blog/~/drafts/-M9J1qlIVoEe-n1mUrUo/defense-evasion/fake-commandline" %}
+
+{% embed url="https://blog.xpnsec.com/how-to-argue-like-cobalt-strike/" %}
+
+
+
 
 
