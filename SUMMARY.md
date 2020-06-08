@@ -15,6 +15,7 @@
 
 * [基于内存补丁的AMSI绕过](defense-evasion/memory-pacth-bypass-amsi.md)
 * [基于HEX字符串执行的AV绕过](defense-evasion/hex-execute.md)
+* [CobaltStrike Argue伪装命令的实现](defense-evasion/cobaltstrike-argue-wei-zhuang-ming-ling-de-shi-xian.md)
 * [简单的分离免杀](defense-evasion/simple-separate-bypassav.md)
 * [伪装PPID规避检测](defense-evasion/fake-ppid.md)
 * [伪装命令行规避检测](defense-evasion/fake-commandline.md)
