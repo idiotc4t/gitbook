@@ -1,4 +1,4 @@
-# CobaltStrike Argue伪装命令
+# CobaltStrike Argue命令实现
 
 ## 简介
 
