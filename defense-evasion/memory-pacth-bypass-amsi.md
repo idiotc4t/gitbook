@@ -114,6 +114,8 @@ int main() {
 }
 ```
 
+![](../.gitbook/assets/image%20%28113%29.png)
+
 ## LINKS
 
 {% embed url="https://www.contextis.com/en/blog/amsi-bypass" %}
