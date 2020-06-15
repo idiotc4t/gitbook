@@ -83,7 +83,7 @@ AMSI整体架构如下图所示：
 
 ## 代码实现
 
-由于powershell版的内存补丁绕过在互联网上导出都是，这里就补贴出来了\(好吧其实是我烂\)，这里我们其实也有多种实现思路，可以查找运行中的powershell.exe进程来进行修补，也可以自己创建一个新的powershell进程进行修补，这里采用新创建的powershell进行修补。
+由于powershell版的内存补丁绕过在互联网上到处都是，且有被标黑，这里就不贴出来了\(好吧其实是我懒\)，这里我们其实也有多种实现思路，可以查找运行中的powershell.exe进程来进行修补，也可以自己创建一个新的powershell进程进行修补，这里采用新创建的powershell进行修补。
 
 ```text
 #include <Windows.h>
