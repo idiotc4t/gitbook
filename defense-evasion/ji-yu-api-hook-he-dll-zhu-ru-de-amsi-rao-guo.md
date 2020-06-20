@@ -12,9 +12,7 @@
 
 ## 代码
 
-dll注入的代码延用[CreateRemoteThrea](../code-and-dll-process-injection/createremotethread.md)的代码
-
-hook.c
+dll注入的代码延用[CreateRemoteThrea](../code-and-dll-process-injection/createremotethread.md)的代码。
 
 ```text
 #include <Windows.h>
