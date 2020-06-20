@@ -73,3 +73,11 @@ BOOL APIENTRY DllMain(HANDLE hModule, DWORD ul_reason_for_call, LPVOID lpReserve
 }
 ```
 
+![](../.gitbook/assets/image%20%28114%29.png)
+
+## LINKS
+
+{% embed url="https://x64sec.sh/understanding-and-bypassing-amsi/" %}
+
+
+
