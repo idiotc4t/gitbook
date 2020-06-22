@@ -87,5 +87,30 @@ combase!_PEB_LDR_DATA
    +0x02c ShutdownThreadId : (null) 
 ```
 
+这三条链表实际上是\_LDR\_DATA\_TABLE\_ENTRY结构体的头部。
 
+```text
+0:007> dt _LDR_DATA_TABLE_ENTRY  0x703e48
+combase!_LDR_DATA_TABLE_ENTRY
+   +0x000 InLoadOrderLinks : _LIST_ENTRY [ 0x703d60 - 0x771e4d8c ]
+   +0x008 InMemoryOrderLinks : _LIST_ENTRY [ 0x703d68 - 0x771e4d94 ]
+   +0x010 InInitializationOrderLinks : _LIST_ENTRY [ 0x0 - 0x0 ]
+   +0x018 DllBase          : 0x00c10000 Void
+   +0x01c EntryPoint       : 0x00c31860 Void
+   +0x020 SizeOfImage      : 0x2e000
+   +0x024 FullDllName      : _UNICODE_STRING "C:\WINDOWS\SysWOW64\notepad.exe"
+   +0x02c BaseDllName      : _UNICODE_STRING "notepad.exe"
+   ···
+   +0x064 SwitchBackContext : 0x770c11a4 Void
+   +0x068 BaseAddressIndexNode : _RTL_BALANCED_NODE
+   +0x074 MappingInfoIndexNode : _RTL_BALANCED_NODE
+   +0x080 OriginalBase     : 0xc10000
+   +0x088 LoadTime         : _LARGE_INTEGER 0x01d64879`7031a94c
+   +0x090 BaseNameHashValue : 0x4c900b25
+   +0x094 LoadReason       : 4 ( LoadReasonDynamicLoad )
+   +0x098 ImplicitPathOptions : 0
+   +0x09c ReferenceCount   : 2
+   +0x0a0 DependentLoadFlags : 0
+   +0x0a4 SigningLevel     : 0 ''
+```
 
