@@ -71,7 +71,19 @@ combase!_PEB
    +0x478 NtGlobalFlag2    : 0
 ```
 
-```
+根据链表含义分别是 加载顺序模块链表、初始化顺序模块链表、内存顺序模块链表。
 
+```
+0:007> dt _PEB_LDR_DATA 0x771e4d80
+combase!_PEB_LDR_DATA
+   +0x000 Length           : 0x30
+   +0x004 Initialized      : 0x1 ''
+   +0x008 SsHandle         : (null) 
+   +0x00c InLoadOrderModuleList : _LIST_ENTRY [ 0x3043e48 - 0x3087fc0 ]
+   +0x014 InMemoryOrderModuleList : _LIST_ENTRY [ 0x3043e50 - 0x3087fc8 ]
+   +0x01c InInitializationOrderModuleList : _LIST_ENTRY [ 0x3043d70 - 0x3088d90 ]
+   +0x024 EntryInProgress  : (null) 
+   +0x028 ShutdownInProgress : 0 ''
+   +0x02c ShutdownThreadId : (null) 
 ```
 
