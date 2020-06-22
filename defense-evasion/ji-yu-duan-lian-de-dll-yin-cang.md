@@ -39,7 +39,13 @@ combase!_TEB
    +0xff0 EffectiveContainerId : _GUID {00000000-0000-0000-0000-000000000000}
 ```
 
-在PEB偏移0x0c位置存在着三条模块链表
+在PEB偏移0x0c位置存在着三条模块链表。
+
+使用汇编获取。
+
+```text
+ mov eax, [eax + 0x0c];
+```
 
 ```text
 0:007> dt _peb 0x02f48000
@@ -113,4 +119,8 @@ combase!_LDR_DATA_TABLE_ENTRY
    +0x0a0 DependentLoadFlags : 0
    +0x0a4 SigningLevel     : 0 ''
 ```
+
+到这里我们的思路应该已经很清晰了，在ring3操作系统维护者三条模块双向链表，我们只要修改我们想要隐藏的模块的前后两个\_LDR\_DATA\_TABLE\_ENTRY结构体的前后链表就能实现这个效果。
+
+通俗点说，我们只要让 我的下一个模块的前一个模块指向我的前一个，我的前一个模块的下一个模块指向我的下一个。
 
