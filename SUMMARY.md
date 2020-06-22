@@ -14,6 +14,7 @@
 ## 防御逃避 <a id="defense-evasion"></a>
 
 * [基于内存补丁的AMSI绕过](defense-evasion/memory-pacth-bypass-amsi.md)
+* [基于断链的DLL隐藏](defense-evasion/ji-yu-duan-lian-de-dll-yin-cang.md)
 * [基于API Hook和DLL注入的AMSI绕过](defense-evasion/ji-yu-api-hook-he-dll-zhu-ru-de-amsi-rao-guo.md)
 * [基于HEX字符串执行的AV绕过](defense-evasion/hex-execute.md)
 * [CobaltStrike Argue命令实现](defense-evasion/cobaltstrike-argue.md)
