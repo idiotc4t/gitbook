@@ -39,6 +39,38 @@ combase!_TEB
    +0xff0 EffectiveContainerId : _GUID {00000000-0000-0000-0000-000000000000}
 ```
 
+在PEB偏移0x0c位置存在着三条模块链表
+
+```text
+0:007> dt _peb 0x02f48000
+combase!_PEB
+   +0x000 InheritedAddressSpace : 0 ''
+   +0x001 ReadImageFileExecOptions : 0 ''
+   +0x002 BeingDebugged    : 0x1 ''
+   +0x003 BitField         : 0x84 ''
+   +0x003 ImageUsesLargePages : 0y0
+   +0x003 IsProtectedProcess : 0y0
+   +0x003 IsImageDynamicallyRelocated : 0y1
+   +0x003 SkipPatchingUser32Forwarders : 0y0
+   +0x003 IsPackagedProcess : 0y0
+   +0x003 IsAppContainer   : 0y0
+   +0x003 IsProtectedProcessLight : 0y0
+   +0x003 IsLongPathAwareProcess : 0y1
+   +0x004 Mutant           : 0xffffffff Void
+   +0x008 ImageBaseAddress : 0x001f0000 Void
+   +0x00c Ldr              : 0x771e4d80 _PEB_LDR_DATA
+   +0x010 ProcessParameters : 0x03042100 _RTL_USER_PROCESS_PARAMETERS
+   ···
+   +0x464 CloudFileDiagFlags : 0
+   +0x468 PlaceholderCompatibilityMode : 2 ''
+   +0x469 PlaceholderCompatibilityModeReserved : [7]  ""
+   +0x470 LeapSecondData   : 0x7f690000 _LEAP_SECOND_DATA
+   +0x474 LeapSecondFlags  : 0
+   +0x474 SixtySecondEnabled : 0y0
+   +0x474 Reserved         : 0y0000000000000000000000000000000 (0)
+   +0x478 NtGlobalFlag2    : 0
+```
+
 ```
 
 ```
