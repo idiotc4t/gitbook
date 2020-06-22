@@ -8,6 +8,14 @@
 
 前面写commandline伪装的时候讲到过，操作系统会在ring3维护一个结构体PEB\(进程环境块\)，段寄存器FS:\[00\]\(x86环境\)在三环时始终指向TEB\(线程环境块\)，TEB偏移0x30则指向该进程的PEB。
 
+通常我们可以使用内联汇编的方式获取PEB位于内存的虚拟地址。
+
+```text
+mov eax, fs: [0x30] ;　
+```
+
+通过windbg定位teb-&gt;peb。
+
 ```text
 0:007> dt _teb 02f60000
 combase!_TEB
@@ -16,7 +24,7 @@ combase!_TEB
    +0x020 ClientId         : _CLIENT_ID
    +0x028 ActiveRpcHandle  : (null) 
    +0x02c ThreadLocalStoragePointer : (null) 
-   +0x030 ProcessEnvironmentBlock : 0x02f48000 _PEB
+   +0x030 ProcessEnvironmentBlock : 0x02f48000 _PEB //PEB的位置
    +0x034 LastErrorValue   : 0
    +0x038 CountOfOwnedCriticalSections : 0
    +0x03c CsrClientThread  : (null) 
@@ -31,11 +39,7 @@ combase!_TEB
    +0xff0 EffectiveContainerId : _GUID {00000000-0000-0000-0000-000000000000}
 ```
 
-通常我们可以使用内联汇编的方式获取PEB位于内存的虚拟地址。
-
-```text
-mov eax, fs: [0x30] ;　
 ```
 
-
+```
 
