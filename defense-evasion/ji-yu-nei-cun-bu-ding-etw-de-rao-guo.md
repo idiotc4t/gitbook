@@ -23,9 +23,7 @@
 > Let's take a look at `clr.dll` to try and see if we can spot the moment that an event is triggered. Loading the PDB and hunting for the `AssemblyDCStart_V1` symbol using Ghidra, we quickly land on the following method:
 
 > ![](../.gitbook/assets/image%20%28116%29.png)
->
->
->
+
 > Let's see if we can find the exact point that an event is generated reporting the Assembly load which we observed above with our ETW consumer. Dropping into WinDBG and setting a breakpoint on all `ntdll!EtwEventWrite` calls occurring after the `ModuleLoad` method above, we quickly discover the following where we can see our Assembly name of "test" is being sent:
 
 > ![](../.gitbook/assets/image%20%28117%29.png)
