@@ -81,6 +81,8 @@ combase!_PEB
 
 根据链表含义分别是 模块加载顺序、模块初始化顺序、模块内存顺序。
 
+![](../.gitbook/assets/image%20%28121%29.png)
+
 ```
 0:007> dt _PEB_LDR_DATA 0x771e4d80
 combase!_PEB_LDR_DATA
@@ -122,9 +124,11 @@ combase!_LDR_DATA_TABLE_ENTRY
    +0x0a4 SigningLevel     : 0 ''
 ```
 
-![](../.gitbook/assets/image%20%28121%29.png)
+![](../.gitbook/assets/image%20%28122%29.png)
 
 到这里我们的思路应该已经很清晰了，在ring3操作系统维护着模块双向链表，我们只要修改我们想要隐藏的模块的前后两个\_LDR\_DATA\_TABLE\_ENTRY结构体的前后链表就能实现这个效果。
+
+
 
 通俗点说，我们只要让 我的下一个模块的前一个模块指向我的前一个，我的前一个模块的下一个模块指向我的下一个。
 
@@ -317,6 +321,8 @@ int main(int argc, char* argv[])
 ## LINKS
 
 {% embed url="https://www.epubit.com/bookDetails?id=N40707" %}
+
+{% embed url="https://bbs.pediy.com/thread-225832.htm" %}
 
 {% embed url="https://www.cnblogs.com/iBinary/p/9601860.html" %}
 
