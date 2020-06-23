@@ -12,7 +12,7 @@
 
 如我们正常开启一个powershell\(属于托管进程\)，在进程加载过程中就会产生大量日志记录，我们可以通过processhacker，进行查看。
 
-![](../.gitbook/assets/image%20%28123%29.png)
+![](../.gitbook/assets/image%20%28124%29.png)
 
 根据前人的研究结果，我们可以知道ETW是由用户空间ntdll.dll!EtwEventWrite发起的\(这里手动@xpn\)，这样我们对其绕过也能比较方便的实现。
 
@@ -26,7 +26,7 @@
 
 > Let's see if we can find the exact point that an event is generated reporting the Assembly load which we observed above with our ETW consumer. Dropping into WinDBG and setting a breakpoint on all `ntdll!EtwEventWrite` calls occurring after the `ModuleLoad` method above, we quickly discover the following where we can see our Assembly name of "test" is being sent:
 
-> ![](../.gitbook/assets/image%20%28122%29.png)
+> ![](../.gitbook/assets/image%20%28123%29.png)
 
 > So this tells us 2 things. First, these ETW events are sent from userland, and second that these ETW events are issued from within a process that we control... And as we know, having a malicious process report that it is doing something malicious never ends well.
 
@@ -40,7 +40,7 @@
 
 一般windows api默认使用stdcall调用约定，即函数外平衡堆栈，以防万一我们确认一下，堆栈的平衡方式会决定我们的内存补丁写法。
 
-![](../.gitbook/assets/image%20%28121%29.png)
+![](../.gitbook/assets/image%20%28122%29.png)
 
 这时我们使用一起BypassAmsi的方式在函数开头直接返回。
 
