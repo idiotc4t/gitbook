@@ -32,3 +32,9 @@
 
 > So this tells us 2 things. First, these ETW events are sent from userland, and second that these ETW events are issued from within a process that we control... And as we know, having a malicious process report that it is doing something malicious never ends well.
 
+根据XPN大佬的研究结果，我们尝试patch ntdll!EtwEventWrite来验证结论是否正确，这里使用x64dbg和powershell来验证。
+
+首先使用x64dbg创建一个powershell进程，这时x64dbg会在线程初始化前下一个断点。
+
+
+
