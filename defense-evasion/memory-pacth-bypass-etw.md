@@ -59,61 +59,6 @@
 由于ntdll在进程加载之初就已经导入，所以这里不需要短暂睡眠，直接挂起创建就行。
 
 ```text
-#include <Windows.h>
-#include <stdio.h>
-#include <Tlhelp32.h>
-
-DWORD WINAPI GetProcessIdByName(LPCTSTR lpszProcessName)
-{
-	HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
-	if (hSnapshot == INVALID_HANDLE_VALUE)
-	{
-		return 0;
-	}
-
-	PROCESSENTRY32 pe;
-	pe.dwSize = sizeof pe;
-
-	if (Process32First(hSnapshot, &pe))
-	{
-		do {
-			if (lstrcmpi(lpszProcessName, pe.szExeFile) == 0)
-			{
-				CloseHandle(hSnapshot);
-				return pe.th32ProcessID;
-			}
-		} while (Process32Next(hSnapshot, &pe));
-	}
-
-	CloseHandle(hSnapshot);
-	return 0;
-}
-
-HANDLE WINAPI GetHandleByProcessId(DWORD dwProcessId, LPCTSTR lpszModule)
-
-{
-
-	HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPMODULE, 5424);
-
-	if (hSnapshot != INVALID_HANDLE_VALUE) {
-		MODULEENTRY32 pe32;
-		pe32.dwSize = sizeof(MODULEENTRY32);
-		Module32First(hSnapshot, &pe32);
-
-		do
-		{
-			if (lstrcmpi(pe32.szModule, lpszModule) == 0)
-			{
-				CloseHandle(hSnapshot);
-				return pe32.hModule;
-
-			}
-		} while (Module32Next(hSnapshot, &pe32));
-	}
-	CloseHandle(hSnapshot);
-	return 0;
-
-}
 
 #include <Windows.h>
 #include <stdio.h>
