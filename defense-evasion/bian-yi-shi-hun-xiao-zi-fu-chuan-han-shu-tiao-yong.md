@@ -107,3 +107,11 @@ sfvenom -p windows/messagebox -e x86/xor_dynamic -i 2 -f c
 
 对于这种被杀烂的编写方式还是有比较明显的免杀效果的。
 
+github:[https://github.com/idiotc4t/ObfuscationStrings-new](https://github.com/idiotc4t/ObfuscationStrings-new)
+
+## LINKS
+
+{% embed url="https://github.com/andrivet/ADVobfuscator" %}
+
+
+
