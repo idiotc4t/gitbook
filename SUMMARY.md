@@ -13,6 +13,7 @@
 
 ## 防御逃避 <a id="defense-evasion"></a>
 
+* [编译时混淆字符串&函数调用](defense-evasion/bian-yi-shi-hun-xiao-zi-fu-chuan-han-shu-tiao-yong.md)
 * [基于内存补丁的AMSI绕过](defense-evasion/memory-pacth-bypass-amsi.md)
 * [基于API Hook和DLL注入的AMSI绕过](defense-evasion/ji-yu-api-hook-he-dll-zhu-ru-de-amsi-rao-guo.md)
 * [基于内存补丁ETW的绕过](defense-evasion/memory-pacth-bypass-etw.md)
