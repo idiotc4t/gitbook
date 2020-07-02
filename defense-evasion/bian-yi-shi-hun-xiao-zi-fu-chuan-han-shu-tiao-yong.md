@@ -96,7 +96,7 @@ int main(int, const char* [])
 ![](../.gitbook/assets/image%20%28134%29.png)
 
 ```text
-sfvenom -p windows/messagebox -e x86/xor_dynamic -i 2 -f c
+msfvenom -p windows/messagebox -e x86/xor_dynamic -i 2 -f c
 ```
 
 查杀效果：
