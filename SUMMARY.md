@@ -46,6 +46,7 @@
 
 ## 权限维持 <a id="persistence"></a>
 
+* [寻找有价值的文件](persistence/xun-zhao-you-jia-zhi-de-wen-jian.md)
 * [Detours InLine Hook](persistence/detous-inline-hook.md)
 * [DLL劫持](persistence/dll-hijack.md)
 * [RID劫持](persistence/rid-hijack.md)
