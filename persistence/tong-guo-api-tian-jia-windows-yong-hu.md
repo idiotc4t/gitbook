@@ -4,11 +4,14 @@
 
 在渗透测试过程中，如果需要白利用远程桌面等服务，往往我们还需要一个知道密码的windows账户，而这个账户通常直接由net1.exe直接添加\(当然也可以直接pass the hash登录rdp，略略略\)，而调用这个可执行文件往往会被第三方杀软直接拦截（略略略，defender是微软自己的，不拦合法功能），这样我们就需要想另外的办法添加用户。
 
-## 利用过程
+## 分析过程
 
-1. 查文档\(狗头\)
-2. 调用NetUserAdd添加本地用户
-3. 调用NetLocalGroupAddMembers将用户添加到组
+1. 查文档&google\(狗头\)
+
+![](../.gitbook/assets/image%20%28138%29.png)
+
+1. 调用NetUserAdd添加本地用户
+2. 调用NetLocalGroupAddMembers将用户添加到组
 
 ## 代码
 
