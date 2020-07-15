@@ -47,7 +47,7 @@
 ## 权限维持 <a id="persistence"></a>
 
 * [寻找有价值的文件](persistence/find-file.md)
-* [通过API添加Windows用户](persistence/tong-guo-api-tian-jia-windows-yong-hu.md)
+* [通过API添加Windows用户](persistence/api-add-user.md)
 * [Detours InLine Hook](persistence/detous-inline-hook.md)
 * [DLL劫持](persistence/dll-hijack.md)
 * [RID劫持](persistence/rid-hijack.md)
