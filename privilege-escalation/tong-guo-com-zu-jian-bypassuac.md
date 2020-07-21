@@ -94,3 +94,27 @@ int main() {
 }
 ```
 
+
+
+![](../.gitbook/assets/image%20%28141%29.png)
+
+## 利用方法
+
+### dll注入
+
+把这个代码写成一个dll，然后通过进程注入的方式获得一个合法的进程环境。
+
+### shellcode注入
+
+利用方法和上面那个差不多，只不过注入的具体dll被打成了一个dll，我记得有这么一个开源项目可以做到，原理类似于在dll二进制代码前写一个加载器。
+
+### 伪装进程
+
+原理我之前的文章写过[fakecommandline](../defense-evasion/fake-commandline.md)，这篇文章的基础上再添加对ldr的伪装，就能绕过PSAPI对进程的校验，具体的代码三号学生大佬写过[this](https://3gstudent.github.io/3gstudent.github.io/%E9%80%9A%E8%BF%87COM%E7%BB%84%E4%BB%B6IFileOperation%E8%B6%8A%E6%9D%83%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6/)。
+
+## LINKS
+
+
+
+
+
