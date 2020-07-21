@@ -8,6 +8,25 @@ com组件本质上是二进制文件\(dll、exe,在windows系统内\),其调用�
 
 windows提供了一种com组件提权的方法，其原意大概是为了方便开发，所以当这种提提权方法的调用者是拥有微软签名的合法程序时，会忽略uac弹窗，这也为了我们利用该技术埋下了隐患。
 
+```text
+HRESULT CoCreateInstanceAsAdmin(HWND hwnd, REFCLSID rclsid, REFIID riid, __out void ** ppv)
+{
+    BIND_OPTS3 bo;
+    WCHAR  wszCLSID[50];
+    WCHAR  wszMonikerName[300];
+
+    StringFromGUID2(rclsid, wszCLSID, sizeof(wszCLSID)/sizeof(wszCLSID[0])); 
+    HRESULT hr = StringCchPrintf(wszMonikerName, sizeof(wszMonikerName)/sizeof(wszMonikerName[0]), L"Elevation:Administrator!new:%s", wszCLSID);
+    if (FAILED(hr))
+        return hr;
+    memset(&bo, 0, sizeof(bo));
+    bo.cbStruct = sizeof(bo);
+    bo.hwnd = hwnd;
+    bo.dwClassContext  = CLSCTX_LOCAL_SERVER;
+    return CoGetObject(wszMonikerName, &bo, riid, ppv);
+}
+```
+
 在com组件中，有一个名为ICMLuaUtil的接口，这个接口提供了一个名为ShellExec的方法，顾名思义，可以执行任意传入的命令，如果我们能用提权的ICMLuaUtil接口调用ShellExec，那么我们就能获得一个不受限的管理员令牌。
 
 ## 流程
