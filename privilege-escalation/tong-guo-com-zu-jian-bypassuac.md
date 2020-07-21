@@ -108,6 +108,8 @@ shellcode注入和dll注入差不多，只不过注入的具体dll被打成了sh
 
 ### rundll32
 
+![](../.gitbook/assets/image%20%28142%29.png)
+
 rundll32是windows提供的一个合法exe，它能把一个单独的dll拉起来成为一个进程，这也起来的进程也被windows视为合法。
 
 ### 伪装进程
