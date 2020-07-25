@@ -31,6 +31,7 @@
 
 ## 代码与进程注入 <a id="code-and-dll-process-injection"></a>
 
+* [APC Thread Hijack](code-and-dll-process-injection/apc-thread-hijack.md)
 * [CreateRemoteThread](code-and-dll-process-injection/createremotethread.md)
 * [APC Injection](code-and-dll-process-injection/apc-injection.md)
 * [Mapping Injection](code-and-dll-process-injection/mapping-injection.md)
