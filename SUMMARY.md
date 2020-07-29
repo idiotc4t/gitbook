@@ -6,7 +6,7 @@
 
 * [基于注册表劫持BypassUAC](privilege-escalation/bypassuac-fodhelper.md)
 * [基于dll劫持BypassUac](privilege-escalation/dll-hijack-bypassuac.md)
-* [通过com组件BypassUAC](privilege-escalation/tong-guo-com-zu-jian-bypassuac.md)
+* [通过com组件BypassUAC](privilege-escalation/com-bypassuac.md)
 * [通过复制Token提权到SYSTEM](privilege-escalation/token-manipulation.md)
 * [通过code&dll注入提权到SYSTEM](privilege-escalation/code-dll-injection-privilege-escalation.md)
 * [通过伪装PPID提权到SYSTEM](privilege-escalation/privilege-escalation-ppid.md)
