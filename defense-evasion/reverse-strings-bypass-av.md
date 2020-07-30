@@ -14,6 +14,23 @@
 
 ![](../.gitbook/assets/image%20%28145%29.png)
 
+在加载器内翻转字符串。
+
+```text
+    int p = 0;
+
+    for (int i = strlen(str) - 1; i >= 0; i--)
+    {
+        temp[p++] = str[i];
+    }
+```
+
+然后执行老哥的ssi，这里遇到一个坑，tm的vc6根本没有malloc\(略略略\)。
+
+然后请出我们的卡巴斯基。
+
+
+
 ## 代码
 
 ```text
