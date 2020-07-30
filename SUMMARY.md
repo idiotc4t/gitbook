@@ -20,7 +20,7 @@
 * [基于内存补丁ETW的绕过](defense-evasion/memory-pacth-bypass-etw.md)
 * [基于断链的DLL隐藏](defense-evasion/unlink-module-hide.md)
 * [基于HEX字符串执行的AV绕过](defense-evasion/hex-execute.md)
-* [翻转字符串绕卡巴斯基](defense-evasion/fan-zhuan-zi-fu-chuan-rao-ka-ba-si-ji.md)
+* [翻转字符串绕卡巴斯基](defense-evasion/reverse-strings-bypass-av.md)
 * [CobaltStrike Argue命令实现](defense-evasion/cobaltstrike-argue.md)
 * [简单的分离免杀](defense-evasion/simple-separate-bypassav.md)
 * [伪装PPID规避检测](defense-evasion/fake-ppid.md)
