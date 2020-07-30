@@ -29,7 +29,17 @@
 
 然后请出我们的卡巴斯基。
 
+![](../.gitbook/assets/image%20%28148%29.png)
 
+虽然我们古典主义脚本小子特别喜欢弹窗，这里我们再测一下Meterpreter。
+
+防止在流量检测的时候被杀掉，我们使用windows/meterpreter/reverse\_tcp\_rc4这个payload。
+
+![](../.gitbook/assets/image%20%28147%29.png)
+
+![](../.gitbook/assets/image%20%28146%29.png)
+
+略略略。
 
 ## 代码
 
