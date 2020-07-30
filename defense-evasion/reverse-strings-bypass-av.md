@@ -31,7 +31,7 @@
 
 ![](../.gitbook/assets/image%20%28148%29.png)
 
-虽然我们古典主义脚本小子特别喜欢弹窗，这里我们再测一下Meterpreter。
+虽然我们古典主义脚本小子特别喜欢弹窗\(更多时候弹calc\)，这里我们再测一下Meterpreter。
 
 防止在流量检测的时候被杀掉，我们使用windows/meterpreter/reverse\_tcp\_rc4这个payload。
 
