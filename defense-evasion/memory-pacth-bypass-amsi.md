@@ -59,7 +59,41 @@ AMSI整体架构如下图所示：
 >
 > 在汇编语言中，`EAX`（32位）以及`RAX`（64位）寄存器始终包含函数的返回值。因此，如果`EAX`/`RAX`寄存器值等于0，并且如果执行了`ret`汇编指令，那么该函数就会返回`S_OK` `HRSULT`，不会将待分析数据发送给反恶意软件服务。
 
-事实上对于字符串的拦截工作是在AmsiScanBuffer函数内完成的,并非在AmsiScanBuffer返回后由其他函数拦截，这也解释了为什么我们直接ret也能绕过AMSI\(此时RAX内存放着AmsiScanBuffer的地址，无论如何也远大于32762\)。
+~~事实上对于字符串的拦截工作是在AmsiScanBuffer函数内完成的,并非在AmsiScanBuffer返回后由其他函数拦截，这也解释了为什么我们直接ret也能绕过AMSI\(此时RAX内存放着AmsiScanBuffer的地址，无论如何也远大于32762\)。~~
+
+这里写的有问题，今天自己去调了一下，返回值 实际上是保存在堆栈对齐后的\[rsp+28\]的位置。
+
+检讨一下这里确实主观臆测了。
+
+现在我们测一下......
+
+首先在AmsiScanBuffer下一个断点。
+
+```text
+0:029> bm Amsi!AmsiScanBuffer
+SYMSRV:  BYINDEX: 0x3
+         c:\symbols*http://msdl.microsoft.com/download/symbols
+         Amsi.pdb
+         C010A935E7681F4F58B28C6AA852B23A1
+SYMSRV:  PATH: c:\symbols\Amsi.pdb\C010A935E7681F4F58B28C6AA852B23A1\Amsi.pdb
+SYMSRV:  RESULT: 0x00000000
+DBGHELP: amsi - public symbols  
+        c:\symbols\Amsi.pdb\C010A935E7681F4F58B28C6AA852B23A1\Amsi.pdb
+  1: 00007ffb`56bd2710 @!"amsi!AmsiScanBuffer"
+```
+
+断下来的时候查看一下rdx\(第二个参数\);
+
+```text
+0:004> g
+Breakpoint 1 hit
+amsi!AmsiScanBuffer:
+00007ffb`56bd2710 4c8bdc          mov     r11,rsp
+0:025> db rdx
+000002d6`892c3984  22 00 41 00 6d 00 73 00-69 00 53 00 63 00 61 00  ".A.m.s.i.S.c.a.
+000002d6`892c3994  6e 00 42 00 75 00 66 00-66 00 65 00 72 00 22 00  n.B.u.f.f.e.r.".
+000002d6`892c39a4  00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00  ................
+```
 
 ## 手工操作
 
