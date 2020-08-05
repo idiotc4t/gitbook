@@ -37,6 +37,7 @@
 * [APC Injection](code-and-dll-process-injection/apc-injection.md)
 * [Mapping Injection](code-and-dll-process-injection/mapping-injection.md)
 * [Bypass Session 0 Injection](code-and-dll-process-injection/bypass-session-0-injection.md)
+* [WriteFile Offset Table Generate Shellcode](code-and-dll-process-injection/writefile-offset-table-generate-shellcode.md)
 * [Early Bird](code-and-dll-process-injection/early-bird.md)
 * [Early Bird & CreateRemoteThread](code-and-dll-process-injection/early-bird-and--createremotethread.md)
 * [TLS Code Execute](code-and-dll-process-injection/tls-code-execute.md)
