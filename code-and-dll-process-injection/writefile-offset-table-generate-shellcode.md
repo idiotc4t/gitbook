@@ -9,7 +9,7 @@
 1. 寻找一个全windows都包含且不变的文件\(C:\Windows\Fonts\wingding.ttf\)
 2. 遍历文件确认存在全字符\(0x00-0xff\)
 3. 计算shellcode在文件内的偏移表
-4. 基于便宜表还原shellcode
+4. 基于偏移表还原shellcode
 
 
 
