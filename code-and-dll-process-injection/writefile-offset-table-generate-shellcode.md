@@ -169,7 +169,7 @@ for i in offsettable:
 
 ![](../.gitbook/assets/image%20%28157%29.png)
 
-然后把木马也改改,古典主义脚本小子以弹窗为准。
+这样就避免了使用白名单文件作为参考字典，然后把木马也改改,古典主义脚本小子以弹窗为准。
 
 ```text
 // OffsetTablesShellcode.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
