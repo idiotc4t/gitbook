@@ -167,6 +167,8 @@ for i in offsettable:
 """
 ```
 
+![](../.gitbook/assets/image%20%28157%29.png)
+
 然后把木马也改改,古典主义脚本小子以弹窗为准。
 
 ```text
