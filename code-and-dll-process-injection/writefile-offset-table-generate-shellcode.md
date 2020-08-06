@@ -167,7 +167,7 @@ for i in offsettable:
 """
 ```
 
-然后把木马也改改。
+然后把木马也改改,古典主义脚本小子以弹窗为准。
 
 ```text
 // OffsetTablesShellcode.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
@@ -206,6 +206,8 @@ int main()
 	return 0;
 }
 ```
+
+![](../.gitbook/assets/image%20%28156%29.png)
 
 ## LINKS
 
