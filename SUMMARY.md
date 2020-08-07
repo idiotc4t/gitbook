@@ -20,7 +20,6 @@
 * [基于内存补丁ETW的绕过](defense-evasion/memory-pacth-bypass-etw.md)
 * [基于断链的DLL隐藏](defense-evasion/unlink-module-hide.md)
 * [基于HEX字符串执行的AV绕过](defense-evasion/hex-execute.md)
-* [翻转字符串绕卡巴斯基](defense-evasion/reverse-strings-bypass-av.md)
 * [CobaltStrike Argue命令实现](defense-evasion/cobaltstrike-argue.md)
 * [简单的分离免杀](defense-evasion/simple-separate-bypassav.md)
 * [伪装PPID规避检测](defense-evasion/fake-ppid.md)
@@ -29,6 +28,7 @@
 * [动态调用无导入表编译](defense-evasion/avtive-call-api.md)
 * [基于Registry的虚拟机检测](defense-evasion/rregistry-check-virtualmachine.md)
 * [利用杀毒软件删除任意文件](defense-evasion/using-antivirus-to-delete-files.md)
+* [--------------------](defense-evasion/reverse-strings-bypass-av.md)
 
 ## 代码与进程注入 <a id="code-and-dll-process-injection"></a>
 
