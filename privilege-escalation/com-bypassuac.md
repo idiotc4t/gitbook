@@ -114,7 +114,9 @@ rundll32是windows提供的一个合法exe，它能把一个单独的dll拉起�
 
 ### 伪装进程
 
-原理我之前的文章写过[fakecommandline](../defense-evasion/fake-commandline.md)，这篇文章的基础上再添加对ldr的伪装，就能绕过PSAPI对进程的校验，具体的代码三号学生大佬写过[this](https://3gstudent.github.io/3gstudent.github.io/%E9%80%9A%E8%BF%87COM%E7%BB%84%E4%BB%B6IFileOperation%E8%B6%8A%E6%9D%83%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6/)。
+原理我之前的文章写过[fakecommandline](../defense-evasion/fake-commandline.md)，这篇文章的基础上再添加对ldr的伪装，就能绕过对进程的校验，具体的代码三号学生大佬写过[this](https://3gstudent.github.io/3gstudent.github.io/%E9%80%9A%E8%BF%87COM%E7%BB%84%E4%BB%B6IFileOperation%E8%B6%8A%E6%9D%83%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6/)。
+
+![](../.gitbook/assets/image%20%28158%29.png)
 
 ```text
 #include "BypassUAC.h"
