@@ -8,7 +8,7 @@
 
 这种技术是看到这篇[漏洞利用缓解part2](https://www.crowdstrike.com/blog/state-of-exploit-development-part-2/)的启发，在windows 1607版本后，PTE也进行了随机化基址处理。
 
-![](../.gitbook/assets/image%20%28167%29.png)
+![](../.gitbook/assets/image%20%28168%29.png)
 
 但有某位神仙安全研究员在blackhat公开了通过nt!MiGetPteAddress函数中获取实例化的PTE\(可能形容不是很恰当\)，通过这种思路，我联想到同样可以应用于syscall，于是就有了这篇文章，不同于上述技术syscall id直接硬编码于ntdll.dll。
 
@@ -24,6 +24,10 @@
 ## 代码
 
 不同于页表,ntdll也可以直接解析PE格式来获取调用号，由于我本人比较懒，这里只给出内存动态读取的demo。
+
+![](../.gitbook/assets/image%20%28166%29.png)
+
+实现效果。
 
 ![](../.gitbook/assets/image%20%28164%29.png)
 
