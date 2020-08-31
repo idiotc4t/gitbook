@@ -2,6 +2,8 @@
 
 ## 简介
 
+众所周知不同的系统版本，进入内核的系统调用号不尽相同。
+
 这种技术是看到这篇[漏洞利用缓解part2](https://www.crowdstrike.com/blog/state-of-exploit-development-part-2/)的启发，在windows 1607版本后，PTE也进行了随机化基址处理。
 
 ![](../.gitbook/assets/image%20%28167%29.png)
