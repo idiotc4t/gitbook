@@ -10,9 +10,15 @@
 
 比如我们熟知的卸载功能：
 
-![](../.gitbook/assets/image%20%28160%29.png)
+![](../.gitbook/assets/image%20%28161%29.png)
 
 具体定位到注册表则HKEY\_LOCAL\_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\\*
 
 ![](../.gitbook/assets/image%20%28159%29.png)
+
+与之相似的还有WMI class。
+
+注册表则是HKEY\_LOCAL\_MACHINE\SOFTWARE\Classes\Installer\Products\\*
+
+![](../.gitbook/assets/image%20%28160%29.png)
 
