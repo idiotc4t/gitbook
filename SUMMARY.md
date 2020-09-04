@@ -17,7 +17,7 @@
 * [编译时混淆字符串&函数调用](defense-evasion/compile-time-obfuscation.md)
 * [动态获取系统调用\(syscall\)号](defense-evasion/dynamic-get-syscallid.md)
 * [基于内存补丁的AMSI绕过](defense-evasion/memory-pacth-bypass-amsi.md)
-* [基于API Hook和DLL注入的AMSI绕过](defense-evasion/ji-yu-api-hook-he-dll-zhu-ru-de-amsi-rao-guo.md)
+* [基于API Hook和DLL注入的AMSI绕过](defense-evasion/apihook-and-dllinjection-bypass-amsi.md)
 * [基于内存补丁ETW的绕过](defense-evasion/memory-pacth-bypass-etw.md)
 * [基于断链的DLL隐藏](defense-evasion/unlink-module-hide.md)
 * [基于HEX字符串执行的AV绕过](defense-evasion/hex-execute.md)
@@ -52,7 +52,7 @@
 ## 权限维持 <a id="persistence"></a>
 
 * [寻找有价值的文件](persistence/find-file.md)
-* [获取机器安装的软件](persistence/huo-qu-ji-qi-an-zhuang-de-ruan-jian.md)
+* [获取机器安装的软件](persistence/get-computer-installed-software.md)
 * [通过API添加Windows用户](persistence/api-add-user.md)
 * [Detours InLine Hook](persistence/detous-inline-hook.md)
 * [DLL劫持](persistence/dll-hijack.md)
