@@ -29,7 +29,7 @@
 * [动态调用无导入表编译](defense-evasion/avtive-call-api.md)
 * [基于Registry的虚拟机检测](defense-evasion/rregistry-check-virtualmachine.md)
 * [利用杀毒软件删除任意文件](defense-evasion/using-antivirus-to-delete-files.md)
-* [--------------------](defense-evasion/reverse-strings-bypass-av.md)
+* [反转字符串绕杀软](defense-evasion/reverse-strings-bypass-av.md)
 
 ## 代码与进程注入 <a id="code-and-dll-process-injection"></a>
 
