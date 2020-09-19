@@ -16,7 +16,7 @@ com本身是一种开发理念，旨在跨应用和语言共享二进制代码�
 
 ## 原理
 
-通常windows内建com已经在注册表内存储着相关信息，而自定义com需要创建注册表入口点告诉windows com组件服务器在上面位置，这个过程称之为注册\(Registration\)，我们可以在HKEY\_CLASSES\_ROOT\CLSID\{clsid}位置找到所有windows已注册的com服务器。
+通常windows内建com已经在注册表内存储着相关信息，而自定义com需要创建注册表入口点告诉windows com组件服务器在上面位置，这个过程称之为注册\(Registration\)，我们可以在HKEY\_CLASSES\_ROOT\CLSID\{clsid}位置找到所有windows已注册的com组件。
 
 ![](../.gitbook/assets/image%20%28169%29.png)
 
