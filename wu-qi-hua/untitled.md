@@ -118,7 +118,7 @@ EXTERN_C const IID IID_IProcessChain;
     };
 ```
 
-接下来就是简单的编程实现了。
+接下来就是简单的编程实现了，如果我们能找到一个支持提权且能执行命令的com组件，那我们就又获得了一个新的bypassuac的方法。
 
 ## 代码
 
@@ -636,9 +636,7 @@ int main(int argc, TCHAR* argv[])
 
 {% embed url="https://www.fireeye.com/blog/threat-research/2019/06/hunting-com-objects.html" %}
 
-
-
-{% embed url="https://dl.packetstormsecurity.net/papers/general/abusing-objects.pdf" %}
+> [https://dl.packetstormsecurity.net/papers/general/abusing-objects.pdf](https://dl.packetstormsecurity.net/papers/general/abusing-objects.pdf)
 
 
 
