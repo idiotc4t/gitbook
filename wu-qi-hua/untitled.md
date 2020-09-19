@@ -606,6 +606,7 @@ int main(int argc, TCHAR* argv[])
 
 	CLSIDFromString(CLSID_ProcessChain, &clsidIProcessChain);
 	IIDFromString(IID_IProcessChain, &iidIProcessChain);
+	//创建接口
 	hr = CoCreateInstance(clsidIProcessChain, NULL, CLSCTX_INPROC_SERVER, iidIProcessChain, (LPVOID*)&ProcessChain);
 	
 	TCHAR cmd[] = L"C:\\WINDOWS\\system32\\calc.exe";
@@ -614,7 +615,7 @@ int main(int argc, TCHAR* argv[])
 	ProcessChain->put_CommandLine((BSTR)cmd);
 	hr = ProcessChain->Start(&b);
 	
-
+//释放
 	CoUninitialize();
 	return 0;
 }
