@@ -14,7 +14,6 @@
 
 ## 防御逃避 <a id="defense-evasion"></a>
 
-* [基于com组件挖掘新的代码执行方式](defense-evasion/ji-yu-com-zu-jian-wa-jue-xin-de-dai-ma-zhi-hang-fang-shi.md)
 * [编译时混淆字符串&函数调用](defense-evasion/compile-time-obfuscation.md)
 * [动态获取系统调用\(syscall\)号](defense-evasion/dynamic-get-syscallid.md)
 * [基于内存补丁的AMSI绕过](defense-evasion/memory-pacth-bypass-amsi.md)
