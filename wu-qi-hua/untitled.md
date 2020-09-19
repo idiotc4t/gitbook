@@ -26,5 +26,22 @@ com本身是一种开发理念，旨在跨应用和语言共享二进制代码�
 
 ![](../.gitbook/assets/image%20%28171%29.png)
 
+我们可以通过一下powershell代码遍历所有com组件和它导出的方法。
 
+```text
+New-PSDrive -PSProvider registry -Root HKEY_CLASSES_ROOT -Name HKCR
+Get-ChildItem -Path HKCR:\CLSID -Name | Select -Skip 1 > clsids.txt
+
+$Position  = 1
+$Filename = "win10-clsid-members.txt"
+$inputFilename = "clsids.txt"
+ForEach($CLSID in Get-Content $inputFilename) {
+      Write-Output "$($Position) - $($CLSID)"
+      Write-Output "------------------------" | Out-File $Filename -Append
+      Write-Output $($CLSID) | Out-File $Filename -Append
+      $handle = [activator]::CreateInstance([type]::GetTypeFromCLSID($CLSID))
+      $handle | Get-Member | Out-File $Filename -Append
+      $Position += 1
+}
+```
 
