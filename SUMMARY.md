@@ -4,7 +4,7 @@
 
 ## 武器化
 
-* [Untitled](wu-qi-hua/untitled.md)
+* [COM组件相关的武器化技术](wu-qi-hua/untitled.md)
 
 ## 权限提升 <a id="privilege-escalation"></a>
 
