@@ -2,6 +2,10 @@
 
 * [关于这个博客](README.md)
 
+## 武器化
+
+* [Untitled](wu-qi-hua/untitled.md)
+
 ## 权限提升 <a id="privilege-escalation"></a>
 
 * [基于注册表劫持BypassUAC](privilege-escalation/bypassuac-fodhelper.md)
