@@ -22,5 +22,9 @@ com本身是一种开发理念，旨在跨应用和语言共享二进制代码�
 
 注册后com通过GUID\(globally unique identifier\)唯一标识符来寻找并使用这个com组件，理论上每一个GUID\(有时也称UUID\)都是唯一的,GUID在标识不同的对象时会有不同的称呼，标识类对象时称之为CLSID\(类标识符\)、标识接口时被称为IID\(接口标识符\)。
 
+在每一个注册的clsid表项中都包含一个名为InprocServer32的子项，该子项内存有映射到该com二进制文件的键值对，操作系统通过该键值对将com组件载入进程。
+
+![](../.gitbook/assets/image%20%28171%29.png)
+
 
 
