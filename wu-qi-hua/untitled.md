@@ -24,7 +24,7 @@ com本身是一种开发理念，旨在跨应用和语言共享二进制代码�
 
 在每一个注册的clsid表项中都包含一个名为InprocServer32的子项，该子项内存有映射到该com二进制文件的键值对，操作系统通过该键值对将com组件载入进程或另起进程。\(进程内组件和进程外组件，二进制代码的表现形式为dll\(内\)和exe\(外\)\)。
 
-![](../.gitbook/assets/image%20%28175%29.png)
+![](../.gitbook/assets/image%20%28176%29.png)
 
 我们可以通过一下powershell代码遍历所有com组件和它导出的方法。
 
@@ -56,21 +56,21 @@ $handle.shellxec('cmd.exe /c')
 
 在这里我会介绍一种通过c++调用的方法，在介绍之前，先看一个简单的powershell案例，Charles Hamilton发现prchauto.dll拥有一个ProcessChain的类，该类公开的start方法和commdline属性。
 
-![](../.gitbook/assets/image%20%28173%29.png)
+![](../.gitbook/assets/image%20%28174%29.png)
 
 接下来我们通过部分工具将这个简单案例使用c艹实现，我们先使用oleview打开这个com组件的实现文件。
 
-![](../.gitbook/assets/image%20%28176%29.png)
+![](../.gitbook/assets/image%20%28177%29.png)
 
 可以看到processchain类导出了一个名为iprocesschain的接口，我们使用这个工具将这个类导出为IDL文件，然后使用MIDL工具将这个IDL文件转换成我们需要的C++的头文件，这个文件会定义这个类和接口的使用方法。
 
-![](../.gitbook/assets/image%20%28177%29.png)
+![](../.gitbook/assets/image%20%28178%29.png)
 
 使用MIDL，生成的processchain.h就是我们需要的。
 
 ![](../.gitbook/assets/image%20%28171%29.png)
 
-![](../.gitbook/assets/image%20%28174%29.png)
+![](../.gitbook/assets/image%20%28175%29.png)
 
 部分代码:
 
@@ -121,6 +121,10 @@ EXTERN_C const IID IID_IProcessChain;
 接下来就是简单的编程实现了。
 
 ## 代码
+
+先贴实现效果:
+
+![win10&#x7684;&#x8BA1;&#x7B97;&#x673A;&#x6709;&#x70B9;&#x5927;.jpg](../.gitbook/assets/image%20%28172%29.png)
 
 ### processchain.h
 
@@ -611,8 +615,9 @@ int main(int argc, TCHAR* argv[])
 	
 	TCHAR cmd[] = L"C:\\WINDOWS\\system32\\calc.exe";
 	VARIANT_BOOL b= VARIANT_TRUE;
-
+//设置参数
 	ProcessChain->put_CommandLine((BSTR)cmd);
+	//调用方法
 	hr = ProcessChain->Start(&b);
 	
 //释放
@@ -620,4 +625,20 @@ int main(int argc, TCHAR* argv[])
 	return 0;
 }
 ```
+
+## LINKS
+
+{% embed url="https://docs.microsoft.com/en-us/windows/win32/com/com-objects-and-interfaces" %}
+
+
+
+{% embed url="https://www.fireeye.com/blog/threat-research/2019/06/hunting-com-objects-part-two.html" %}
+
+{% embed url="https://www.fireeye.com/blog/threat-research/2019/06/hunting-com-objects.html" %}
+
+
+
+{% embed url="https://dl.packetstormsecurity.net/papers/general/abusing-objects.pdf" %}
+
+
 
