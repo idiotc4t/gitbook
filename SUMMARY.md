@@ -2,9 +2,9 @@
 
 * [关于这个博客](README.md)
 
-## 武器化
+## 武器化 <a id="weaponization"></a>
 
-* [COM组件相关的武器化技术](wu-qi-hua/com-weaponization.md)
+* [COM组件相关的武器化开发技术](weaponization/com-weaponization.md)
 
 ## 权限提升 <a id="privilege-escalation"></a>
 
