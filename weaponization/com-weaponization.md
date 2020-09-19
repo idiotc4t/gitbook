@@ -630,8 +630,6 @@ int main(int argc, TCHAR* argv[])
 
 {% embed url="https://docs.microsoft.com/en-us/windows/win32/com/com-objects-and-interfaces" %}
 
-
-
 {% embed url="https://www.fireeye.com/blog/threat-research/2019/06/hunting-com-objects-part-two.html" %}
 
 {% embed url="https://www.fireeye.com/blog/threat-research/2019/06/hunting-com-objects.html" %}
