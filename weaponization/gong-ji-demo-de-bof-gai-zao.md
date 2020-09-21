@@ -25,5 +25,152 @@
 
 ## 操作&代码
 
-1. 找到一份需要武器化的代码，这里使用[get-computer-installed-software](../persistence/get-computer-installed-software.md)的demo。
+找到一份需要武器化的代码，这里使用[get-computer-installed-software](../persistence/get-computer-installed-software.md)的demo。
+
+```text
+
+#include <stdio.h>
+#include <Windows.h>
+#include <tchar.h>
+
+
+BOOL EnumInstalledSoft(TCHAR* subKey, TCHAR* subKeyName) {
+
+	HKEY hKey = NULL;
+	HKEY hSubKey = NULL;
+	DWORD dwIndexs = 0;
+	TCHAR keyName[MAX_PATH] = { 0 };
+	DWORD dwLength = 256;
+	TCHAR subKeyValue[MAX_PATH] = { 0 };
+
+
+	if (RegOpenKeyEx(HKEY_LOCAL_MACHINE, subKey, 0, KEY_READ, &hKey) == ERROR_SUCCESS)
+	{
+		while (RegEnumKeyEx(hKey, dwIndexs, keyName, &dwLength, NULL, NULL, NULL, NULL) == ERROR_SUCCESS)
+		{
+			RegOpenKey(hKey, keyName, &hSubKey);
+
+			RegQueryValueEx(hSubKey,
+				subKeyName,
+				NULL,
+				NULL,
+				(LPBYTE)subKeyValue,
+				&dwLength);
+
+			printf("%s : %s  \n", keyName, subKeyValue);
+			RegCloseKey(hSubKey);
+			hSubKey = 0;
+			++dwIndexs;
+			dwLength = 256;
+		}
+	}
+	else
+	{
+		return FALSE;
+	}
+	if (hKey != NULL)
+	{
+		RegCloseKey(hKey);
+		return TRUE;
+	}
+}
+
+int main()
+{
+
+
+	EnumInstalledSoft((TCHAR*)"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall",(TCHAR*)"DisplayName");
+	EnumInstalledSoft((TCHAR*)"Software\\Classes\\Installer\\Products", (TCHAR*)"ProductName");
+	system("pause");
+
+
+	return 0;
+}
+```
+
+然后我们导入beacon.h,和替换bof约定的写法，函数原型我们可以使用一个bof\_helper的项目，这个项目自动化帮我们生成好bof约定的函数写法，如把GetProcAddress换成KERNEL32$GetProcAddress的写法，这里直接使用工具，同时也需要把输出函数换成beacon导出的函数。
+
+![](../.gitbook/assets/image%20%28179%29.png)
+
+最后整个代码看上去是这样的。
+
+```text
+
+#include <stdio.h>
+#include <windows.h>
+#include "beacon.h"
+
+DECLSPEC_IMPORT WINADVAPI LONG WINAPI ADVAPI32$RegOpenKeyExA(HKEY, LPCWSTR, DWORD, REGSAM, PHKEY);
+
+DECLSPEC_IMPORT WINADVAPI LONG WINAPI ADVAPI32$RegOpenKeyA(HKEY, LPCWSTR, PHKEY);
+DECLSPEC_IMPORT WINADVAPI LONG WINAPI ADVAPI32$RegCloseKey(HKEY);
+DECLSPEC_IMPORT WINADVAPI LONG WINAPI ADVAPI32$RegEnumKeyExA(
+	HKEY,
+	DWORD,
+	LPWSTR,
+	LPDWORD,
+	LPDWORD,
+	LPWSTR,
+	LPDWORD,
+	PFILETIME
+);
+DECLSPEC_IMPORT WINADVAPI LONG WINAPI ADVAPI32$RegQueryValueExA(
+	HKEY,
+	LPCWSTR,
+	LPDWORD,
+	LPDWORD,
+	LPBYTE,
+	LPDWORD
+);
+
+BOOL EnumInstalledSoft(CHAR* subKey, CHAR* subKeyName) {
+
+	HKEY hKey = NULL;
+	HKEY hSubKey = NULL;
+	DWORD dwIndexs = 0;
+	CHAR keyName[MAX_PATH] = { 0 };
+	DWORD dwLength = 256;
+	CHAR subKeyValue[MAX_PATH] = { 0 };
+
+
+	if (ADVAPI32$RegOpenKeyExA(HKEY_LOCAL_MACHINE, subKey, 0, KEY_READ, &hKey) == ERROR_SUCCESS)
+	{
+		while (ADVAPI32$RegEnumKeyExA(hKey, dwIndexs, keyName, &dwLength, NULL, NULL, NULL, NULL) == ERROR_SUCCESS)
+		{
+			ADVAPI32$RegOpenKeyA(hKey, keyName, &hSubKey);
+
+			ADVAPI32$RegQueryValueExA(hSubKey,
+				subKeyName,
+				NULL,
+				NULL,
+				(LPBYTE)subKeyValue,
+				&dwLength);
+
+			BeaconPrintf(CALLBACK_OUTPUT, "%s : %s  \n", keyName, subKeyValue);
+			ADVAPI32$RegCloseKey(hSubKey);
+			hSubKey = 0;
+			++dwIndexs;
+			dwLength = 256;
+		}
+	}
+	else
+	{
+		return FALSE;
+	}
+	if (hKey != NULL)
+	{
+		ADVAPI32$RegCloseKey(hKey);
+		return TRUE;
+	}
+}
+
+int main()
+{
+
+
+	EnumInstalledSoft((CHAR*)"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall", (CHAR*)"DisplayName");
+	EnumInstalledSoft((CHAR*)"Software\\Classes\\Installer\\Products", (CHAR*)"ProductName");
+	return 0;
+}
+```
 
