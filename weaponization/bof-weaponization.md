@@ -88,7 +88,7 @@ int main()
 }
 ```
 
-然后我们导入beacon.h,和替换bof约定的写法，函数原型我们可以使用一个[bof\_helper](https://github.com/dtmsecurity/bof_helper)的项目，这个项目自动化帮我们生成好bof约定的函数写法，如把GetProcAddress换成KERNEL32$GetProcAddress的写法，这里直接使用工具，同时也需要把输出函数换成beacon导出的函数。
+然后我们导入beacon.h,和替换bof约定的写法，函数原型我们可以使用一个[bof\_helper](https://github.com/dtmsecurity/bof_helper)的项目，这个项目自动化帮我们生成好bof约定的函数原型和写法，如把GetProcAddress换成KERNEL32$GetProcAddress的写法，这里直接使用工具，同时也需要把输出函数换成beacon导出的函数。
 
 ![](../.gitbook/assets/image%20%28179%29.png)
 
