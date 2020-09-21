@@ -5,6 +5,7 @@
 ## 武器化 <a id="weaponization"></a>
 
 * [COM组件相关的武器化开发技术](weaponization/com-weaponization.md)
+* [攻击demo的bof改造](weaponization/gong-ji-demo-de-bof-gai-zao.md)
 
 ## 权限提升 <a id="privilege-escalation"></a>
 
