@@ -20,7 +20,7 @@
 ## 防御逃避 <a id="defense-evasion"></a>
 
 * [编译时混淆字符串&函数调用](defense-evasion/compile-time-obfuscation.md)
-* [基于线程结束的EventLog绕过](defense-evasion/ji-yu-xian-cheng-guan-bi-de-eventlog-rao-guo.md)
+* [基于线程结束的EventLog绕过](defense-evasion/fuck-eventlog.md)
 * [动态获取系统调用\(syscall\)号](defense-evasion/dynamic-get-syscallid.md)
 * [基于内存补丁的AMSI绕过](defense-evasion/memory-pacth-bypass-amsi.md)
 * [基于API Hook和DLL注入的AMSI绕过](defense-evasion/apihook-and-dllinjection-bypass-amsi.md)
