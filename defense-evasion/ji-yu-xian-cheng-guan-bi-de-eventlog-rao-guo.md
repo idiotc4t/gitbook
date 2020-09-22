@@ -20,21 +20,27 @@
 Get-WmiObject -Class win32_service -Filter "name = 'eventlog'" | select -exp ProcessId
 ```
 
-![](../.gitbook/assets/image%20%28182%29.png)
+![](../.gitbook/assets/image%20%28183%29.png)
 
-![&#x90E8;&#x5206;&#x53C2;&#x6570;&#x88AB;&#x906E;&#x6321;](../.gitbook/assets/image%20%28184%29.png)
+![&#x90E8;&#x5206;&#x53C2;&#x6570;&#x88AB;&#x906E;&#x6321;](../.gitbook/assets/image%20%28185%29.png)
 
-![](../.gitbook/assets/image%20%28185%29.png)
+![](../.gitbook/assets/image%20%28186%29.png)
 
 获取到进程号之后我们需要识别具体的服务线程，在windows vista之后的系统，具体的服务线程约定使用servicemain作为入口点，同时服务线程自身会带有一个等同于服务名的tag，这个tag可以帮我们识别这个线程是否是我们寻找的，在x64线程teb中0x1720偏移的位置存放着service tag的句柄，我们可以那这个句柄使用I\_QueryTagInformation api查询到具体service tag内容。\(句柄-&gt;内容，需要查询内核\_eprocess句柄表，有机会补上\)。
 
-![](../.gitbook/assets/image%20%28181%29.png)
+![](../.gitbook/assets/image%20%28182%29.png)
 
-![](../.gitbook/assets/image%20%28183%29.png)
+![](../.gitbook/assets/image%20%28184%29.png)
 
-最后我们把识别出来的服务线程结束就好，因为带起服务线程的主线程和派遣线程依旧存在，所以进程本身并不结束，这样就很好的架空的日志服务。
+最后我们把识别出来的服务线程结束就好，因为转换成分派控制器的主线程依旧存在，所以进程本身并不结束，这样就能很好的架空的日志服务。
 
 ## 代码
+
+运行前后:
+
+![](../.gitbook/assets/image%20%28181%29.png)
+
+![](../.gitbook/assets/image%20%28187%29.png)
 
 ```text
 #include <Windows.h>
