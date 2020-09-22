@@ -36,7 +36,7 @@ Get-WmiObject -Class win32_service -Filter "name = 'eventlog'" | select -exp Pro
 
 ## 代码
 
-运行前后:
+运行效果:
 
 ![](../.gitbook/assets/image%20%28181%29.png)
 
