@@ -236,3 +236,15 @@ int main() {
 }
 ```
 
+## LINKS
+
+{% embed url="http://www.winsiderss.com/tools/sctagquery/sctagquery.htm" %}
+
+{% embed url="https://artofpwn.com/2017/06/05/phant0m-killing-windows-event-log.html" %}
+
+{% embed url="https://3gstudent.github.io/3gstudent.github.io/%E6%B8%97%E9%80%8F%E6%8A%80%E5%B7%A7-Windows%E6%97%A5%E5%BF%97%E7%9A%84%E5%88%A0%E9%99%A4%E4%B8%8E%E7%BB%95%E8%BF%87/" %}
+
+{% embed url="https://wj32.org/wp/2010/03/30/howto-use-i\_querytaginformation/" %}
+
+
+
