@@ -38,7 +38,7 @@
 
 ![](../.gitbook/assets/image%20%28118%29.png)
 
-一般windows api默认使用stdcall\(x86\)调用约定，这里x64默认使用fastcall，即函数内平衡堆栈，以防万一我们确认一下，堆栈的平衡方式会决定我们的内存补丁写法。
+一般windows api默认使用stdcall\(x86\)调用约定，这里x64默认使用fastcall，即寄存器传参，以防万一我们确认一下，堆栈的平衡方式会决定我们的内存补丁写法。
 
 ![](../.gitbook/assets/image%20%28123%29.png)
 
