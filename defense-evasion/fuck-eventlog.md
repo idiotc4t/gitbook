@@ -22,7 +22,7 @@ Get-WmiObject -Class win32_service -Filter "name = 'eventlog'" | select -exp Pro
 
 ![](../.gitbook/assets/image%20%28183%29.png)
 
-![&#x90E8;&#x5206;&#x53C2;&#x6570;&#x88AB;&#x906E;&#x6321;](../.gitbook/assets/image%20%28185%29.png)
+![](../.gitbook/assets/image%20%28185%29.png)
 
 ![](../.gitbook/assets/image%20%28186%29.png)
 
