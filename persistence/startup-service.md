@@ -23,6 +23,14 @@
 
 ## 大致原理
 
+scm服务控制管理器进程services.exe会在系统初始化时遍历名为HKEY\_LOCAL\_MACHINE\SYSTEM\CurrentControlSet\Services的注册表项，这个注册表项记录着所有注册的windows服务的实现文件\(系统默认服务通常是一个dll\)、启动权限。
+
+![](../.gitbook/assets/image%20%28188%29.png)
+
+遍历后将所有设置为auto-start的服务启动，通常表现形式为每个服务带起一个名为svchost.exe进程，这个进程是一个共享服务进程，具体服务线程的代码则是该进程额外载入的注册表内记录的dll文件。
+
+![](../.gitbook/assets/image%20%28189%29.png)
+
 ## 代码实现
 
 serviceloader.cpp
