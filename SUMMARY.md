@@ -37,6 +37,7 @@
 * [利用杀毒软件删除任意文件](defense-evasion/using-antivirus-to-delete-files.md)
 * [反转字符串绕杀软](defense-evasion/reverse-strings-bypass-av.md)
 * [重新加载.text节拖钩](defense-evasion/zhong-xin-jia-zai-.text-jie-tuo-gou.md)
+* [ShadowMove复现与思考](defense-evasion/shadowmove-fu-xian-yu-si-kao.md)
 
 ## 代码与进程注入 <a id="code-and-dll-process-injection"></a>
 
