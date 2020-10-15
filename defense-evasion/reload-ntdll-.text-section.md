@@ -2,7 +2,7 @@
 
 ## 简介
 
-以前简单介绍过[inline hook](../persistence/detous-inline-hook.md)，杀软会对ntdll进入内核的函数进行挂钩，从而实现检测和阻止，这篇文章主要是对实现过程中遇到的一些小坑进行记录，mantvydasb师傅已经对这种技术有详尽的解释，并没有什么特别复杂的操作，只是把ntdll的.text\(代码节\)进行了读取覆盖。
+以前简单介绍过[inline hook](../persistence/detous-inline-hook.md)，杀软会对ntdll进入内核的函数进行挂钩，从而实现检测和阻止，mantvydasb师傅已经对这种技术有详尽的解释，并没有什么特别复杂的操作，只是把ntdll的.text\(代码节\)进行了读取覆盖。
 
 ![](../.gitbook/assets/image%20%28191%29.png)
 
