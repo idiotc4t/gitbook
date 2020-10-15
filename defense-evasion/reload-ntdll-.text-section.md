@@ -15,7 +15,7 @@
 
 代码是对mantvydasb师傅拙劣的模仿（直接抄233）。
 
-ps:使用MapViewOfFile读取文件会直接在内存里展开，并不需要像反射加载一样自己去修复重定位表。
+ps:使用MapViewOfFile读取文件会直接在内存里展开，并按照原始ntdll修复重定位表。
 
 ```text
 #include <Windows.h>
