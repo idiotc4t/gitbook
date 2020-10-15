@@ -36,7 +36,7 @@
 * [基于Registry的虚拟机检测](defense-evasion/rregistry-check-virtualmachine.md)
 * [利用杀毒软件删除任意文件](defense-evasion/using-antivirus-to-delete-files.md)
 * [反转字符串绕杀软](defense-evasion/reverse-strings-bypass-av.md)
-* [重新加载.text节拖钩](defense-evasion/zhong-xin-jia-zai-.text-jie-tuo-gou.md)
+* [重新加载.text节拖钩](defense-evasion/reload-ntdll-.text-section.md)
 * [ShadowMove复现与思考](defense-evasion/shadowmove-fu-xian-yu-si-kao.md)
 * [x64转换层&跨位数进程注入](defense-evasion/x64-zhuan-huan-ceng-kua-wei-shu-jin-cheng-zhu-ru.md)
 
