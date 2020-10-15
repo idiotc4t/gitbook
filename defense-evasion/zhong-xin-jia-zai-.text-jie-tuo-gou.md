@@ -54,3 +54,9 @@ int main()
 }
 ```
 
+## LINKS
+
+{% embed url="https://www.ired.team/offensive-security/defense-evasion/how-to-unhook-a-dll-using-c++" %}
+
+
+
