@@ -60,7 +60,7 @@ int pafish_exists_regkey(HKEY hKey, char * regkey_s) {
 }
 ```
 
-对于蓝队，如果注册表查询中出现了如下表现，那么该软件可能就在使用逃避技术。
+对于蓝队，如果注册表查询中出现了如下表项，那么该软件可能就在使用逃避技术。
 
 | Detect | Registry path | Details \(if any\) |
 | :--- | :--- | :--- |
