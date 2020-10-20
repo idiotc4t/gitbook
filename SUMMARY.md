@@ -37,7 +37,7 @@
 * [利用杀毒软件删除任意文件](defense-evasion/using-antivirus-to-delete-files.md)
 * [反转字符串绕杀软](defense-evasion/reverse-strings-bypass-av.md)
 * [重新加载.text节拖钩](defense-evasion/reload-ntdll-.text-section.md)
-* [载入第二个Ntdll绕Hook](defense-evasion/xin-jia-zai-ntdll-rao-hook.md)
+* [载入第二个Ntdll绕Hook](defense-evasion/load-ntdll-too.md)
 * [ShadowMove复现与思考](defense-evasion/shadowmove-emersion-and-think.md)
 * [x64转换层&跨位数进程注入](defense-evasion/wow64-and-cross-bit-process-injection.md)
 
