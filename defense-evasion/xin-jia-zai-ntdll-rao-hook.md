@@ -17,9 +17,13 @@
 
 ![](../.gitbook/assets/image%20%28194%29.png)
 
-![](../.gitbook/assets/image%20%28195%29.png)
+![](../.gitbook/assets/image%20%28197%29.png)
 
 如果使用windows api GetProcAddress函数获取函数地址的话会报错0126 找不到指定的模块。\(正在分析原因\)
 
 ![](../.gitbook/assets/image%20%28192%29.png)
+
+但是如果我们直接自己编写一个GetProcAddress函数就可以获取到这个自己加载的ntdll内的函数地址并且执行成功。
+
+![&#x3001;](../.gitbook/assets/image%20%28195%29.png)
 
