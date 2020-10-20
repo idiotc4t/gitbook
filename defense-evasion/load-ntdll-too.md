@@ -31,6 +31,10 @@
 
 ![](../.gitbook/assets/image%20%28198%29.png)
 
+![](../.gitbook/assets/image%20%28203%29.png)
+
+![errorcode 126](../.gitbook/assets/image%20%28204%29.png)
+
 ![](../.gitbook/assets/image%20%28202%29.png)
 
 但是如果我们直接自己编写一个GetProcAddress函数就可以获取到这个自己加载的ntdll内的函数地址并且执行成功。
