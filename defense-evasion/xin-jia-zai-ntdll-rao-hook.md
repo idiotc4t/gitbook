@@ -15,9 +15,11 @@
 
 把代码写出来之后windbg调了一下，发现如果没有挂钩，那么这个代码其实和原ntdll是一模一样的，在windbg里面会显示第二个ntdll。
 
+![](../.gitbook/assets/image%20%28194%29.png)
+
+![](../.gitbook/assets/image%20%28195%29.png)
+
+如果使用windows api GetProcAddress函数获取函数地址的话会报错0126 找不到指定的模块。\(正在分析原因\)
+
 ![](../.gitbook/assets/image%20%28192%29.png)
-
-![](../.gitbook/assets/image%20%28193%29.png)
-
-
 
