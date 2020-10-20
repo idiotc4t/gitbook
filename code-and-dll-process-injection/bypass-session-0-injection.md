@@ -12,39 +12,9 @@ ZwCreateThreadEx函数比CreateRemoteThread函数更接近内核，CreateRemoteT
 
 所以如果想要创建的线程成功执行我们需要将第七个参数指定为0，这样我们就能在创建线程后让他执行。
 
-ZwCreateThreadEx函数原型在不同位数的系统中有细微差别。
+ZwCreateThreadEx函数原型不同位数莫得区别。
 
 ![](../.gitbook/assets/image%20%2823%29.png)
-
-```text
-#ifdef _WIN64
-	typedef DWORD(WINAPI *typedef_ZwCreateThreadEx)(
-		PHANDLE ThreadHandle,
-		ACCESS_MASK DesiredAccess,
-		LPVOID ObjectAttributes,
-		HANDLE ProcessHandle,
-		LPTHREAD_START_ROUTINE lpStartAddress,
-		LPVOID lpParameter,
-		ULONG CreateThreadFlags,
-		SIZE_T ZeroBits,
-		SIZE_T StackSize,
-		SIZE_T MaximumStackSize,
-		LPVOID pUnkown);
-#else
-	typedef DWORD(WINAPI *typedef_ZwCreateThreadEx)(
-		PHANDLE ThreadHandle,
-		ACCESS_MASK DesiredAccess,
-		LPVOID ObjectAttributes,
-		HANDLE ProcessHandle,
-		LPTHREAD_START_ROUTINE lpStartAddress,
-		LPVOID lpParameter,
-		BOOL CreateSuspended,
-		DWORD dwStackSize,
-		DWORD dw1,
-		DWORD dw2,
-		LPVOID pUnkown);
-#endif
-```
 
 ## 代码实现
 
