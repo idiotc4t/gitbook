@@ -27,8 +27,6 @@
 
 ![](../.gitbook/assets/image%20%28195%29.png)
 
-## COde
-
 ## 代码
 
 ```text
