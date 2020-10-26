@@ -12,7 +12,7 @@
 
 尽管windows本身提供了WSADuplicateSocket函数，但是这个函数需要本地进程的socks句柄，而句柄只在本地进程才有意义，这篇文章的作者提出了一种从远程复制句柄技术的变体。
 
-作者发现套接字的句柄等同于的名为\Device\Afd文件句柄，这个句柄可以直接是为socks使用\(虽然就是同一个，但说还是这么说\)，我们可以通过常规的句柄枚举技术从远程进程得到它，然后使用NtDuplicateObject函数将它复制到本地进程，本地进程再通过WSADuplicateSocket获取克隆套接字需要的参数，然后我们可以像使用自己的socket一样使用这个克隆过来的socket了。
+作者发现套接字的句柄等同于的名为\Device\Afd文件句柄，这个句柄可以直接视为socks使用\(虽然就是同一个，但说还是这么说\)，我们可以通过常规的句柄枚举技术从远程进程得到它，然后使用NtDuplicateObject函数将它复制到本地进程，本地进程再通过WSADuplicateSocket获取克隆套接字需要的参数，然后我们可以像使用自己的socket一样使用这个克隆过来的socket了。
 
 ![](../.gitbook/assets/image%20%28205%29.png)
 
