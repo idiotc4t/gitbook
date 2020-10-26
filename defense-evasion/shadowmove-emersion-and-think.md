@@ -16,7 +16,7 @@
 
 ![](../.gitbook/assets/image%20%28205%29.png)
 
-在github有师傅分享了一份ShadowMove的代码，这里我做了一点简化。
+在github有[0xcpu](https://github.com/0xcpu/winsmsd)师傅分享了一份ShadowMove的代码，这里我做了一点简化。
 
 首先师傅获取了远程进程的所有句柄。
 
@@ -405,6 +405,10 @@ DWORD WINAPI ThreadProc(LPVOID lpParam)
 ![](../.gitbook/assets/image%20%28209%29.png)
 
 ## LINKS
+
+{% embed url="https://github.com/0xcpu/winsmsd" %}
+
+
 
 原文如下:
 
