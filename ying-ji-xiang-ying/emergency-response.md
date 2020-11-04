@@ -61,6 +61,22 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Netw
 1. 定位其中一个进程查找可结束的最上级进程\(这里是服务，所有windows服务都是由services进程带起的，所以查找到父进程是services.exe就代表这个进程是可结束的最上级进程\)。
 2. 通过服务名定位服务进程实例\(由于这个病毒是用服务带起来的所以，本文采用这种方法\)。
 
+方法2使用QueryServiceStatusEx函数来定位服务的实例进程，需要指定查询等级为SC\_STATUS\_PROCESS\_INFO，这样这个函数会返回一个名为SERVICE\_STATUS\_PROCESS的结构体，这个结构体的dwProcessId成员就是改服务实例化的进程id。
+
+```text
+typedef struct _SERVICE_STATUS_PROCESS {
+  DWORD dwServiceType;
+  DWORD dwCurrentState;
+  DWORD dwControlsAccepted;
+  DWORD dwWin32ExitCode;
+  DWORD dwServiceSpecificExitCode;
+  DWORD dwCheckPoint;
+  DWORD dwWaitHint;
+  DWORD dwProcessId;
+  DWORD dwServiceFlags;
+} SERVICE_STATUS_PROCESS, *LPSERVICE_STATUS_PROCESS;
+```
+
 现在我们就通过windows的services api定位，代码如下:
 
 ```text
@@ -102,4 +118,39 @@ void KillProcessTree(DWORD dwProcessId) {
 
 	bRet = DeleteService(hService);
 ```
+
+最后就是简简单单的删文件删注册表删服务了。
+
+```text
+
+	bRet = DeleteService(hService);
+	if(bRet){
+		printf("[+]Delete Service successful\n");
+	}else	{
+		printf("[-]Can not Delete Service successful\n");
+	}
+
+	printf("[*]Deleting malware file ......\n");
+	char ServiceDllPath[MAX_PATH]={0};
+	memcpy(ServiceDllPath,buffer,strlen(buffer));
+	sprintf_s(buffer, "del %s /Q /F\n", ServiceDllPath);
+    system(buffer);
+	for (size_t i = 0; i < sizeof(strings) / MAX_PATH; i++)
+    {
+          sprintf_s(buffer, "del %s /Q /F\n", strings[i]);
+          system(buffer);
+    }
+	printf("[+]Delete malware file successful!\n");
+	RegCloseKey(hKey);
+	CloseServiceHandle(hSCM);
+	CloseServiceHandle(hService);
+```
+
+## LINKS
+
+{% embed url="https://www.freebuf.com/articles/terminal/198891.html" %}
+
+{% embed url="https://bbs.pediy.com/thread-263127.htm" %}
+
+
 
