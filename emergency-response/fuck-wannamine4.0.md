@@ -10,7 +10,13 @@
 
 ## 查杀思路
 
-病毒首先注册污点注册表释放一个随机固定单词组合的一个服务dll，然后注册一个系统服务用svchost.exe带起这个恶意dll，这个注册表键值对里会写入服务名和dll路径和服务的描述信息，这里我们可以直接读取这个键值来获取服务名。
+病毒首先注册污点注册表释放一个随机固定单词组合的一个服务dll，然后注册一个系统服务用svchost.exe带起这个恶意dll，这个注册表键值对里会写入服务名和dll路径和服务的描述信息，这里我们可以直接读取这个键值来获取服务名。\(有一说一，有些专杀通过枚举单词组合来确定服务是真的蠢。\)
+
+> 字符串1列表：Windows、Microsoft、Network、Remote、Function、Secure、Application
+>
+> 字符串2列表：Update、Time、NetBIOS、RPC、Protocol、SSDP、UPnP
+>
+> 字符串3列表：Service、Host、Client、Event、Manager、Helper、System
 
 ```text
 HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\NetworkPlatform\Location Awareness
