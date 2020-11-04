@@ -73,5 +73,5 @@
 
 ## 应急响应
 
-* [WannaMine4.0专杀的一些技巧](ying-ji-xiang-ying/emergency-response.md)
+* [WannaMine4.0专杀的一些技巧](ying-ji-xiang-ying/fuck-wannamine4.0.md)
 
