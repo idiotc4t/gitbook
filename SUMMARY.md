@@ -71,3 +71,7 @@
 * [编写简单远控](persistence/simple-cc.md)
 * [注册表自启动项](persistence/registry-startup.md)
 
+---
+
+* [应急响应](emergency-response.md)
+
