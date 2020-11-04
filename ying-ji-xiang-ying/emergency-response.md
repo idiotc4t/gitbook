@@ -16,9 +16,11 @@
 HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\NetworkPlatform\Location Awareness
 ```
 
-![](../.gitbook/assets/image%20%28212%29.png)
+![](../.gitbook/assets/image%20%28213%29.png)
 
 ![](../.gitbook/assets/image%20%28210%29.png)
+
+![](../.gitbook/assets/image%20%28212%29.png)
 
 ```text
 	BOOL bRet = EnbalePrivileges(GetCurrentProcess(), SE_DEBUG_NAME);
@@ -48,5 +50,5 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Netw
 	}
 ```
 
-
+2.
 
