@@ -58,7 +58,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Netw
 
 只要我们结束了最上级进程，那它下属的所有进程都会被结束\(结束进程树\)，这样我们就有两种思路：
 
-1. 定位其中一个进程查找可结束的最上级进程\(这里是服务，所有windows服务都是由services进程带起的，所以查找到父进程是services.exe就代表这个进程是可结束的最上级进程\)。
+1. 定位其中一个进程查找可结束的最上级进程，之前[fuck-eventlog](../defense-evasion/fuck-eventlog.md)的时候用过类似方法\(这里是服务，所有windows服务都是由services进程带起的，所以查找到父进程是services.exe就代表这个进程是可结束的最上级进程\)。
 2. 通过服务名定位服务进程实例\(由于这个病毒是用服务带起来的所以，本文采用这种方法\)。
 
 方法2使用QueryServiceStatusEx函数来定位服务的实例进程，需要指定查询等级为SC\_STATUS\_PROCESS\_INFO，这样这个函数会返回一个名为SERVICE\_STATUS\_PROCESS的结构体，这个结构体的dwProcessId成员就是改服务实例化的进程id。
