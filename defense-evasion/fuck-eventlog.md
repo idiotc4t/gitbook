@@ -12,7 +12,7 @@
 
 ## 原理
 
-首先我们需要定位到EventLog服务对应的进程，使用windows的services.msc查看发现windows服务是由svchost指定-s\(从选定组中加载该标志指定的服务\)参数查询注册服务进行启动，那我们可以通过遍历系统所有进程的commandline是否带有eventlog服务名来进行识别，主要实现方式由两种，通过进程快照遍历或通过调用wmi接口来识别。
+首先我们需要定位到EventLog服务对应的进程，使用windows的services.msc查看发现windows服务是由svchost指定-s\(从选定组中加载该标志指定的服务\)参数查询注册服务进行启动\(HKEY\_LOCAL\_MACHINE\SYSTEM\CurrentControlSet\Services\EventLog\Parameters下的servicedll键值对\)，那我们可以通过遍历系统所有进程的commandline是否带有eventlog服务名来进行识别，主要实现方式由两种，通过进程快照遍历或通过调用wmi接口来识别。
 
 对服务不了解的朋友可以看看[这个](../persistence/startup-service.md)。
 
@@ -21,6 +21,8 @@ Get-WmiObject -Class win32_service -Filter "name = 'eventlog'" | select -exp Pro
 ```
 
 ![](../.gitbook/assets/image%20%28183%29.png)
+
+![](../.gitbook/assets/image%20%28216%29.png)
 
 ![](../.gitbook/assets/image%20%28185%29.png)
 
