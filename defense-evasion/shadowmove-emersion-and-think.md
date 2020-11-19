@@ -18,10 +18,10 @@
 
 在github有[0xcpu](https://github.com/0xcpu/winsmsd)师傅分享了一份ShadowMove的代码，这里我做了一点简化。
 
-首先师傅获取了远程进程的所有句柄。
+首先师傅获取了系统的所有句柄。
 
 ```text
-    //获取远程线程内所有句柄
+    //获取系统内所有句柄
     pSysHandleInfo = (PSYSTEM_HANDLE_INFORMATION)calloc(SystemInformationLength, sizeof(UCHAR));
     while (pNtQuerySystemInformation(SystemHandleInformation,
                                      pSysHandleInfo,
