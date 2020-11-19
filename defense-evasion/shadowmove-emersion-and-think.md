@@ -271,7 +271,7 @@ SOCKET GetSocket(HANDLE hProcess, PBYTE pIpAddress, USHORT dwPort)
     for (size_t i = 0; i < pSysHandleInfo->NumberOfHandles; i++) 
     {
         //句柄只在拥有者进程内有意义，所以这里需要通过NtDuplicateObject函数将句柄复制到当前进程
-        if (pSysHandleInfo->Handles[i].ObjectTypeIndex == 0x25) {
+        if (pSysHandleInfo->Handles[i].ObjectTypeIndex == 25) {
             ntStatus = pNtDuplicateObject(hProcess,
                                           (HANDLE)pSysHandleInfo->Handles[i].HandleValue,
                                           GetCurrentProcess(),
