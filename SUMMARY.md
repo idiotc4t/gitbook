@@ -19,6 +19,8 @@
 
 ## 防御逃避 <a id="defense-evasion"></a>
 
+* [ShadowMove复现与思考](defense-evasion/shadowmove-emersion-and-think.md)
+* [载入第二个Ntdll绕Hook](defense-evasion/load-ntdll-too.md)
 * [编译时混淆字符串&函数调用](defense-evasion/compile-time-obfuscation.md)
 * [基于线程结束的EventLog绕过](defense-evasion/fuck-eventlog.md)
 * [动态获取系统调用\(syscall\)号](defense-evasion/dynamic-get-syscallid.md)
@@ -37,8 +39,6 @@
 * [利用杀毒软件删除任意文件](defense-evasion/using-antivirus-to-delete-files.md)
 * [反转字符串绕杀软](defense-evasion/reverse-strings-bypass-av.md)
 * [重新加载.text节拖钩](defense-evasion/reload-ntdll-.text-section.md)
-* [载入第二个Ntdll绕Hook](defense-evasion/load-ntdll-too.md)
-* [ShadowMove复现与思考](defense-evasion/shadowmove-emersion-and-think.md)
 * [x64转换层&跨位数进程注入](defense-evasion/wow64-and-cross-bit-process-injection.md)
 
 ## 代码与进程注入 <a id="code-and-dll-process-injection"></a>
