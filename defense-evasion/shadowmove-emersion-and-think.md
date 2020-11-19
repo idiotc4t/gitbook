@@ -257,7 +257,7 @@ SOCKET GetSocket(HANDLE hProcess, PBYTE pIpAddress, USHORT dwPort)
     INT                         WsaErr;
     WSAPROTOCOL_INFOW           WsaProtocolInfo = { 0 };
 
-    //获取远程线程内所有句柄
+    //获取系统内所有句柄
     pSysHandleInfo = (PSYSTEM_HANDLE_INFORMATION)calloc(SystemInformationLength, sizeof(UCHAR));
     while (pNtQuerySystemInformation(SystemHandleInformation,
                                      pSysHandleInfo,
