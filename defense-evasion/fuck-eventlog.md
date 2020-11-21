@@ -28,7 +28,7 @@ Get-WmiObject -Class win32_service -Filter "name = 'eventlog'" | select -exp Pro
 
 ![](../.gitbook/assets/image%20%28186%29.png)
 
-获取到进程号之后我们需要识别具体的服务线程，在windows vista之后的系统，具体的服务线程约定使用servicemain作为入口点，同时服务线程自身会带有一个等同于服务名的tag，这个tag可以帮我们识别这个线程是否是我们寻找的，在x64线程teb中0x1720偏移的位置存放着service tag的句柄，我们可以那这个句柄使用I\_QueryTagInformation api查询到具体service tag内容。\(句柄-&gt;内容，需要查询内核\_eprocess句柄表，有机会补上\)。
+获取到进程号之后我们需要识别具体的服务线程，在windows vista之后的系统，具体的服务线程约定使用servicemain作为入口点，同时服务线程自身会带有一个等同于服务名的tag，这个tag可以帮我们识别这个线程是否是我们寻找的，在x64线程teb中0x1720偏移的位置存放着service tag的标记~~句柄\(这玩意不是句柄\)~~，我们可以那这个标记使用I\_QueryTagInformation api查询到具体service tag内容。
 
 ![](../.gitbook/assets/image%20%28182%29.png)
 
