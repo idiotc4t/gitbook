@@ -19,7 +19,6 @@
 
 ## 防御逃避 <a id="defense-evasion"></a>
 
-* [.NET反射加载](defense-evasion/.net-fan-she-jia-zai.md)
 * [ShadowMove复现与思考](defense-evasion/shadowmove-emersion-and-think.md)
 * [载入第二个Ntdll绕Hook](defense-evasion/load-ntdll-too.md)
 * [编译时混淆字符串&函数调用](defense-evasion/compile-time-obfuscation.md)
@@ -44,6 +43,7 @@
 
 ## 代码与进程注入 <a id="code-and-dll-process-injection"></a>
 
+* [.NET Reflective Injection](code-and-dll-process-injection/.net-fan-she-jia-zai.md)
 * [APC Thread Hijack](code-and-dll-process-injection/apc-thread-hijack.md)
 * [CreateRemoteThread](code-and-dll-process-injection/createremotethread.md)
 * [APC Injection](code-and-dll-process-injection/apc-injection.md)
