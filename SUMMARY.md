@@ -19,6 +19,7 @@
 
 ## 防御逃避 <a id="defense-evasion"></a>
 
+* [.NET反射加载](defense-evasion/.net-fan-she-jia-zai.md)
 * [ShadowMove复现与思考](defense-evasion/shadowmove-emersion-and-think.md)
 * [载入第二个Ntdll绕Hook](defense-evasion/load-ntdll-too.md)
 * [编译时混淆字符串&函数调用](defense-evasion/compile-time-obfuscation.md)
