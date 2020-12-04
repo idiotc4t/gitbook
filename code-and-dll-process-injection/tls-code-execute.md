@@ -171,6 +171,15 @@ int main()
 }
 ```
 
+x64的回调函数声明使用别的预处理指令
+
+```text
+EXTERN_C
+#pragma const_seg (".CRT$XLB")
+const PIMAGE_TLS_CALLBACK _tls_callback = TlsCallBackCheckDbugger;
+#pragma const_seg ()
+```
+
 ![](../.gitbook/assets/image%20%2889%29.png)
 
 ## LINKS
