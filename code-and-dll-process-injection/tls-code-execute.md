@@ -76,6 +76,15 @@ int main()
 }
 ```
 
+x64的回调函数声明使用别的预处理指令
+
+```text
+EXTERN_C
+#pragma const_seg (".CRT$XLB")
+const PIMAGE_TLS_CALLBACK _tls_callback = TlsCallBackCheckDbugger;
+#pragma const_seg ()
+```
+
 ## 扩展
 
 由于TLS调用时通常已经初始化了所以进程相关信息\(DLL加载、PEB分配\)，所以理论上我们能在TLScallback函数内实现任意代码，理论上我们能在TLS实现其他任意技术,如在TLS回调函数内实现Mapping注入技术。
@@ -171,14 +180,7 @@ int main()
 }
 ```
 
-x64的回调函数声明使用别的预处理指令
 
-```text
-EXTERN_C
-#pragma const_seg (".CRT$XLB")
-const PIMAGE_TLS_CALLBACK _tls_callback = TlsCallBackCheckDbugger;
-#pragma const_seg ()
-```
 
 ![](../.gitbook/assets/image%20%2889%29.png)
 
