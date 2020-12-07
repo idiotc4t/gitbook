@@ -113,7 +113,7 @@ namespace TEST
 
 ```
 
-3.通过默认应用程序域实例的Load\_3方法加载安全.net程序集数组，并返回Assembly的实例对象指针，通过Assembly实例对象的get\_EntryPoint方法获取MethodInfo实例对象。
+3.通过默认应用程序域实例的Load\_3方法加载安全.net程序集数组，并返回Assembly的实例对象指针，通过Assembly实例对象的get\_EntryPoint方法获取描述入口点的MethodInfo实例对象。
 
 ```text
 	saBound[0].cElements = ASSEMBLY_LENGTH;
@@ -152,7 +152,7 @@ ZeroMemory(&vRet, sizeof(VARIANT));
 
 ```
 
-5.通过MethodInfo的实例对象发现方法的属性并提供对方法元数据的访问
+5.通过描述入口点的MethodInfo实例对象的Invoke方法执行入口点。
 
 ```text
 HRESULT hr = pMethodInfo->Invoke_3(vObj, args, &vRet);
