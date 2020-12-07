@@ -96,5 +96,126 @@ namespace TEST
 
 ## 流程B\(内存加载\)
 
+1. 初始化CLR环境
+2. 获取默认应用程序域
+3. 通过应用程序域加载.net程序集
+4. 创建参数安全数组
+5. 执行入口点
+
+
+
+{% tabs %}
+{% tab title="unmanaged.cpp" %}
+```cpp
+#include <stdio.h>
+#include <tchar.h>
+#include <metahost.h>
+#pragma comment(lib, "mscoree.lib")
+
+#import <mscorlib.tlb> raw_interfaces_only			\
+    	high_property_prefixes("_get","_put","_putref")		\
+    	rename("ReportEvent", "InteropServices_ReportEvent")	\
+	rename("or", "InteropServices_or")
+
+using namespace mscorlib;
+#define ASSEMBLY_LENGTH  8192
+
+
+unsigned char dotnetRaw[8192] =
+"\x4d\x5a\x90\x00\x03\x00\x00"; //.net程序集数组
+
+
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+
+	BOOL bLoadable;
+	ICLRMetaHost* iMetaHost = NULL;
+	ICLRRuntimeInfo* iRuntimeInfo = NULL;
+	ICorRuntimeHost* iRuntimeHost = NULL;
+	IUnknownPtr pAppDomainThunk = NULL;
+	_AppDomainPtr pDefaultAppDomain = NULL;
+	_AssemblyPtr pAssembly = NULL;
+	_MethodInfoPtr pMethodInfo = NULL;
+	SAFEARRAYBOUND saBound[1];
+	void* pData = NULL;
+	VARIANT vRet;
+	VARIANT vObj;
+	VARIANT vPsa;
+	SAFEARRAY* args = NULL;
+
+	CLRCreateInstance(CLSID_CLRMetaHost, IID_ICLRMetaHost, (VOID**)&iMetaHost);
+	iMetaHost->GetRuntime(L"v4.0.30319", IID_ICLRRuntimeInfo, (VOID**)&iRuntimeInfo);
+	iRuntimeInfo->IsLoadable(&bLoadable);
+	iRuntimeInfo->GetInterface(CLSID_CorRuntimeHost, IID_ICorRuntimeHost, (VOID**)&iRuntimeHost);
+	iRuntimeHost->Start();
+
+
+	iRuntimeHost->GetDefaultDomain(&pAppDomainThunk);
+	pAppDomainThunk->QueryInterface(__uuidof(_AppDomain), (VOID**)&pDefaultAppDomain);
+
+	saBound[0].cElements = ASSEMBLY_LENGTH;
+	saBound[0].lLbound = 0;
+	SAFEARRAY* pSafeArray = SafeArrayCreate(VT_UI1, 1, saBound);
+
+	SafeArrayAccessData(pSafeArray, &pData);
+	memcpy(pData, dotnetRaw, ASSEMBLY_LENGTH);
+	SafeArrayUnaccessData(pSafeArray);
+
+	pDefaultAppDomain->Load_3(pSafeArray, &pAssembly);
+	pAssembly->get_EntryPoint(&pMethodInfo);
+
+	ZeroMemory(&vRet, sizeof(VARIANT));
+	ZeroMemory(&vObj, sizeof(VARIANT));
+	vObj.vt = VT_NULL;
+
+
+
+	vPsa.vt = (VT_ARRAY | VT_BSTR);
+	args = SafeArrayCreateVector(VT_VARIANT, 0, 1);
+
+	if (argc > 1)
+	{
+		vPsa.parray = SafeArrayCreateVector(VT_BSTR, 0, argc);
+		for (long i = 0; i < argc; i++)
+		{
+			SafeArrayPutElement(vPsa.parray, &i, SysAllocString(argv[i]));
+		}
+
+		long idx[1] = { 0 };
+		SafeArrayPutElement(args, idx, &vPsa);
+	}
+
+	HRESULT hr = pMethodInfo->Invoke_3(vObj, args, &vRet);
+
+	return 0;
+};
+
+```
+{% endtab %}
+
+{% tab title="managed.cs" %}
+```csharp
+using System;
+
+namespace TEST
+{
+    class Program
+    {
+        static int Main(String[] args)
+        {
+            Console.WriteLine("hello world!");
+            foreach (var s in args)
+            {
+                Console.WriteLine(s);
+            }
+            return 1;
+        }
+    }
+}
+```
+{% endtab %}
+{% endtabs %}
+
 
 
