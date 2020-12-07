@@ -96,7 +96,7 @@ namespace TEST
 
 ## 流程B\(内存加载\)
 
-1.初始化CLR环境
+1.初始化CLR环境\(同上\)
 
 ```text
 	CLRCreateInstance(CLSID_CLRMetaHost, IID_ICLRMetaHost, (VOID**)&iMetaHost);
