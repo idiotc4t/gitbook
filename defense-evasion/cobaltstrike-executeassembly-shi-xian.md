@@ -274,5 +274,23 @@ namespace TEST
 {% endtab %}
 {% endtabs %}
 
+![](../.gitbook/assets/image%20%28222%29.png)
+
+![](../.gitbook/assets/image%20%28223%29.png)
+
+## LINKS
+
+{% embed url="https://teamhydra.blog/2020/10/12/in-process-execute-assembly-and-mail-slots/" %}
+
+{% embed url="https://docs.microsoft.com/" %}
+
+{% embed url="https://b4rtik.github.io/posts/execute-assembly-via-meterpreter-session/" %}
+
+{% embed url="https://b4rtik.github.io/posts/execute-assembly-via-meterpreter-session-part-2/" %}
+
+
+
+
+
 
 
