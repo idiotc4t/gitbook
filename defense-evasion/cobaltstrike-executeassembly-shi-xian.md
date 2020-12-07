@@ -86,7 +86,6 @@ namespace TEST
         static int print(String strings)
         {
             Console.WriteLine(strings);
-            Console.ReadLine();
             return 1;
         }
     }
