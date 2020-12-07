@@ -96,11 +96,39 @@ namespace TEST
 
 ## 流程B\(内存加载\)
 
-1. 初始化CLR环境
-2. 获取默认应用程序域
-3. 通过应用程序域加载.net程序集
-4. 创建参数安全数组
-5. 执行入口点
+1.初始化CLR环境
+
+```text
+	CLRCreateInstance(CLSID_CLRMetaHost, IID_ICLRMetaHost, (VOID**)&iMetaHost);
+	iMetaHost->GetRuntime(L"v4.0.30319", IID_ICLRRuntimeInfo, (VOID**)&iRuntimeInfo);
+	iRuntimeInfo->IsLoadable(&bLoadable);
+	iRuntimeInfo->GetInterface(CLSID_CorRuntimeHost, IID_ICorRuntimeHost, (VOID**)&iRuntimeHost);
+	iRuntimeHost->Start();
+```
+
+
+
+2.获取默认应用程序域
+
+```text
+	iRuntimeHost->GetDefaultDomain(&pAppDomainThunk);
+	pAppDomainThunk->QueryInterface(__uuidof(_AppDomain), (VOID**)&pDefaultAppDomain);
+
+	saBound[0].cElements = ASSEMBLY_LENGTH;
+	saBound[0].lLbound = 0;
+	SAFEARRAY* pSafeArray = SafeArrayCreate(VT_UI1, 1, saBound);
+
+	SafeArrayAccessData(pSafeArray, &pData);
+	memcpy(pData, dotnetRaw, ASSEMBLY_LENGTH);
+	SafeArrayUnaccessData(pSafeArray);
+
+	pDefaultAppDomain->Load_3(pSafeArray, &pAssembly);
+	pAssembly->get_EntryPoint(&pMethodInfo);
+```
+
+1. 通过应用程序域加载.net程序集
+2. 创建参数安全数组
+3. 执行入口点
 
 {% tabs %}
 {% tab title="unmanaged.cpp" %}
