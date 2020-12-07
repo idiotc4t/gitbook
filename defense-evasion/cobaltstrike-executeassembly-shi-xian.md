@@ -152,7 +152,7 @@ ZeroMemory(&vRet, sizeof(VARIANT));
 
 ```
 
-5.执行入口点
+5.通过的实例对象方法的访问。
 
 ```text
 HRESULT hr = pMethodInfo->Invoke_3(vObj, args, &vRet);
