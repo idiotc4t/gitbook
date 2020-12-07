@@ -101,7 +101,6 @@ namespace TEST
 ```text
 	CLRCreateInstance(CLSID_CLRMetaHost, IID_ICLRMetaHost, (VOID**)&iMetaHost);
 	iMetaHost->GetRuntime(L"v4.0.30319", IID_ICLRRuntimeInfo, (VOID**)&iRuntimeInfo);
-	iRuntimeInfo->IsLoadable(&bLoadable);
 	iRuntimeInfo->GetInterface(CLSID_CorRuntimeHost, IID_ICorRuntimeHost, (VOID**)&iRuntimeHost);
 	iRuntimeHost->Start();
 ```
@@ -186,7 +185,6 @@ unsigned char dotnetRaw[8192] =
 int _tmain(int argc, _TCHAR* argv[])
 {
 
-	BOOL bLoadable;
 	ICLRMetaHost* iMetaHost = NULL;
 	ICLRRuntimeInfo* iRuntimeInfo = NULL;
 	ICorRuntimeHost* iRuntimeHost = NULL;
@@ -203,7 +201,6 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	CLRCreateInstance(CLSID_CLRMetaHost, IID_ICLRMetaHost, (VOID**)&iMetaHost);
 	iMetaHost->GetRuntime(L"v4.0.30319", IID_ICLRRuntimeInfo, (VOID**)&iRuntimeInfo);
-	iRuntimeInfo->IsLoadable(&bLoadable);
 	iRuntimeInfo->GetInterface(CLSID_CorRuntimeHost, IID_ICorRuntimeHost, (VOID**)&iRuntimeHost);
 	iRuntimeHost->Start();
 
@@ -244,6 +241,12 @@ int _tmain(int argc, _TCHAR* argv[])
 	}
 
 	HRESULT hr = pMethodInfo->Invoke_3(vObj, args, &vRet);
+	pMethodInfo->Release();
+	pAssembly->Release();
+	pDefaultAppDomain->Release();
+	iRuntimeInfo->Release();
+	iMetaHost->Release();
+	CoUninitialize();
 
 	return 0;
 };
