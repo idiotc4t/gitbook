@@ -106,11 +106,11 @@ namespace TEST
 	iRuntimeHost->Start();
 ```
 
-2.获取默认应用程序域
+2.通过ICLRRuntimeHost获取\_AppDomain接口指针，然后通过\_AppDomain接口指针
 
 ```text
 	iRuntimeHost->GetDefaultDomain(&pAppDomainThunk);
-	pAppDomainThunk->QueryInterface(__uuidof(_AppDomain), (VOID**)&pDefaultAppDomain);
+	pAppDomain->QueryInterface(__uuidof(_AppDomain), (VOID**)&pDefaultAppDomain);
 
 ```
 
