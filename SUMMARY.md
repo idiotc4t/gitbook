@@ -19,6 +19,7 @@
 
 ## 防御逃避 <a id="defense-evasion"></a>
 
+* [CobaltStrike Execute-Assembly实现](defense-evasion/cobaltstrike-executeassembly-shi-xian.md)
 * [ShadowMove复现与思考](defense-evasion/shadowmove-emersion-and-think.md)
 * [载入第二个Ntdll绕Hook](defense-evasion/load-ntdll-too.md)
 * [编译时混淆字符串&函数调用](defense-evasion/compile-time-obfuscation.md)
