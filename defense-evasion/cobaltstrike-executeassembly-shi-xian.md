@@ -102,8 +102,6 @@ namespace TEST
 4. 创建参数安全数组
 5. 执行入口点
 
-
-
 {% tabs %}
 {% tab title="unmanaged.cpp" %}
 ```cpp
