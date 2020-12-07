@@ -105,7 +105,7 @@ namespace TEST
 	iRuntimeHost->Start();
 ```
 
-2.通过ICLRRuntimeHost获取AppDomain实例对象指针，然后通过AppDomain实例对象的QueryInterface方法来查询默认应用程序域的实例指针。
+2.通过ICLRRuntimeHost获取AppDomain接口指针，然后通过AppDomain接口的QueryInterface方法来查询默认应用程序域的实例指针。
 
 ```text
 	iRuntimeHost->GetDefaultDomain(&pAppDomain);
