@@ -4,8 +4,6 @@
 
 cs实现了在非托管程序中加载.net程序集的功能，该功能使我们的恶意.net程序集不落地在内存中执行，这个实质是当前进程通过com接口初始化\(公共语言运行时\)CLR环境，本文尝试对该功能进行复现。
 
-## 流程
-
 > ### ICLRMetaHost 接口 
 >
 > 提供一些方法，这些方法基于公共语言运行时的版本号返回特定版本的公共语言运行时 \(\) ，列出所有已安装的 Clr，列出在指定进程中加载的所有运行时，发现编译程序集所用的 CLR 版本，退出使用干净运行时关闭的进程，以及查询旧的 API 绑定。
@@ -29,9 +27,69 @@ cs实现了在非托管程序中加载.net程序集的功能，该功能使我�
 >
 > ExecuteInDefaultAppDomain 方法 在指定的程序集中调用指定类型的指定方法。
 
+## 流程A\(硬盘加载\)
+
 1. 初始化ICLRMetaHost接口。
 2. 通过ICLRMetaHost获取ICLRRuntimeInfo接口。
-3. 通过ICLRRuntimeInfo获取ICLRRuntimeHost接口。
+3. 通过ICLRRuntimeInfo将 CLR 加载到当前进程并返回运行时接口ICLRRuntimeHost指针。
 4. 通过ICLRRuntimeHost.Start\(\)初始化CLR。
 5. 通过ICLRRuntimeHost.EecuteInDefaultAppDomain执行指定程序集\(硬盘上\)。
+
+## 实现
+
+```text
+#include <metahost.h>
+#pragma comment(lib, "mscoree.lib")
+ 
+int main()
+{
+    ICLRMetaHost* iMetaHost = NULL;
+    ICLRRuntimeInfo* iRuntimeInfo = NULL;
+    ICLRRuntimeHost* iRuntimeHost = NULL;
+
+    //初始化环境
+    CLRCreateInstance(CLSID_CLRMetaHost, IID_ICLRMetaHost, (LPVOID*)&iMetaHost);
+    iMetaHost->GetRuntime(L"v4.0.30319", IID_ICLRRuntimeInfo, (LPVOID*)&iRuntimeInfo);
+    iRuntimeInfo->GetInterface(CLSID_CLRRuntimeHost, IID_ICLRRuntimeHost, (LPVOID*)&iRuntimeHost);
+    iRuntimeHost->Start();
+
+    //执行
+    iRuntimeHost->ExecuteInDefaultAppDomain(L"C:\\Users\\Black Sheep\\source\\repos\\HostingCLR\\TEST\\bin\\Debug\\TEST.exe", L"TEST.Program", L"print", L"test", NULL);
+
+    //释放
+    iRuntimeInfo->Release();
+    iMetaHost->Release();
+    iRuntimeHost->Release();
+
+    return 0;
+};
+```
+
+```text
+using System;
+
+namespace TEST
+{
+    class Program
+    {
+        static int Main(String[] args)
+        {
+
+            return 1;
+        }
+        static int print(String strings)
+        {
+            Console.WriteLine(strings);
+            Console.ReadLine();
+            return 1;
+        }
+    }
+}
+```
+
+![](../.gitbook/assets/image%20%28221%29.png)
+
+## 流程B\(内存加载\)
+
+
 
