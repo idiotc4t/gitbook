@@ -110,7 +110,6 @@ namespace TEST
 ```text
 	iRuntimeHost->GetDefaultDomain(&pAppDomain);
 	pAppDomain->QueryInterface(__uuidof(_AppDomain), (VOID**)&pDefaultAppDomain);
-
 ```
 
 3.通过默认应用程序域实例的Load\_3方法加载安全.net程序集数组，并返回Assembly的实例对象指针，通过Assembly实例对象的get\_EntryPoint方法获取描述入口点的MethodInfo实例对象。
