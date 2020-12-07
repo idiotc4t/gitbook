@@ -113,7 +113,7 @@ namespace TEST
 
 ```
 
-3.通过默认应用程序域实例的Load\_3方法加载安全.net程序集数组，并返回\_AssemblyPtr的实例对象指针。
+3.通过默认应用程序域实例的Load\_3方法加载安全.net程序集数组，并返回Assembly的实例对象指针。
 
 ```text
 	saBound[0].cElements = ASSEMBLY_LENGTH;
