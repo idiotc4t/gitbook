@@ -106,14 +106,17 @@ namespace TEST
 	iRuntimeHost->Start();
 ```
 
-
-
 2.获取默认应用程序域
 
 ```text
 	iRuntimeHost->GetDefaultDomain(&pAppDomainThunk);
 	pAppDomainThunk->QueryInterface(__uuidof(_AppDomain), (VOID**)&pDefaultAppDomain);
 
+```
+
+3.通过应用程序域加载.net程序集
+
+```text
 	saBound[0].cElements = ASSEMBLY_LENGTH;
 	saBound[0].lLbound = 0;
 	SAFEARRAY* pSafeArray = SafeArrayCreate(VT_UI1, 1, saBound);
@@ -126,9 +129,37 @@ namespace TEST
 	pAssembly->get_EntryPoint(&pMethodInfo);
 ```
 
-1. 通过应用程序域加载.net程序集
-2. 创建参数安全数组
-3. 执行入口点
+4.创建参数安全数组
+
+```text
+ZeroMemory(&vRet, sizeof(VARIANT));
+	ZeroMemory(&vObj, sizeof(VARIANT));
+	vObj.vt = VT_NULL;
+
+	vPsa.vt = (VT_ARRAY | VT_BSTR);
+	args = SafeArrayCreateVector(VT_VARIANT, 0, 1);
+
+	if (argc > 1)
+	{
+		vPsa.parray = SafeArrayCreateVector(VT_BSTR, 0, argc);
+		for (long i = 0; i < argc; i++)
+		{
+			SafeArrayPutElement(vPsa.parray, &i, SysAllocString(argv[i]));
+		}
+
+		long idx[1] = { 0 };
+		SafeArrayPutElement(args, idx, &vPsa);
+	}
+
+```
+
+5.执行入口点
+
+```text
+HRESULT hr = pMethodInfo->Invoke_3(vObj, args, &vRet);
+```
+
+### 完整代码
 
 {% tabs %}
 {% tab title="unmanaged.cpp" %}
