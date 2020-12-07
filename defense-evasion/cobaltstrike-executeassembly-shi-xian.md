@@ -105,7 +105,7 @@ namespace TEST
 	iRuntimeHost->Start();
 ```
 
-2.通过ICLRRuntimeHost获取\_AppDomain接口指针，然后通过\_AppDomain接口的QueryInterface方法来查询默认应用程序域的接口。
+2.通过ICLRRuntimeHost获取\_AppDomain接口指针，然后通过\_AppDomain接口的QueryInterface方法来查询默认应用程序域的实例指针。
 
 ```text
 	iRuntimeHost->GetDefaultDomain(&pAppDomain);
@@ -113,7 +113,7 @@ namespace TEST
 
 ```
 
-3.通过默认应用程序域接口Load\_3方法加载安全.net程序集数组，并返回\_AssemblyPtr的实例对象指针。
+3.通过默认应用程序域实例的Load\_3方法加载安全.net程序集数组，并返回\_AssemblyPtr的实例对象指针。
 
 ```text
 	saBound[0].cElements = ASSEMBLY_LENGTH;
