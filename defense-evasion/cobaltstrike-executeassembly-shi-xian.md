@@ -37,10 +37,14 @@ cs实现了在非托管程序中加载.net程序集的功能，该功能使我�
 
 ## 实现
 
-```text
+代码
+
+{% tabs %}
+{% tab title="unmanaged.cpp" %}
+```cpp
 #include <metahost.h>
 #pragma comment(lib, "mscoree.lib")
- 
+
 int main()
 {
     ICLRMetaHost* iMetaHost = NULL;
@@ -64,8 +68,10 @@ int main()
     return 0;
 };
 ```
+{% endtab %}
 
-```text
+{% tab title="managed.cs" %}
+```csharp
 using System;
 
 namespace TEST
@@ -86,6 +92,8 @@ namespace TEST
     }
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 ![](../.gitbook/assets/image%20%28221%29.png)
 
