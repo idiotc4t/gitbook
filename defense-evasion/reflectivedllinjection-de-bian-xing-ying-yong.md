@@ -21,7 +21,7 @@
 
 我们将MZ的机器码转换成汇编指令，这里以X86为例，文章末尾也会给出X64的代码。
 
-![](../.gitbook/assets/image%20%28224%29.png)
+![](../.gitbook/assets/image%20%28225%29.png)
 
 可以看到MZ对应的汇编代码是↓，我们需要消除这两条指令的影响。
 
@@ -44,5 +44,9 @@ add ebx,<FunctionOffset-0x0C> ;计算ReflectiveLoader函数在内存中的位置
 call ebx                 ;调用ReflectiveLoader
 ```
 
+修补过后↓，这里代码使用[https://github.com/rapid7/ReflectiveDLLInjectio](https://github.com/rapid7/ReflectiveDLLInjection)n。
 
+![](../.gitbook/assets/image%20%28226%29.png)
+
+![](../.gitbook/assets/image%20%28224%29.png)
 
