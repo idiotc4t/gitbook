@@ -46,11 +46,11 @@ call edx                 ;调用ReflectiveLoader
 
 修补过后↓，这里代码使用[https://github.com/rapid7/ReflectiveDLLInjection](https://github.com/rapid7/ReflectiveDLLInjection)。
 
-![](../.gitbook/assets/image%20%28226%29.png)
+![](../.gitbook/assets/image%20%28227%29.png)
 
 ![](../.gitbook/assets/image%20%28224%29.png)
 
 ### 优化
 
-![](../.gitbook/assets/image%20%28227%29.png)
+![](../.gitbook/assets/image%20%28229%29.png)
 
