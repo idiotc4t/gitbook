@@ -52,5 +52,7 @@ call edx                 ;调用ReflectiveLoader
 
 ### 优化
 
+我们看到反射加载的DLL在内存中还是会存在很明显的PE格式文件特征，接下来我们尝试把他的PE特征抹掉。
+
 ![](../.gitbook/assets/image%20%28229%29.png)
 
