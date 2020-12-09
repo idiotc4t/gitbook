@@ -19,6 +19,7 @@
 
 ## 防御逃避 <a id="defense-evasion"></a>
 
+* [ReflectiveDLLInjection的变形应用](defense-evasion/reflectivedllinjection-de-bian-xing-ying-yong.md)
 * [Execute-Assembly实现](defense-evasion/cobaltstrike-executeassembly-shi-xian.md)
 * [ShadowMove复现与思考](defense-evasion/shadowmove-emersion-and-think.md)
 * [载入第二个Ntdll绕Hook](defense-evasion/load-ntdll-too.md)
