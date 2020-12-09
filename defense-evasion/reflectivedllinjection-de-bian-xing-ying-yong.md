@@ -44,9 +44,13 @@ add ebx,<FunctionOffset-0x0C> ;计算ReflectiveLoader函数在内存中的位置
 call ebx                 ;调用ReflectiveLoader
 ```
 
-修补过后↓，这里代码使用[https://github.com/rapid7/ReflectiveDLLInjectio](https://github.com/rapid7/ReflectiveDLLInjection)。
+修补过后↓，这里代码使用[https://github.com/rapid7/ReflectiveDLLInjection](https://github.com/rapid7/ReflectiveDLLInjection)。
 
 ![](../.gitbook/assets/image%20%28226%29.png)
 
 ![](../.gitbook/assets/image%20%28224%29.png)
+
+### 优化
+
+![](../.gitbook/assets/image%20%28227%29.png)
 
