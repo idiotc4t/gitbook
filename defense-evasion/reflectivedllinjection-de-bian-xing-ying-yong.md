@@ -28,7 +28,7 @@
 ```text
 dec ebp                  ;ebp -1
 pop edx                  ;edx=[esp] esp+4
-;恢复环境
+//恢复环境
 inc ebp                  ;ebp +1
 push edx                 ;esp-4 [esp]=edx
 ```
@@ -40,7 +40,7 @@ call 0                   ;获取下一条指令的内存地址
 pop edx                  ;将下一条指令出栈给edx
 push ebp
 mov ebp, esp             ;切换堆栈
-add ebx,<FunctionOffset> ;计算ReflectiveLoader函数在内存中的位置
+add ebx,<FunctionOffset-0x0A> ;计算ReflectiveLoader函数在内存中的位置
 call ebx                 ;调用ReflectiveLoader
 ```
 
