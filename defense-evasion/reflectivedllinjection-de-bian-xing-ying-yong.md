@@ -64,6 +64,10 @@ call edx                 ;调用ReflectiveLoader
 
 聪明的你应该已经想到我做了什么\(狗头\)。
 
+## PE-&gt;SHELLCODE改造
+
+先挖坑
+
 ### LINKS
 
 {% embed url="https://wbglil.github.io/2020/03/27/%E5%85%B3%E4%BA%8E%E5%8F%8D%E5%B0%84dll%E4%BF%AE%E8%A1%A5/" %}
