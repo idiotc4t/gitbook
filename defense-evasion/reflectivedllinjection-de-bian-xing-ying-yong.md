@@ -36,12 +36,12 @@ push edx                 ;esp-4 [esp]=edx
 然后需要将执行指针\(eip/rip\)指向ReflectiveLoader。
 
 ```text
-push ebp
-mov ebp, esp             ;切换堆栈
 call 0                   ;获取下一条指令的内存地址
 pop edx                  ;将下一条指令出栈给edx
-add ebx,<FunctionOffset-0x0C> ;计算ReflectiveLoader函数在内存中的位置
-call ebx                 ;调用ReflectiveLoader
+add edx,<FuncOffset-0x09>;计算ReflectiveLoader函数在内存中的位置
+push ebp
+mov ebp, esp             ;切换堆栈
+call edx                 ;调用ReflectiveLoader
 ```
 
 修补过后↓，这里代码使用[https://github.com/rapid7/ReflectiveDLLInjection](https://github.com/rapid7/ReflectiveDLLInjection)。
