@@ -66,6 +66,8 @@ call edx                 ;调用ReflectiveLoader
 
 ## PE-&gt;SHELLCODE改造
 
+### 思路
+
 上面的操作大概是这样的↓，学过shellcode开发的朋友可能知道，如果我们直接在DLL文件内编写加载函数是不能使用一些编写语法的如字符串、函数、CRT之类的东西的，就算要用系统函数也不能直接调用，前面我们使用的[ReflectiveDLLInjection](https://github.com/rapid7/ReflectiveDLLInjection)项目中ReflectiveLoader函数源码其实是经过特殊处理的，它遵循shellcode的开发限制，把所有东西都编译到一起，也避免了所有字符串和依赖的限制，保证了的编译出来的代码在任意环境下都能使用，也就是这段代码抠出来是能直接使用的，如果我们编写一个可修补的dll比较麻烦，我们也可以利用这段反射加载的shellcode来对已有PE文件进行改造。
 
 ![](../.gitbook/assets/image%20%28232%29.png)
@@ -74,7 +76,11 @@ call edx                 ;调用ReflectiveLoader
 
 ![](../.gitbook/assets/image%20%28233%29.png)
 
-这种技术已经有比较成熟的开源项目[pe\_to\_shellcode](https://github.com/hasherezade/pe_to_shellcode.git)，
+这种技术已经有比较成熟的开源项目[pe\_to\_shellcode](https://github.com/hasherezade/pe_to_shellcode.git)，这个老哥用汇编实现了一个反射加载的stub\(太硬核了\)，同样我们也用上一种应用的思路对这个stub进行优化，加载后抹除PE的特征，在这个基础上，我们可以快速对一个已有的功能模块进行修补。
+
+### 优化
+
+
 
 ### LINKS
 
