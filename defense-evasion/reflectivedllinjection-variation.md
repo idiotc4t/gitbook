@@ -66,7 +66,11 @@ call edx                 ;调用ReflectiveLoader
 
 ## PE-&gt;SHELLCODE改造
 
-先挖坑
+上面的操作大概是这样的↓，学过shellcode开发的朋友可能知道，如果我们直接在DLL文件内编写加载函数是不能使用一些编写语法的如字符串、函数、CRT之类的东西的，就算要用系统函数也不能直接调用，前面我们使用的[ReflectiveDLLInjection](https://github.com/rapid7/ReflectiveDLLInjection)项目
+
+![](../.gitbook/assets/image%20%28232%29.png)
+
+
 
 ### LINKS
 
