@@ -53,7 +53,15 @@ call edx                 ;调用ReflectiveLoader
 x64:
 
 ```text
-
+41 5a                   ;pop r10
+41 52                   ;push r10
+e8 00 00 00 00          ;call 0
+5b                      ;pop rbx
+48 81 c3 37 04 00 00    ;add rbx, 0x437
+55                      ;push  rbp
+48 89 e5                ;mov rbp, rsp
+48 83 ec 20             ;sub rsp, 0x20
+ff d3                   ;call rbx
 ```
 
 ### 优化
