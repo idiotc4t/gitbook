@@ -194,7 +194,28 @@ if __name__ == '__main__':
 
 这种技术已经有比较成熟的开源项目[pe\_to\_shellcode](https://github.com/hasherezade/pe_to_shellcode.git)，这个老哥用汇编实现了一个反射加载的stub\(太硬核了\)，同样我们也用上一种应用的思路对这个stub进行优化，加载后抹除PE的特征，在这个基础上，我们可以快速对一个已有的功能模块进行修补。
 
-[pe\_to\_shellcode](https://github.com/hasherezade/pe_to_shellcode.git)给出的中项目
+[pe\_to\_shellcode](https://github.com/hasherezade/pe_to_shellcode.git)项目中给出的汇编编写的ReflectiveLoader函数不需要像rapid7给出的反射库一样切换堆栈，但是需要压栈传入pe文件所在位置。
+
+由于不需要切换堆栈\(切换堆栈的机器码不同位数有差异\)，就可以统一不同位数程序的bootstrap。
+
+![x64](../.gitbook/assets/image%20%28240%29.png)
+
+![x86](../.gitbook/assets/image%20%28239%29.png)
+
+```text
+    b"\x4d"+
+		b"\x5A" +#pop edx
+		b"\x45" +#inc ebp
+		b"\x52" +#push edx
+		b"\xE8\x00\x00\x00\x00" +#call <next_line>
+		b"\x5B" +# pop ebx
+		b"\x48\x83\xEB\x09" +# sub ebx,9
+		b"\x53" +# push ebx (Image Base)
+		b"\x48\x81\xC3" +# add ebx,
+		pack("<I",func_offset) +# value
+		b"\xFF\xD3" +# call esp
+		b"\xc3" # ret
+```
 
 ### 优化-&gt;注入-&gt;思路
 
