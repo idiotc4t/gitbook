@@ -194,6 +194,8 @@ if __name__ == '__main__':
 
 这种技术已经有比较成熟的开源项目[pe\_to\_shellcode](https://github.com/hasherezade/pe_to_shellcode.git)，这个老哥用汇编实现了一个反射加载的stub\(太硬核了\)，同样我们也用上一种应用的思路对这个stub进行优化，加载后抹除PE的特征，在这个基础上，我们可以快速对一个已有的功能模块进行修补。
 
+[pe\_to\_shellcode](https://github.com/hasherezade/pe_to_shellcode.git)给出的中项目
+
 ### 优化-&gt;注入-&gt;思路
 
 上面的实现方式会对PE文件本身的大小产生影响，在哪年的黑帽大会上有一位究极老师傅公开过一种PE注入技术\(还有武器化的工具\)，原理是利用编译过程中产生的code caves\(编译过程文件对齐产生的空字节区\)，在这些区域插入loader stub，就可以避免改造后的PE文件体积增大，不过需要注入代码洞的大小不能小于loader stub的大小。
