@@ -232,7 +232,7 @@ def get_patch_stub(pe_file,func_offset):
 
 
     stub = (
-        b"\x4d"+
+    b"\x4d"+
 		b"\x5A" +#pop edx
 		b"\x45" +#inc ebp
 		b"\x52" +#push edx
