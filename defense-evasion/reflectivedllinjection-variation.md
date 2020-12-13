@@ -202,6 +202,8 @@ if __name__ == '__main__':
 
 ![x86](../.gitbook/assets/image%20%28239%29.png)
 
+### 代码
+
 ```text
     b"\x4d"+
 		b"\x5A" +#pop edx
@@ -215,6 +217,29 @@ if __name__ == '__main__':
 		pack("<I",func_offset) +# value
 		b"\xFF\xD3" +# call esp
 		b"\xc3" # ret
+```
+
+```text
+def addit_pe(pe_path):
+    pe_file = get_pe_load(pe_path)
+
+    pe_file_array = open(pe_path, 'rb').read()
+    print("[+] loaded nameof %s" % (pe_path))
+
+    addit_bootstrap = get_inject_bootstrap(pe_file,len(pe_file_array))
+
+    if get_pe_bit(pe_file):
+        addit_stub = open('resources/stub64.bin', 'rb').read()
+    else:
+        addit_stub = open('resources/stub32.bin', 'rb').read()
+
+    patch_pe_file = addit_bootstrap + pe_file_array[len(addit_bootstrap):] + addit_stub
+    print("[+] patched offset %d" % (len(pe_file_array)))
+
+    patch_pe_name = "patch-" + pe_path
+    open(patch_pe_name, 'wb').write(patch_pe_file)
+    print("[+] wrote nameof %s" % (patch_pe_name))
+
 ```
 
 ### 优化-&gt;注入-&gt;思路
