@@ -7,16 +7,6 @@
 * [COM组件相关的武器化开发技术](weaponization/com-weaponization.md)
 * [攻击demo的bof改造](weaponization/bof-weaponization.md)
 
-## 权限提升 <a id="privilege-escalation"></a>
-
-* [基于注册表劫持BypassUAC](privilege-escalation/bypassuac-fodhelper.md)
-* [基于dll劫持BypassUac](privilege-escalation/dll-hijack-bypassuac.md)
-* [通过com组件BypassUAC](privilege-escalation/com-bypassuac.md)
-* [通过复制Token提权到SYSTEM](privilege-escalation/token-manipulation.md)
-* [通过code&dll注入提权到SYSTEM](privilege-escalation/code-dll-injection-privilege-escalation.md)
-* [通过伪装PPID提权到SYSTEM](privilege-escalation/privilege-escalation-ppid.md)
-* [通过系统服务提权到SYSTEM](privilege-escalation/privilege-escalation-service.md)
-
 ## 防御逃避 <a id="defense-evasion"></a>
 
 * [ReflectiveDLLInjection变形应用](defense-evasion/reflectivedllinjection-variation.md)
@@ -62,6 +52,16 @@
 * [Process Hollowing](code-and-dll-process-injection/process-hollowing.md)
 * [SetContext Hijack Thread](code-and-dll-process-injection/setcontext-hijack-thread.md)
 * [DLL Hollowing](code-and-dll-process-injection/dll-hollowing.md)
+
+## 权限提升 <a id="privilege-escalation"></a>
+
+* [基于注册表劫持BypassUAC](privilege-escalation/bypassuac-fodhelper.md)
+* [基于dll劫持BypassUac](privilege-escalation/dll-hijack-bypassuac.md)
+* [通过com组件BypassUAC](privilege-escalation/com-bypassuac.md)
+* [通过复制Token提权到SYSTEM](privilege-escalation/token-manipulation.md)
+* [通过code&dll注入提权到SYSTEM](privilege-escalation/code-dll-injection-privilege-escalation.md)
+* [通过伪装PPID提权到SYSTEM](privilege-escalation/privilege-escalation-ppid.md)
+* [通过系统服务提权到SYSTEM](privilege-escalation/privilege-escalation-service.md)
 
 ## 权限维持 <a id="persistence"></a>
 
