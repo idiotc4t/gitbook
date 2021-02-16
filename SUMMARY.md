@@ -7,6 +7,10 @@
 * [COM组件相关的武器化开发技术](weaponization/com-weaponization.md)
 * [攻击demo的bof改造](weaponization/bof-weaponization.md)
 
+## 红队研究 <a id="redteam-research"></a>
+
+* [NtQueryInformationProcess逆向](redteam-research/untitled.md)
+
 ## 防御逃避 <a id="defense-evasion"></a>
 
 * [ReflectiveDLLInjection变形应用](defense-evasion/reflectivedllinjection-variation.md)
@@ -78,8 +82,4 @@
 ## 应急响应 <a id="emergency-response"></a>
 
 * [WannaMine4.0专杀的一些技巧](emergency-response/fuck-wannamine4.0.md)
-
-## 红队研究
-
-* [Untitled](hong-dui-yan-jiu/untitled.md)
 
