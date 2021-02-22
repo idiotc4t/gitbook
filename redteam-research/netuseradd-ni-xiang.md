@@ -24,13 +24,7 @@ int wmain(int argc, wchar_t* argv[])
 	LSA_OBJECT_ATTRIBUTES ObjectAttributes = { 0 };
 	PPOLICY_ACCOUNT_DOMAIN_INFO DomainInfo = NULL;
 	USER_ALL_INFORMATION uai = { 0 };
-	PACL Dacl = NULL;
-	PSECURITY_DESCRIPTOR SecurityDescriptor = NULL;
-	PACL SamDacl{ 0 };
-	PACL LocalDacl = { 0 };
-	BOOLEAN Defaulted;
-	BOOLEAN Present;
-	ACL_SIZE_INFORMATION AclSize;
+
 
 	hSamlib = LoadLibraryA("samlib.dll");
 	hNtdll = LoadLibraryA("ntdll");
@@ -41,8 +35,6 @@ int wmain(int argc, wchar_t* argv[])
 	pSamSetInformationUser SamSetInformationUser = (pSamSetInformationUser)GetProcAddress(hSamlib, "SamSetInformationUser");
 	pSamQuerySecurityObject SamQuerySecurityObject = (pSamQuerySecurityObject)GetProcAddress(hSamlib, "SamQuerySecurityObject");
 	pRtlInitUnicodeString RtlInitUnicodeString = (pRtlInitUnicodeString)GetProcAddress(hNtdll, "RtlInitUnicodeString");
-	pRtlGetDaclSecurityDescriptor RtlGetDaclSecurityDescriptor = (pRtlGetDaclSecurityDescriptor)GetProcAddress(hNtdll, "RtlGetDaclSecurityDescriptor");
-	pRtlQueryInformationAcl RtlQueryInformationAcl = (pRtlQueryInformationAcl)GetProcAddress(hNtdll, "RtlQueryInformationAcl");
 
 	RtlInitUnicodeString(&UserName, L"Admin");
 	RtlInitUnicodeString(&PassWord, L"Admin");
