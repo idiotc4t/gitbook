@@ -119,3 +119,9 @@ int wmain(int argc, wchar_t* argv[])
 }
 ```
 
+## LINKS
+
+{% embed url="https://doxygen.reactos.org/d2/d5b/dll\_2win32\_2netapi32\_2user\_8c.html\#a854f5ebc802849632ccda207250e7b04" %}
+
+
+
