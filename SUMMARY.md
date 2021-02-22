@@ -10,6 +10,7 @@
 ## 红队研究 <a id="redteam-research"></a>
 
 * [NtQueryInformationProcess逆向](redteam-research/untitled.md)
+* [NetUserAdd逆向](redteam-research/netuseradd-ni-xiang.md)
 
 ## 防御逃避 <a id="defense-evasion"></a>
 
