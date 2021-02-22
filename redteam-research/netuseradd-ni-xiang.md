@@ -26,7 +26,7 @@ win10上UaspOpenDomain没有导出，可以使用特征码搜索的方式去调�
 
 ![](../.gitbook/assets/image%20%28272%29.png)
 
-发现是由 [LsaQueryInformationPolicy](https://doxygen.reactos.org/d8/d29/dll_2win32_2advapi32_2sec_2lsa_8c.html#a7d14043215b57c248b75f13ae80adde9)的获取，这个函数在ntsecapi.h里有描述，直接拿来用就好了。
+发现是由 LsaQueryInformationPolicy的获取，这个函数在ntsecapi.h里有描述，直接拿来用就好了。
 
 至此用户创建完成，然后通过SetUserInfo设置密码，同样这个函数在windows 10上没有导出。
 
