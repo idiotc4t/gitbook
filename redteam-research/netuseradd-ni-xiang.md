@@ -1,5 +1,33 @@
 # NetUserAdd逆向
 
+## 简介
+
+![](../.gitbook/assets/image%20%28262%29.png)
+
+## 过程
+
+反手直接拖ida。
+
+![](../.gitbook/assets/image%20%28265%29.png)
+
+![](../.gitbook/assets/image%20%28259%29.png)
+
+跟了下逻辑然后对比了下React OS发现逻辑几乎一致，那直接扣代码。
+
+![](../.gitbook/assets/image%20%28263%29.png)
+
+win10上UaspOpenDomain没有导出，可以使用特征码搜索的方式去调用，这里跟进了发现同样是调用了sam系函数。
+
+![](../.gitbook/assets/image%20%28260%29.png)
+
+跟一下函数还需要sid。
+
+![](../.gitbook/assets/image%20%28258%29.png)
+
+![](../.gitbook/assets/image%20%28264%29.png)
+
+发现 [LsaQueryInformationPolicy](https://doxygen.reactos.org/d8/d29/dll_2win32_2advapi32_2sec_2lsa_8c.html#a7d14043215b57c248b75f13ae80adde9)的获取
+
 ## 完整代码
 
 ```text
