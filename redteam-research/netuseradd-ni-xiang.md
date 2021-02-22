@@ -1,32 +1,56 @@
 # NetUserAdd逆向
 
-## 简介
+## 起因
 
-![](../.gitbook/assets/image%20%28262%29.png)
+![](../.gitbook/assets/image%20%28266%29.png)
 
 ## 过程
 
 反手直接拖ida。
 
-![](../.gitbook/assets/image%20%28265%29.png)
+![](../.gitbook/assets/image%20%28273%29.png)
 
-![](../.gitbook/assets/image%20%28259%29.png)
+![](../.gitbook/assets/image%20%28261%29.png)
 
 跟了下逻辑然后对比了下React OS发现逻辑几乎一致，那直接扣代码。
 
-![](../.gitbook/assets/image%20%28263%29.png)
+![](../.gitbook/assets/image%20%28268%29.png)
 
 win10上UaspOpenDomain没有导出，可以使用特征码搜索的方式去调用，这里跟进了发现同样是调用了sam系函数。
 
-![](../.gitbook/assets/image%20%28260%29.png)
+![](../.gitbook/assets/image%20%28262%29.png)
 
 跟一下函数还需要sid。
 
-![](../.gitbook/assets/image%20%28258%29.png)
+![](../.gitbook/assets/image%20%28260%29.png)
 
-![](../.gitbook/assets/image%20%28264%29.png)
+![](../.gitbook/assets/image%20%28272%29.png)
 
-发现 [LsaQueryInformationPolicy](https://doxygen.reactos.org/d8/d29/dll_2win32_2advapi32_2sec_2lsa_8c.html#a7d14043215b57c248b75f13ae80adde9)的获取
+发现是由 [LsaQueryInformationPolicy](https://doxygen.reactos.org/d8/d29/dll_2win32_2advapi32_2sec_2lsa_8c.html#a7d14043215b57c248b75f13ae80adde9)的获取，这个函数在ntsecapi.h里有描述，直接拿来用就好了。
+
+至此用户创建完成，然后通过SetUserInfo设置密码，同样这个函数在windows 10上没有导出。
+
+![](../.gitbook/assets/image%20%28265%29.png)
+
+![](../.gitbook/assets/image%20%28271%29.png)
+
+跟一下，发现下层函数一致并导出。
+
+![](../.gitbook/assets/image%20%28270%29.png)
+
+![](../.gitbook/assets/image%20%28263%29.png)
+
+![](../.gitbook/assets/image%20%28257%29.png)
+
+跟踪了一下函数逻辑，发现不同的UserInfo都有不同的处理方法，通常我们会传入一个USERINFO1结构体，这里会把有效信息传入到一个 USER\_ALL\_INFORMATION 结构体里面，这个结构体的实现和Startupinfo有点像，需要同时设置值和使用标签位，阅读发现，有一个结构体单处理密码。
+
+![](../.gitbook/assets/image%20%28274%29.png)
+
+![](../.gitbook/assets/image%20%28269%29.png)
+
+这里我们只需要传入密码，然后将标志位设1。
+
+我们就自己封装出了一个NetUserAdd。
 
 ## 完整代码
 
