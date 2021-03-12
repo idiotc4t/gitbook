@@ -6,6 +6,7 @@
 
 * [COM组件相关的武器化开发技术](weaponization/com-weaponization.md)
 * [攻击demo的bof改造](weaponization/bof-weaponization.md)
+* [Go项目反射改造](weaponization/go-xiang-mu-fan-she-gai-zao.md)
 
 ## 红队研究 <a id="redteam-research"></a>
 
