@@ -2,5 +2,5 @@
 
 ## 简介
 
-反射加载也没什么好说的，突然一时兴起想试一下能不能搞出来go的反射模块，发现已经有师傅铺好了路，这里手动@[WBGlIl](https://github.com/WBGlIl)师傅
+反射加载也没什么好说的，突然一时兴起想试一下能不能搞出来go的反射模块，发现已经有师傅铺好了路，这里手动@[WBGlIl](https://github.com/WBGlIl)师傅，选了用[HackBrowserData](https://github.com/moonD4rk/HackBrowserData)，项目
 
