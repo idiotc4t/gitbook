@@ -76,6 +76,7 @@
 
 ## 权限维持 <a id="persistence"></a>
 
+* [主机特征绑定木马](persistence/zhu-ji-te-zheng-bang-ding-mu-ma.md)
 * [寻找有价值的文件](persistence/find-file.md)
 * [获取机器安装的软件](persistence/get-computer-installed-software.md)
 * [通过API添加Windows用户](persistence/api-add-user.md)
