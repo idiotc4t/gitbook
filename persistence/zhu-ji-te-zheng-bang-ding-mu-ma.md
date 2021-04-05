@@ -22,11 +22,36 @@
 1. 将木马体写在无法上传的位置
 2. 编写定制执行器
 
-## 代码
+## 伪代码
+
+windows会在安装后生成一个product ID该值理论上唯一，我们可以读取这个值作为密钥加密我们的木马体，然后编写读取当前环境值的加载器。
+
+![](../.gitbook/assets/image%20%28286%29.png)
 
 这个就写伪代码了。
 
-```text
+加密部分
 
+```text
+shellcode="XXXX"
+key = read('xxx')
+def encode(key,shellcode){
+    自有算法处理shellcode
+    return encode_shellcode
+    }
+print encode(key,shellcode)
+```
+
+解密部分
+
+```text
+encode_shellcode="xxxx"
+key = read('xxx')
+def decode(key,encode_shellcode){
+    自有算法解密shellcode
+    return shellcode
+}
+shellcode=decode(key,shellcode)
+shellcode()
 ```
 
