@@ -2,6 +2,11 @@
 
 * [关于这个博客](README.md)
 
+## 武器设计
+
+* [我也不知道能不能写](wu-qi-she-ji/idoknow.md)
+* [先占个位置](wu-qi-she-ji/xian-zhan-ge-wei-zhi.md)
+
 ## 武器化 <a id="weaponization"></a>
 
 * [COM组件相关的武器化开发技术](weaponization/com-weaponization.md)
