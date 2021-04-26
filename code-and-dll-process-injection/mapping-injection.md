@@ -6,7 +6,7 @@ description: Mapping Injection
 
 ## [CreateFileMapping-&gt;MapViewOfFile](mapping-injection.md)简介
 
-映射注入是一种内存注入技术，可以避免使用一些经典注入技术使用的API,如VirtualAllocEx,WriteProcessMemory等被杀毒软件严密监控的API，同时创建Mapping内核对象本质上属于申请一块物理内存，而申请的物理内存又能比较方便的通过系统函数直接映射到进程的虚拟内存里，这也就避免使用经典写入函数，增加了隐蔽性。
+映射注入是一种内存注入技术，可以避免使用一些经典注入技术使用的API,如VirtualAllocEx,WriteProcessMemory等被杀毒软件严密监控的API，同时创建Mapping对象本质上属于申请一块物理内存，而申请的物理内存又能比较方便的通过系统函数直接映射到进程的虚拟内存里，这也就避免使用经典写入函数，增加了隐蔽性。
 
 ![](../.gitbook/assets/image%20%2818%29.png)
 
