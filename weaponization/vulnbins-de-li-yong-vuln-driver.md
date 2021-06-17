@@ -29,12 +29,13 @@ BOOLEAN KillProcess(ULONG PID)
 	if (NT_SUCCESS(ntStatus))
 	{
 		if (ObOpenObjectByPointer((PVOID)pEprcess, 0, NULL, 0, NULL, KernelMode, &hProcess) != STATUS_SUCCESS)
-			{return FALSE;}
+			{
+			return FALSE;
+			}
 		ZwTerminateProcess((HANDLE)hProcess, STATUS_SUCCESS);
 		ZwClose((HANDLE)hProcess);
 		return TRUE;
 	}
-	return FALSE;
 };
 
 ```
