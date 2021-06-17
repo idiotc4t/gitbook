@@ -12,5 +12,33 @@
 4. 漏洞利用改回原值
 5. 卸载白驱动
 
+### 代码片段
+
+鲨进程
+
+```text
+BOOLEAN KillProcess(ULONG PID)
+{
+	NTSTATUS ntStatus = STATUS_SUCCESS;
+	PVOID hProcess;
+	PEPROCESS pEprcess;
+	ntStatus = PsLookupProcessByProcessId(PID, &pEprcess);
+
+	if (NT_SUCCESS(ntStatus))
+	{
+		if (ObOpenObjectByPointer((PVOID)pEprcess, 0, NULL, 0, NULL, KernelMode, &hProcess) != STATUS_SUCCESS)
+			return FALSE;
+		ZwTerminateProcess((HANDLE)hProcess, STATUS_SUCCESS);
+		ZwClose((HANDLE)hProcess);
+		return TRUE;
+	}
+	return FALSE;
+};
+```
+
+### Loader
+
+
+
 
 
