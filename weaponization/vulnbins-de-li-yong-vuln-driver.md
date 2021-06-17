@@ -14,7 +14,9 @@
 
 ### 代码片段
 
-鲨进程
+### 鲨进程 驱动片段
+
+获取当前进程EPROCESS,遍历ActiveProcessLinks获取和判断进程,符合条件就给扬了,当然最好用点强杀手段。
 
 ```text
 BOOLEAN KillProcess(ULONG PID)
@@ -34,11 +36,14 @@ BOOLEAN KillProcess(ULONG PID)
 	}
 	return FALSE;
 };
+
 ```
 
 ### Loader
 
+```text
 
+```
 
 
 
