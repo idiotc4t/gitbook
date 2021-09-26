@@ -155,3 +155,50 @@ pe_profile:
             "AAA" "BBB"
 ```
 
+#### 实现
+
+```text
+{
+    "ProfileName":"TestProfile",
+    "SleepTime":60,
+    "SleepJitter":30,
+    "UserAgent":"Uset Agent",
+    "Http":{
+      "Server": {
+        "Headers": {
+          "serverheader": "serverheader"
+        },
+        "Status": 404,
+        "Body": "<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>Tom fuck fbi 404 Not Found</title>\n</head><body>\n<h1>Not Found</h1>\n<p>The requested URL #URI# was not\nfound on this server.</p>\n</body></html>",
+        "TaskRequest": {
+          "Null": 201,
+          "Put": 200,
+          "Coding": "base64",
+          "Prepend": "prepend",
+          "Append": "append"
+        }
+      },
+        "Client":{
+            "Headers":
+            {
+                "Clientheader":"clientheader"
+            },
+            "TaskResult":{
+                "Uri":"/rooke.api",
+                "Null":"GET",
+                "Put":"POST",
+                "Coding":"base64",
+                "Append":"append",
+                "Prepend":"prepend"
+            },
+            "Metadata":{
+                "Coding":"base64",
+                "Header":"Cookie",
+                "Append":"append",
+                "Prepend":"prepend"
+            }
+        }
+    }
+}
+```
+
