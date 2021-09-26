@@ -2,20 +2,20 @@
 
 * [关于这个博客](README.md)
 
-## 武器设计 <a id="weapon-design-1"></a>
+## 武器设计 <a id="weapon-design"></a>
 
-* [我也不知道能不能写](weapon-design-1/idoknow.md)
-* [C2手稿](weapon-design-1/c2-shou-gao/README.md)
-  * [真·手稿](weapon-design-1/c2-shou-gao/untitled.md)
-  * [实现UML图](weapon-design-1/c2-shou-gao/shi-xian-uml-tu.md)
-* [先占个位置](weapon-design-1/xian-zhan-ge-wei-zhi.md)
+* [我也不知道能不能写](weapon-design/idoknow.md)
+* [C2手稿](weapon-design/c2-shou-gao/README.md)
+  * [真·手稿](weapon-design/c2-shou-gao/untitled.md)
+  * [实现UML图](weapon-design/c2-shou-gao/shi-xian-uml-tu.md)
+* [先占个位置](weapon-design/xian-zhan-ge-wei-zhi.md)
 
-## 武器化 <a id="weapon-design"></a>
+## 武器化 <a id="weaponization"></a>
 
-* [COM组件相关的武器化开发技术](weapon-design/com-weaponization.md)
-* [攻击demo的bof改造](weapon-design/bof-weaponization.md)
-* [Go项目反射改造](weapon-design/go-xiang-mu-fan-she-gai-zao.md)
-* [VulnBins的利用 \(vuln driver\)](weapon-design/vulnbins-de-li-yong-vuln-driver.md)
+* [COM组件相关的武器化开发技术](weaponization/com-weaponization.md)
+* [攻击demo的bof改造](weaponization/bof-weaponization.md)
+* [Go项目反射改造](weaponization/go-xiang-mu-fan-she-gai-zao.md)
+* [VulnBins的利用 \(vuln driver\)](weaponization/vulnbins-de-li-yong-vuln-driver.md)
 
 ## 红队研究 <a id="redteam-research"></a>
 
