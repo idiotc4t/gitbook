@@ -12,7 +12,7 @@
 
 ### 处理逻辑
 
-![](../../.gitbook/assets/8e4299cbcb7d61402c492f35605f009.jpg)
+![](../../.gitbook/assets/lj.jpg)
 
 ## 初期UML图
 
