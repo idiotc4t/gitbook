@@ -5,9 +5,9 @@
 ## 武器设计 <a id="weapon-design"></a>
 
 * [我也不知道能不能写](weapon-design/idoknow.md)
-* [C2手稿](weapon-design/c2-shou-gao/README.md)
-  * [真·手稿](weapon-design/c2-shou-gao/untitled.md)
-  * [实现UML图](weapon-design/c2-shou-gao/shi-xian-uml-tu.md)
+* [C2手稿](weapon-design/c2-manuscript/README.md)
+  * [真·手稿](weapon-design/c2-manuscript/real-manuscript.md)
+  * [实现UML图](weapon-design/c2-manuscript/real-uml.md)
 * [先占个位置](weapon-design/xian-zhan-ge-wei-zhi.md)
 
 ## 武器化 <a id="weaponization"></a>
