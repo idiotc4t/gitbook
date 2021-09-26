@@ -4,8 +4,6 @@
 
 C2是个啥玩意我就不赘述了,放一些设计初期的手稿,希望能对大家有所帮助。
 
-大概的对象逻辑是这样的。
-
 ![](../../.gitbook/assets/shi-yi-tu-.jpg)
 
 ## 第一章 设计理念
@@ -24,11 +22,11 @@ TeamServer与Client均为C\#编写,出于对使用者的体验考虑,故设计�
 
 #### 2.1 Agent
 
-![image-20210615113856114](file://C:/Users/Black%20Sheep/AppData/Roaming/Typora/typora-user-images/image-20210615113856114.png?lastModify=1632632537)
+![](../../.gitbook/assets/image-20210615113856114.png)
 
-![image-20210615113817201](file://C:/Users/Black%20Sheep/AppData/Roaming/Typora/typora-user-images/image-20210615113817201.png?lastModify=1632632537)
+![](../../.gitbook/assets/image-20210615113817201.png)
 
 #### 2.2 TeamServcer
 
-![image-20210615113754347](file://C:/Users/Black%20Sheep/AppData/Roaming/Typora/typora-user-images/image-20210615113754347.png?lastModify=1632632537)
+![](../../.gitbook/assets/image-20210615113754347.png)
 
