@@ -6,7 +6,7 @@
 
 * [我也不知道能不能写](wu-qi-she-ji/idoknow.md)
 * [C2手稿](wu-qi-she-ji/c2-shou-gao/README.md)
-  * [Untitled](wu-qi-she-ji/c2-shou-gao/untitled.md)
+  * [真·手稿](wu-qi-she-ji/c2-shou-gao/untitled.md)
 * [先占个位置](wu-qi-she-ji/xian-zhan-ge-wei-zhi.md)
 
 ## 武器化 <a id="weaponization"></a>
