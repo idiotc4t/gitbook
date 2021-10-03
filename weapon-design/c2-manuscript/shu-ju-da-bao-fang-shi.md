@@ -1,5 +1,7 @@
 # 数据打包DataPacker
 
+如果是定长数据就直接压入buffer,不是定长数据压入一个长度再压入数据。
+
 ![](../../.gitbook/assets/image%20%28290%29.png)
 
 ```text
