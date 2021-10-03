@@ -36,3 +36,46 @@ BOOL HeapWalk(
 
 ![](../../.gitbook/assets/image%20%28288%29.png)
 
+## 代码
+
+```text
+#include <windows.h>
+#include <stdio.h>
+
+
+VOID Xor(char* buffer, size_t buffer_size) {
+	char key[9] = { 1,2,3,4,5,6,8,0 };
+
+	for (size_t i = 0; i < buffer_size; i++)
+	{
+		buffer[i] ^= key[i % sizeof(key)-1];
+	}
+}
+
+VOID FuckHeap() {
+	PROCESS_HEAP_ENTRY heapEntry = { 0 };
+	HANDLE hHeap = GetProcessHeap();
+	while (HeapWalk(hHeap, &heapEntry))
+	{
+		if (heapEntry.wFlags & PROCESS_HEAP_ENTRY_BUSY)
+		{
+			Xor((char*)heapEntry.lpData, heapEntry.cbData);
+		}
+	}
+}
+
+int main()
+{
+	
+	LPVOID WorkPath = malloc(MAX_PATH);
+	GetCurrentDirectoryA(MAX_PATH, (LPSTR)WorkPath);
+	printf("%s\n", (char*)WorkPath);
+	FuckHeap();
+
+	//printf("%s\n", (char*)WorkPath);
+	FuckHeap();
+	printf("%s\n", (char*)WorkPath);
+
+}
+```
+
