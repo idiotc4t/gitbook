@@ -81,3 +81,7 @@ int main()
 
 
 
+## Links
+
+[https://www.arashparsa.com/hook-heaps-and-live-free/](https://www.arashparsa.com/hook-heaps-and-live-free/)
+
