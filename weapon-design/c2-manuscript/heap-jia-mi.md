@@ -10,5 +10,23 @@
 2. 编译堆中已分配的块。
 3. 异或已分配块中的数据。
 
-## 代码
+## 过程
+
+首先用GetProcessHeaps获取进程拥有的所有堆句柄。
+
+```text
+DWORD GetProcessHeaps(
+  DWORD   NumberOfHeaps,
+  PHANDLE ProcessHeaps
+);
+```
+
+然后用HeapWalk枚举所有的堆内存块。
+
+```text
+BOOL HeapWalk(
+  HANDLE               hHeap,
+  LPPROCESS_HEAP_ENTRY lpEntry
+);
+```
 
