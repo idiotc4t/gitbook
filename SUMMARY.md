@@ -6,6 +6,7 @@
 
 * [我也不知道能不能写](weapon-design/idoknow.md)
 * [C2手稿](weapon-design/c2-manuscript/README.md)
+  * [.text加密](weapon-design/c2-manuscript/.text-jia-mi.md)
   * [Heap加密](weapon-design/c2-manuscript/heap-jia-mi.md)
   * [真·手稿](weapon-design/c2-manuscript/real-manuscript.md)
   * [实现UML图](weapon-design/c2-manuscript/real-uml.md)
