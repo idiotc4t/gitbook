@@ -21,7 +21,9 @@ DWORD GetProcessHeaps(
 );
 ```
 
-然后用HeapWalk枚举所有的堆内存块。\(这个函数设计的挺好的终于不用啥First Next了 略略略\)
+然后用HeapWalk枚举所有已分配的堆内存块。\(这个函数设计的挺好的终于不用啥First Next了 略略略\)
+
+（heapEntry.wFlags & PROCESS\_HEAP\_ENTRY\_BUSY\)
 
 ```text
 BOOL HeapWalk(
