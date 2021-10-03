@@ -7,7 +7,7 @@
 * [我也不知道能不能写](weapon-design/idoknow.md)
 * [C2手稿](weapon-design/c2-manuscript/README.md)
   * [Heap加密](weapon-design/c2-manuscript/heap-jia-mi.md)
-  * [数据打包方式](weapon-design/c2-manuscript/shu-ju-da-bao-fang-shi.md)
+  * [数据打包DataPacker](weapon-design/c2-manuscript/shu-ju-da-bao-fang-shi.md)
   * [真·手稿](weapon-design/c2-manuscript/real-manuscript.md)
   * [实现UML图](weapon-design/c2-manuscript/real-uml.md)
 * [先占个位置](weapon-design/xian-zhan-ge-wei-zhi.md)
